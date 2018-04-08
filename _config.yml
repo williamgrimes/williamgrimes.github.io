@@ -15,14 +15,12 @@ icons:
     link: resume.html
     title: Resume
   - icon: social-github
-    link: http://www.github.com/DDuarte
+    link: https://github.com/williamgrimes
     title: Github
-  - icon: social-twitter
-    link: https://twitter.com/OhMyCorgi
-    title: Twitter
-  - icon: paw
-    link: http://lmgtfy.com/?q=corgi
-  - icon: social-reddit
+  - icon: social-linkedin
+    link: https://www.linkedin.com/in/william-grimes
+    title: LinkedIn
+  - icon: mail
     link: https://www.reddit.com/r/corgi
     title: Reddit
 
