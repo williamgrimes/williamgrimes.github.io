@@ -22,7 +22,7 @@ icons:
     title: LinkedIn
   - icon: mail
     link: mailto:williamgrimes@gmx.com
-    title: Reddit
+    title: email
 
 projects:
   - name: Jekyll Configurable Site
