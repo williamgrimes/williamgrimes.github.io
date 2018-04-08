@@ -8,12 +8,12 @@ siteDescription: My awesome personal site, i'm a Corgi!
 avatar: img/avatar.jpg
 background: img/background.jpg
 description: Hey I'm William Grimes. Thanks for visiting my personal site!
-resumeFile: /cv/william_grimes_cv.pdf
+resumeFile: https://www.dropbox.com/s/dt2ri8xbcuqro90/william_grimes_cover_letter.pdf?dl=0
 
 icons:
   - icon: page-pdf
     link: resume.html
-    title: Resume
+    title: Curriculum Vitae
   - icon: social-github
     link: https://github.com/williamgrimes
     title: Github
