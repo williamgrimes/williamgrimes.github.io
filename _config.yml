@@ -1,31 +1,26 @@
-# Jekyll
-gems:
-  - jekyll-redirect-from
+# Site settings
 
-# Custom
-siteTitle: Williamgrimes
-siteDescription: A personal webpage for William Grimes.
-avatar: img/profile2.jpg
-background: img/background4.jpg
-description: Hi. I'm William Grimes. Thanks for visiting my personal site!
-resumeFile: /cv/william_grimes_cv.pdf
+# REQUIRED CHANGES
+# Edit next line, providing your own name.
+title: William Grimes | Professional Portfolio
+# Edit next line, replacing 'techfolios' with your github username
+url: "https://williamgrimes.github.io"
+# Edit next line so that baseurl is "" if your repo is <username>.github.io
+baseurl: ""
 
-icons:
-  - icon: page-pdf
-    link: resume.html
-    title: Resume
-  - icon: social-github
-    link: https://github.com/williamgrimes
-    title: Github
-  - icon: social-linkedin
-    link: https://www.linkedin.com/in/william-grimes
-    title: LinkedIn
-  - icon: mail
-    link: mailto:williamgrimes@gmx.com
-    title: email
+# OPTIONAL CHANGES
+# You might want to change the bio page label to something else, such as CV
+bio-page-label: Resume
+# You might want to change the theme associated with one or more sections of the site.
+# Defining your own custom theme variations is easy. See the documentation.
+theme-home: theme-home-builtin-1.html
+theme-projects: theme-projects-builtin-1.html
+theme-essays: theme-essays-builtin-1.html
+theme-bio: theme-bio-builtin-1.html
 
-projects:
-  - name: Project WEF Oceans
-    link: https://dssg.uchicago.edu/project/fishingriskframework/
-  - name: London Fire Brigade
-    link: http://blog.asidatascience.com/how-to-put-out-a-fire-using-old-reports/
+# Specify the rouge syntax highlighter theme. Pick one from css/rouge.
+rouge-theme: igorpro
+
+# YOU NORMALLY NEVER CHANGE THE FOLLOWING
+markdown: kramdown
+include: [_data]
