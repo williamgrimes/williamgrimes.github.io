@@ -1,10 +1,9 @@
 # Site settings
 
-# REQUIRED CHANGES
-# Edit next line, providing your own name.
-title: William Grimes | Professional Portfolio
-# Edit next line, replacing 'techfolios' with your github username
+title: William Grimes
 url: "https://williamgrimes.github.io"
+curriculum-vitae-file: /cv/william_grimes_cv.pdf
+
 # Edit next line so that baseurl is "" if your repo is <username>.github.io
 baseurl: ""
 
@@ -13,7 +12,7 @@ baseurl: ""
 bio-page-label: CV
 # You might want to change the theme associated with one or more sections of the site.
 # Defining your own custom theme variations is easy. See the documentation.
-theme-home: theme-home-builtin-2.html
+theme-home: theme-home-builtin-1.html
 theme-projects: theme-projects-builtin-1.html
 theme-essays: theme-essays-builtin-1.html
 theme-bio: theme-bio-will-1.html
