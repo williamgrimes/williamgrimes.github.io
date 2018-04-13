@@ -2,11 +2,11 @@
   "basics": {
     "name": "William Grimes",
     "label": "Data Scientist",
-    "picture": "https://williamgrimes.github.io/images/profile2.jpg",
+    "picture": "/images/profile6.jpg",
     "email": "williamgrimes@gmx.com",
     "phone": "+44 7794070622",
     "website": "https://williamgrimes.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2020. There is so much more to say about this bio including all my history and everything else, my favourite stuff and all the incredible things I have done. That would just be filling space but still why not because I am a narcissit",
+    "summary": "<br>Data Scientist, with two years experience delivering commercial data science projects. Worked with, Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> Hold a PhD in Bioinformatics, and a MSc in Computer Science, with over eight years programming experience. <br><br> Dedicated to applying machine learning to solve problems with a positive social impact, and particularly interested in imaging, geospatial data, and natural language processing.",
     "location": {
       "address": "",
       "postalCode": "96822",
@@ -24,15 +24,23 @@
         "network": "linkedin",
         "username": "william-grimes",
         "url": "https://www.linkedin.com/in/william-grimes/"
+      },
+      {
+        "network": "stack overflow",
+        "username": "william-grimes",
+        "url": "https://stackoverflow.com/users/2545164/william-grimes/"
+      },
+      {
+        "network": "file pdf outline",
+        "username": "william-grimes",
+        "url": "/curriculum_vitae.html"
       }
     ]
   },
   "interests": [
     {
-      "name": "internet of things",
+      "name": "artificial intelligence",
       "keywords": [
-        "Arduino",
-        "TI MSP430"
       ]
     },
     {
@@ -41,7 +49,12 @@
       ]
     },
     {
-      "name": "artificial intelligence",
+      "name": "bitcoin",
+      "keywords": [
+      ]
+    },
+    {
+      "name": "vipassana",
       "keywords": [
       ]
     }

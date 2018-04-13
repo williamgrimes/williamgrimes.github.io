@@ -7,24 +7,21 @@
 <div style="height: 100%;" class="ui middle aligned two column centered stackable grid container">
 
   <div style="text-align: center" class="column">
-    <div  class="ui rounded image">
-      <img style="max-width: 225px" src="{{ site.data.bio.basics.picture }}">
+    <div  class="ui bordered circular image">
+      <img style="max-width: 220px" src="{{ site.data.bio.basics.picture }}">
     </div>
   </div>
 
-  <div class="column">
-    <h2 class="header no-bottom">{{ site.data.bio.basics.name }}</h2>
-    <p class="">{{ site.data.bio.basics.label }}</p>
-    <p class="">
+  <div style="font-size:125%;" class="column">
+    <h2 class="header no-bottom" style="text-align: center">{{ site.data.bio.basics.name }}</h2>
+    <!--<p class="">{{ site.data.bio.basics.label }}</p>-->
+    <p class="" style="text-align: justify"> <br>
       {{ site.data.bio.basics.summary }}
     </p>
     <p>Interests:
       {% for interest in site.data.bio.interests %}
         {{ interest.name }}{% if forloop.last != true %}, {% endif %}
       {% endfor %}
-    </p>
-    <p style="text-align: center">
-      {% include home-network-links.html %}
     </p>
     <p style="text-align: center">
       <a href="{{ site.baseurl}}/projects/">
@@ -37,6 +34,9 @@
         <button class="ui basic button">{{ site.bio-page-label }}</button>
       </a>
     </p>
+    <p style="text-align: center">
+      {% include home-network-links.html %}
+    </p>
   </div>
 </div>
 
@@ -45,7 +45,7 @@
   document.addEventListener("DOMContentLoaded", function() {
       var body = document.getElementsByTagName("body")[0];
       body.style.cssText =
-          'background: url("../images/background16.jpg");' +
+          'background: url("../images/background29.jpg");' +
           'background-size: auto;' +
           'background-position: center;' +
           'background-repeat: no-repeat;';

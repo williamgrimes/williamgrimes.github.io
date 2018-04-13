@@ -9,33 +9,30 @@
 
   <div class="column">
 
-    <div style="position: relative; top: 75px; z-index: 1" class="ui fluid centered small circular image">
+    <div style="position: relative; top: 75px; z-index: 1" class="ui fluid centered small circular bordered image">
       <img src="{{ site.data.bio.basics.picture }}">
     </div>
 
 
-    <div style="max-width: 600px; padding-top: 75px; margin-top: 0px" class="ui fluid centered card">
-
-      <div class="center aligned content">
+    <div style="max-width: 650px; padding-top: 75px; margin-top: 0px; background-color: rgba(255, 255, 255, .50); " class="ui fluid centered card">
+      <div class="center aligned content" style="font-size:131%;">
         <span class="header">{{ site.data.bio.basics.name }}</span>
+        <!--
         <div class="meta">
           <span class="date">{{ site.data.bio.basics.label }}</span>
         </div>
-        <div class="left aligned description">
+        --!>
+        <div class="left aligned description" style="text-align: justify">
           {{ site.data.bio.basics.summary }}
         </div>
       </div>
       <div class="center aligned content">
         <div class="description">
-          Interests:
+          <b>Interests: </b>
           {% for interest in site.data.bio.interests %}
             {{ interest.name }}{% if forloop.last != true %}, {% endif %}
           {% endfor %}
-
         </div>
-      </div>
-      <div class="center aligned extra content">
-        {% include home-network-links.html %}
       </div>
       <div class="center aligned content">
         <a href="{{ site.baseurl}}/projects/">
@@ -44,9 +41,9 @@
         <a href="{{ site.baseurl}}/essays/">
           <button class="ui basic button">Essays ({{ num_essays }})</button>
         </a>
-        <a href="{{ site.baseurl}}/bio/">
-          <button class="ui basic button">{{ site.bio-page-label }}</button>
-        </a>
+      </div>
+      <div class="center aligned extra content">
+        {% include home-network-links.html %}
       </div>
     </div>
   </div>
@@ -58,7 +55,7 @@
   document.addEventListener("DOMContentLoaded", function() {
       var body = document.getElementsByTagName("body")[0];
       body.style.cssText =
-          'background: url("../images/background6.jpg");' +
+          'background: url("../images/background13.jpg");' +
           'background-size: auto;' +
           'background-position: center;' +
           'background-repeat: no-repeat;';
