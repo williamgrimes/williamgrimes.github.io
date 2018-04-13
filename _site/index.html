@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>
+    
+    William Grimes | Professional Portfolio
+  </title>
+
+  <!-- Load Javascript and CSS for Semantic UI -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="/css/semantic-ui/semantic.min.js"></script>
+  <link rel="stylesheet" href="/css/semantic-ui/semantic.min.css">
+
+  <!-- Load Techfolio CSS customizations -->
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet-default.css">
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet-customizations.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/print-default.css" media="print">
+  <link rel="stylesheet" type="text/css" href="/css/print-customizations.css" media="print">
+
+  <!-- Load a rouge theme from the sample themes in css/rouge.
+       See https://benhur07b.github.io/2017/03/25/add-syntax-highlighting-to-your-jekyll-site-with-rouge.html
+  -->
+  <link rel="stylesheet" type="text/css" href="/css/rouge/igorpro.css">
+
+  <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+  
+
+
+</head>
+
+
+  <body>
+    <!-- Home page design with large image to left of bio info. -->
+
+
+
+
+
+<div style="height: 100%;" class="ui middle aligned two column centered stackable grid container">
+
+  <div style="text-align: center" class="column">
+    <div  class="ui rounded image">
+      <img style="max-width: 225px" src="https://williamgrimes.github.io/images/profile2.jpg">
+    </div>
+  </div>
+
+  <div class="column">
+    <h2 class="header no-bottom">William Grimes</h2>
+    <p class="">Data Scientist</p>
+    <p class="">
+      I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2020. There is so much more to say about this bio including all my history and everything else, my favourite stuff and all the incredible things I have done. That would just be filling space but still why not because I am a narcissit
+    </p>
+    <p>Interests:
+      
+        internet of things, 
+      
+        data mining, 
+      
+        artificial intelligence
+      
+    </p>
+    <p style="text-align: center">
+      <!-- Used by theme-home-builtin-1,2,3 -->
+
+
+   <a href="https://github.com/williamgrimes/"> <i class="big github icon icon-color"></i> </a>
+
+   <a href="https://www.linkedin.com/in/william-grimes/"> <i class="big linkedin icon icon-color"></i> </a>
+
+
+
+  <a href="mailto:williamgrimes@gmx.com"> <i class="big mail square icon icon-color"></i> </a>
+
+    </p>
+    <p style="text-align: center">
+      <a href="/projects/">
+        <button class="ui basic button">Projects (3)</button>
+      </a>
+      <a href="/essays/">
+        <button class="ui basic button">Essays (3)</button>
+      </a>
+      <a href="/bio/">
+        <button class="ui basic button">CV</button>
+      </a>
+    </p>
+  </div>
+</div>
+
+<script type="text/javascript">
+  /* Terrible ugly hack to get nice background image on main page without changing other templates */
+  document.addEventListener("DOMContentLoaded", function() {
+      var body = document.getElementsByTagName("body")[0];
+      body.style.cssText =
+          'background: url("../images/background16.jpg");' +
+          'background-size: auto;' +
+          'background-position: center;' +
+          'background-repeat: no-repeat;';
+
+      var uhbtns = document.getElementsByClassName("uhbtn");
+      for(var i = 0; i < uhbtns.length; i++) {
+          uhbtns[i].cssText = "background-color: green;";
+      }
+  });
+
+</script>
+
+    <!-- Always create iframes to embed videos if present. See: http://semantic-ui.com/modules/embed.html -->
+
+<script>
+  $('.ui.embed').embed();
+</script>
+
+
+  </body>
+
+</html>

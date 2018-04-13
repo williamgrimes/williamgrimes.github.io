@@ -14,7 +14,7 @@
     </div>
 
 
-    <div style="max-width: 500px; padding-top: 75px; margin-top: 0px" class="ui fluid centered card">
+    <div style="max-width: 600px; padding-top: 75px; margin-top: 0px" class="ui fluid centered card">
 
       <div class="center aligned content">
         <span class="header">{{ site.data.bio.basics.name }}</span>
@@ -52,3 +52,21 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+  /* Terrible ugly hack to get nice background image on main page without changing other templates */
+  document.addEventListener("DOMContentLoaded", function() {
+      var body = document.getElementsByTagName("body")[0];
+      body.style.cssText =
+          'background: url("../images/background6.jpg");' +
+          'background-size: auto;' +
+          'background-position: center;' +
+          'background-repeat: no-repeat;';
+
+      var uhbtns = document.getElementsByClassName("uhbtn");
+      for(var i = 0; i < uhbtns.length; i++) {
+          uhbtns[i].cssText = "background-color: green;";
+      }
+  });
+
+</script>
