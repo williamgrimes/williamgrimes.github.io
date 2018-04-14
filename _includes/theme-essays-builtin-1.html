@@ -1,6 +1,6 @@
 <div style="padding-top: 20px" class="ui container ">
 
-  <div class="ui stackable centered four cards">
+  <div class="ui stackable centered three cards">
     {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
       {% for page in essay_pages %}
         {% unless page.draft %}
@@ -19,10 +19,5 @@
           'background-size: auto;' +
           'background-position: center;' +
           'background-repeat: no-repeat;';
-
-      var uhbtns = document.getElementsByClassName("uhbtn");
-      for(var i = 0; i < uhbtns.length; i++) {
-          uhbtns[i].cssText = "background-color: green;";
-      }
   });
 </script>

@@ -4,40 +4,34 @@
 {% assign num_essays = essay_pages.size %}
 {% assign num_projects = project_pages.size %}
 
+{% include menubar.html active="aboutpage"%}
+
 <div style="height: 100%;" class="ui middle aligned two column centered stackable grid container">
 
-  <div style="text-align: center" class="column">
-    <div  class="ui bordered circular image">
-      <img style="max-width: 220px" src="{{ site.data.bio.basics.picture }}">
+  <div style="margin-top:-50px; text-align: center" class="column">
+    <div  class="ui circular image">
+      <img style="max-width: 400px" src="{{ site.data.bio.basics.picture }}">
     </div>
   </div>
 
   <div style="font-size:125%;" class="column">
-    <h2 class="header no-bottom" style="text-align: center">{{ site.data.bio.basics.name }}</h2>
-    <!--<p class="">{{ site.data.bio.basics.label }}</p>-->
-    <p class="" style="text-align: justify"> <br>
-      {{ site.data.bio.basics.summary }}
-    </p>
-    <p>Interests:
-      {% for interest in site.data.bio.interests %}
-        {{ interest.name }}{% if forloop.last != true %}, {% endif %}
-      {% endfor %}
-    </p>
-    <p style="text-align: center">
-      <a href="{{ site.baseurl}}/projects/">
-        <button class="ui basic button">Projects ({{ num_projects }})</button>
-      </a>
-      <a href="{{ site.baseurl}}/essays/">
-        <button class="ui basic button">Essays ({{ num_essays }})</button>
-      </a>
-      <a href="{{ site.baseurl}}/bio/">
-        <button class="ui basic button">{{ site.bio-page-label }}</button>
-      </a>
-    </p>
-    <p style="text-align: center">
-      {% include home-network-links.html %}
-    </p>
-  </div>
+
+    <div style="max-width: 800px; padding-top:75px; margin-bottom:60px; margin-top:-45px; background-color:rgba(255, 255, 255, .70); " class="ui fluid centered card">
+      <div class="center aligned content" style="font-size:225%;">
+        <span class="header" style="font-family: Ubuntu mono!important;">{{ site.data.bio.basics.name }}</span>
+        <div class="left aligned description" style="font-family: Ubuntu !important;text-align: justify; font-size:65%;">
+          {{ site.data.bio.basics.summary }}
+        </div>
+      </div>
+      <div class="center aligned content">
+        <div class="description"style="font-family: Ubuntu !important; font-size:150%;">
+          <b>Interests: </b>
+          {% for interest in site.data.bio.interests %}
+            {{ interest.name }}{% if forloop.last != true %}, {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+   </div>
 </div>
 
 <script type="text/javascript">
@@ -49,11 +43,6 @@
           'background-size: auto;' +
           'background-position: center;' +
           'background-repeat: no-repeat;';
-
-      var uhbtns = document.getElementsByClassName("uhbtn");
-      for(var i = 0; i < uhbtns.length; i++) {
-          uhbtns[i].cssText = "background-color: green;";
-      }
   });
 
 </script>
