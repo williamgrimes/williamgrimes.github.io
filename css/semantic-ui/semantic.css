@@ -9,7 +9,6 @@
  *
  */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic&subset=latin');
-@import url('http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin');
 
 /*!
  * # Semantic UI 2.2.4 - Reset
@@ -67,7 +66,7 @@ input[type="password"] {
  */
 
 html {
-  font-family: Ubuntu, sans-serif;
+  font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -526,7 +525,7 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   background: #FFFFFF;
-  font-family: Ubuntu,'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
