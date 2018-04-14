@@ -6,7 +6,7 @@
 
 {% include menubar.html active="aboutpage"%}
 
-<div style="height: 102%;" class="ui top aligned grid ">
+<div class="ui top aligned grid ">
 
   <div class="column">
 
@@ -18,11 +18,6 @@
     <div style="max-width: 700px; padding-top: 75px; margin-top: -45px; background-color: rgba(255, 255, 255, .70); " class="ui fluid centered card">
       <div class="center aligned content" style="font-size:125%;">
         <span class="header">{{ site.data.bio.basics.name }}</span>
-        <!--
-        <div class="meta">
-          <span class="date">{{ site.data.bio.basics.label }}</span>
-        </div>
-        --!>
         <div class="left aligned description" style="text-align: justify">
           {{ site.data.bio.basics.summary }}
         </div>
@@ -34,19 +29,6 @@
             {{ interest.name }}{% if forloop.last != true %}, {% endif %}
           {% endfor %}
         </div>
-      </div>
-        <!--
-      <div class="center aligned content">
-        <a href="{{ site.baseurl}}/projects/">
-          <button class="ui basic button">Projects ({{ num_projects }})</button>
-        </a>
-        <a href="{{ site.baseurl}}/blogs/">
-          <button class="ui basic button">Essays ({{ num_essays }})</button>
-        </a>
-      </div>
-        --!>
-      <div class="center aligned extra content">
-        {% include home-network-links.html %}
       </div>
     </div>
   </div>

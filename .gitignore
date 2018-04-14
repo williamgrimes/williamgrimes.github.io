@@ -2,5 +2,7 @@
 
 .idea/
 *.iml
+*.swp
+*.swo
 _site/
 .sass-cache/
