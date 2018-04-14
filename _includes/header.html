@@ -1,1 +1,14 @@
 <!-- if you want a global header, put the code here. -->
+
+<landing-navbar class="navbar-slider">
+  <div class="ui fluid borderless inverted container menu">
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
+    <a class="ui centered header item" href="{{ "/" | relative_url }}"><img class="ui avatar image" src="/images/profile_nathan_lam.jpg">{{ site.title | escape }}</a>
+    <div class="right aligned item">
+      {% for item in site.data.menu %}
+      <a class="aligned item" href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</landing-navbar>
