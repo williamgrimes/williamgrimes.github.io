@@ -7,43 +7,37 @@
 {% include menubar.html active="aboutpage"%}
 
 <div class="ui top aligned grid ">
-
-  <div class="column">
-
-    <div style="position: relative; top: 25px; z-index: 1" class="ui fluid centered small circular image">
-      <img src="{{ site.data.bio.basics.picture }}">
-    </div>
-
-
-    <div style="max-width: 700px; padding-top:75px; margin-bottom:60px; margin-top:-45px; background-color:rgba(255, 255, 255, .70); " class="ui fluid centered card">
-      <div class="center aligned content" style="font-size:225%;">
-        <span class="header" style="font-family: Ubuntu mono!important;">{{ site.data.bio.basics.name }}</span>
-        <div class="left aligned description" style="font-family: Ubuntu !important;text-align: justify; font-size:65%;">
-          {{ site.data.bio.basics.summary }}
+    <div class="column">
+        <div style="position: relative; top: 25px; z-index: 1" class="ui fluid centered small circular image">
+            <img src="{{ site.data.bio.basics.picture }}">
         </div>
-      </div>
-      <div class="center aligned content">
-        <div class="description"style="font-family: Ubuntu !important; font-size:150%;">
-          <b>Interests: </b>
-          {% for interest in site.data.bio.interests %}
-            {{ interest.name }}{% if forloop.last != true %}, {% endif %}
-          {% endfor %}
+        <div style="max-width: 700px; padding-top:75px; margin-bottom:60px; margin-top:-45px; background-color:rgba(255, 255, 255, .70); " class="ui fluid centered card">
+            <div class="center aligned content" style="font-size:225%;">
+                <span class="header" style="font-family: Ubuntu mono!important;">{{ site.data.bio.basics.name }}</span>
+                <div class="left aligned description" style="font-family: Ubuntu !important;text-align: justify; font-size:65%;">
+                    {{ site.data.bio.basics.summary }}
+                </div>
+          </div>
+          <div class="center aligned content">
+            <div class="description"style="font-family: Ubuntu !important; font-size:150%;">
+                <b>Interests: </b>
+                {% for interest in site.data.bio.interests %}
+                    {{ interest.name }}{% if forloop.last != true %}, {% endif %}
+                {% endfor %}
+            </div>
+          </div>
         </div>
-      </div>
     </div>
-  </div>
-
 </div>
 
 <script type="text/javascript">
-  /* Terrible ugly hack to get nice background image on main page without changing other templates */
-  document.addEventListener("DOMContentLoaded", function() {
-      var body = document.getElementsByTagName("body")[0];
-      body.style.cssText =
-          'background: url("../images/background30.jpg");' +
-          'background-size: auto;' +
-          'background-position: center;' +
-          'background-repeat: no-repeat;';
-  });
-
+    /* Terrible ugly hack to get nice background image on main page without changing other templates */
+    document.addEventListener("DOMContentLoaded", function() {
+        var body = document.getElementsByTagName("body")[0];
+        body.style.cssText =
+            'background: url("../images/background30.jpg");' +
+            'background-size: auto;' +
+            'background-position: center;' +
+            'background-repeat: no-repeat;';
+        });
 </script>
