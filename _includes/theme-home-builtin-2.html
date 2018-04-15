@@ -8,49 +8,47 @@
 
 <div style="height: 100%;" class="ui middle aligned two column centered stackable grid container">
 
-  <div style="margin-top:-100px;, width=30%;" class="column">
-    <div  class="ui fluid centered rounded image">
-      <img class="center"  style="max-width: 360px; text-align:center; display: block; margin-left: auto; margin-right: auto;" src="{{ site.data.bio.basics.picture }}">
+    <div style="margin-top:-100px;, width=30%;" class="column">
+        <div  class="ui fluid centered rounded image">
+            <img class="center"  style="max-width: 360px; text-align:center; display: block; margin-left: auto; margin-right: auto;" src="{{ site.data.bio.basics.picture }}">
+        </div>
+        <div style="background-color:rgba(255, 255, 255, .0); " class="ui fluid centered card">
+            <div class="center aligned content">
+                <div class="description"style="font-family: Ubuntu !important; font-size:400%;">
+                    <span class="header" style="font-family: Ubuntu mono!important;"><b>{{ site.data.bio.basics.name }}</b></span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="background-color:rgba(255, 255, 255, .0); " class="ui fluid centered card">
-      <div class="center aligned content">
-        <div class="description"style="font-family: Ubuntu !important; font-size:400%;">
-          <span class="header" style="font-family: Ubuntu mono!important;"><b>{{ site.data.bio.basics.name }}</b></span>
-         </div>
-       </div>
-     </div>
-  </div>
 
-  <div style="font-size:125%; width=60%;" class="column">
-
+    <div style="font-size:125%; width=60%;" class="column">
     <div style="max-width: 700px; margin-bottom:60px; margin-top:-45px; background-color:rgba(255, 255, 255, .70); " class="ui fluid centered card">
-      <div class="center aligned content" style="font-size:225%;">
-        <span class="header" style="font-family: Ubuntu mono!important; color:red;">SITE UNDER CONSTRUCTION<br></span>
-        <!-- <span class="header" style="font-family: Ubuntu mono!important;">{{ site.data.bio.basics.name }}</span> -->
-        <div class="left aligned description" style="font-family: Ubuntu !important;text-align: justify; font-size:50%;">
-          {{ site.data.bio.basics.summary }}
+        <div class="center aligned content" style="font-size:225%;">
+            <span class="header" style="font-family: Ubuntu mono!important; color:red;">SITE UNDER CONSTRUCTION<br></span>
+                <!-- <span class="header" style="font-family: Ubuntu mono!important;">{{ site.data.bio.basics.name }}</span> -->
+            <div class="left aligned description" style="font-family: Ubuntu !important;text-align: justify; font-size:50%;">
+                {{ site.data.bio.basics.summary }}
+            </div>
         </div>
-      </div>
-      <div class="center aligned content">
-        <div class="description"style="font-family: Ubuntu !important; font-size:100%;">
-          <b>Interests: </b>
-          {% for interest in site.data.bio.interests %}
-            {{ interest.name }}{% if forloop.last != true %}, {% endif %}
-          {% endfor %}
+        <div class="center aligned content">
+            <div class="description"style="font-family: Ubuntu !important; font-size:100%;">
+                <b>Interests: </b>
+                {% for interest in site.data.bio.interests %}
+                    {{ interest.name }}{% if forloop.last != true %}, {% endif %}
+                {% endfor %}
+            </div>
         </div>
-      </div>
-   </div>
+     </div>
 </div>
 
 <script type="text/javascript">
-  /* Terrible ugly hack to get nice background image on main page without changing other templates */
-  document.addEventListener("DOMContentLoaded", function() {
-      var body = document.getElementsByTagName("body")[0];
-      body.style.cssText =
-          'background: url("../images/background30.jpg");' +
-          'background-size: auto;' +
-          'background-position: center;' +
-          'background-repeat: no-repeat;';
-  });
-
+    /* Terrible ugly hack to get nice background image on main page without changing other templates */
+    document.addEventListener("DOMContentLoaded", function() {
+        var body = document.getElementsByTagName("body")[0];
+        body.style.cssText =
+            'background: url("../images/background30.jpg");' +
+            'background-size: auto;' +
+            'background-position: center;' +
+            'background-repeat: no-repeat;';
+    });
 </script>

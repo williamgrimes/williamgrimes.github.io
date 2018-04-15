@@ -2,21 +2,29 @@
 
 {% assign essay_pages = site.pages | where: "type", "essay"  | where_exp: "page", "page.draft != true" %}
 {% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
-{% assign num_essays = essay_pages.size %}
-{% assign num_projects = project_pages.size %}
 
 <div class="nonprintable">
-  <nav class="ui stackable menu" style="background-color: rgba(255, 255, 255, .25); font-family: Ubuntu Mono!important; font-size:115%;">
-    <a href="{{ site.baseurl}}/" class=" {% if include.active == "aboutpage" %} active {% endif %}brand item">
-      <img class="ui avatar image" src="{{ site.data.bio.basics.picture }}"><span> &nbsp;<b> about me </b></span>
-    </a>
-    {% if num_projects > 0 %}
-    <a href="{{ site.baseurl }}/projects" class=" {% if include.active == "projects" %} active {% endif %}right item">&nbsp;&nbsp;&nbsp;<b> projects </b>&nbsp;&nbsp;&nbsp;</a>
-    {% endif %}
-    {% if num_essays > 0 %}
-    <a href="{{ site.baseurl }}/essays" class=" {% if include.active == "essays" %} active {% endif %}item">&nbsp;&nbsp;&nbsp;<b> blogs </b>&nbsp;&nbsp;&nbsp;</a>
-    {% endif %}
-    <a href="{{ site.baseurl }}/links/" class=" {% if include.active == "links" %} active {% endif %}item">&nbsp;&nbsp;&nbsp;<b> links </b>&nbsp;&nbsp;&nbsp;</a>
-    <a href="{{ site.baseurl }}/cv/william_grimes_cv.pdf" class="right item" target="_blank">&nbsp;&nbsp;&nbsp <b> curriculum vitae &nbsp </b><i class="file pdf outline icon"></i></a>
-  </nav>
+    <nav class="ui stackable borderless menu" style="background-color: rgba(255, 255, 255, .25); font-family: Ubuntu Mono!important; font-size:115%;">
+    <!-- <nav class="ui stackable five item borderless menu" style="background-color: rgba(255, 255, 255, .25); font-family: Ubuntu Mono!important; font-size:115%;"> -->
+        <!--
+        <a href="{{ site.baseurl}}/" class=" {% if include.active == "aboutpage" %} active {% endif %}header item">
+            <img class="ui avatar image" src="{{ site.data.bio.basics.picture }}"><span> &nbsp;<b> about me </b></span>
+        </a>
+        -->
+        <a href="{{ site.baseurl}}/" class=" {% if include.active == "aboutpage" %} active {% endif %}item">
+            <i class="user outline icon"></i><b> william grimes </b>
+        </a>
+        <a href="{{ site.baseurl }}/projects" class=" {% if include.active == "projects" %} active {% endif %} right item">
+            <b> projects </b>
+        </a>
+        <a href="{{ site.baseurl }}/essays" class=" {% if include.active == "essays" %} active {% endif %} item">
+            <b> blogs </b>
+        </a>
+        <a href="{{ site.baseurl }}/links/" class=" {% if include.active == "links" %} active {% endif %} item">
+            <b> links </b>
+        </a>
+        <a href="{{ site.baseurl }}/cv/william_grimes_cv.pdf" class="right item" target="_blank">
+            <b> curriculum vitae &nbsp </b><i class="file pdf icon"></i>
+        </a>
+    </nav>
 </div>
