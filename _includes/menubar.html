@@ -4,13 +4,8 @@
 {% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
 
 <div class="nonprintable">
-    <nav class="ui stackable borderless menu" style="background-color: rgba(255, 255, 255, .25); font-family: Ubuntu Mono!important; font-size:115%;">
-    <!-- <nav class="ui stackable five item borderless menu" style="background-color: rgba(255, 255, 255, .25); font-family: Ubuntu Mono!important; font-size:115%;"> -->
-        <!--
-        <a href="{{ site.baseurl}}/" class=" {% if include.active == "aboutpage" %} active {% endif %}header item">
-            <img class="ui avatar image" src="{{ site.data.bio.basics.picture }}"><span> &nbsp;<b> about me </b></span>
-        </a>
-        -->
+    <nav class="ui stackable borderless menu">
+    <!-- <nav class="ui stackable five item borderless menu"> -->
         <a href="{{ site.baseurl}}/" class=" {% if include.active == "aboutpage" %} active {% endif %}item">
             <i class="user outline icon"></i><b> william grimes </b>
         </a>

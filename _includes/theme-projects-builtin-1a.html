@@ -1,25 +1,12 @@
 <!-- Like theme-projects-builtin-1, but uses project-card-2.html (i.e. entire card is a link). -->
 
 <div style="padding-top: 20px" class="ui container ">
-
-  <div class="ui stackable centered four cards">
-    {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
-    {% for page in project_pages %}
-      {% unless page.draft %}
-        {% include project-card-1a.html page=page %}
-      {% endunless %}
-    {% endfor %}
-  </div>
+    <div class="ui stackable centered four cards">
+        {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
+        {% for page in project_pages %}
+            {% unless page.draft %}
+                {% include project-card-1a.html page=page %}
+            {% endunless %}
+        {% endfor %}
+    </div>
 </div>
-
-<script type="text/javascript">
-  /* Terrible ugly hack to get nice background image on main page without changing other templates */
-  document.addEventListener("DOMContentLoaded", function() {
-      var body = document.getElementsByTagName("body")[0];
-      body.style.cssText =
-          'background: url("../images/background30.jpg");' +
-          'background-size: auto;' +
-          'background-position: center;' +
-          'background-repeat: no-repeat;';
-  });
-</script>

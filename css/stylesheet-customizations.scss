@@ -5,14 +5,36 @@
 // Put your custom CSS here if you want to override the defaults.
 // Here are some common customizations for colors
 
-// Customize the background color
-body {
-  background-color: #f2f2f2;
+body{
+    background-image: url("../images/background30.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
+
+/* Then tablets, laptops and desktops (768px and up) */
+@media screen and (min-width:768px) {
+body{
+    background-image: url("../images/background30.jpg");
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+}
+
+//body {
+//    background: url("../images/background30.jpg");
+//    background-size: auto;
+//    background-position: center;
+//    background-repeat: no-repeat;
+//}
 
 // Customize the menubar color
 .ui.menu {
   // background: $background-start;
+  padding: 0em 0em;
+  background-color: rgba(255, 255, 255, 0.25); 
+  font-family: Ubuntu Mono!important;
+  font-size:115%;
 }
 
 // Customize the home page icon colors
