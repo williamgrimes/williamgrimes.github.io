@@ -6,37 +6,28 @@
 
 {% include menubar.html active="aboutpage"%}
 
-<div style="height: 100%;" class="ui middle aligned two column centered stackable grid container">
-
-    <div style="margin-top:-100px;, width=30%;" class="column">
-        <div  class="ui fluid centered rounded image">
-            <img class="center"  style="max-width: 360px; text-align:center; display: block; margin-left: auto; margin-right: auto;" src="{{ site.data.bio.basics.picture }}">
-        </div>
-        <div style="background-color:rgba(255, 255, 255, .0); " class="ui fluid centered card">
-            <div class="center aligned content">
-                <div class="description"style="font-family: Ubuntu !important; font-size:400%;">
-                    <span class="header" style="font-family: Ubuntu mono!important;"><b>{{ site.data.bio.basics.name }}</b></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="font-size:125%; width=60%;" class="column">
-    <div style="max-width: 700px; margin-bottom:60px; margin-top:-45px; background-color:rgba(255, 255, 255, .70); " class="ui fluid centered card">
-        <div class="center aligned content" style="font-size:225%;">
-            <span class="header" style="font-family: Ubuntu mono!important; color:red; font-size:60%">!! SITE UNDER CONSTRUCTION !!<br></span>
-            <!-- <span class="header" style="font-family: Ubuntu mono!important;">{{ site.data.bio.basics.name }}</span> -->
-            <div class="left aligned description" style="font-family: Ubuntu !important;text-align: justify; font-size:50%;">
-                {{ site.data.bio.basics.summary }}
-            </div>
-        </div>
-        <div class="center aligned content">
-            <div class="description"style="font-family: Ubuntu !important; font-size:100%;">
-                <b>Interests: </b>
-                {% for interest in site.data.bio.interests %}
-                    {{ interest.name }}{% if forloop.last != true %}, {% endif %}
-                {% endfor %}
-            </div>
+<div style="height: 75%;" class="ui middle aligned two column centered stackable grid container">
+     <div style="text-align: center" class="column">
+        <div  class="ui rounded image">
+            <img src="{{ site.data.bio.basics.picture }}" style="display: block; margin-left: auto; margin-right:auto; width:50%;" >
         </div>
      </div>
+    
+     <div class="column">
+        <h2 class="header no-bottom" style="font-family: Ubuntu mono !important; font-size:400%;">
+            {{ site.data.bio.basics.name }}
+        </h2>
+        <p class="" style="font-family: Ubuntu mono !important; font-size:100%;">
+            <b>{{ site.data.bio.basics.label }}</b>
+        </p>
+        <p class="" style="font-family: Ubuntu mono !important; font-size:100%; text-align:justify;">
+           {{ site.data.bio.basics.summary }}
+        </p>
+        <p style="font-family: Ubuntu mono !important; font-size:100%;">
+            Interests:
+           {% for interest in site.data.bio.interests %}
+              {{ interest.name }}{% if forloop.last != true %}, {% endif %}
+           {% endfor %}
+        </p>
+    </div>
 </div>

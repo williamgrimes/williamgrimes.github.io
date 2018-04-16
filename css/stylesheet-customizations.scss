@@ -2,8 +2,6 @@
 # Provide front matter so Jekyll processes this file as SASS.
 ---
 
-// Put your custom CSS here if you want to override the defaults.
-// Here are some common customizations for colors
 
 body{
     background-image: url("../images/background30.jpg");
@@ -15,20 +13,13 @@ body{
 @media screen and (min-width:768px) {
 body{
     background-image: url("../images/background30.jpg");
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     }
 }
 
-//body {
-//    background: url("../images/background30.jpg");
-//    background-size: auto;
-//    background-position: center;
-//    background-repeat: no-repeat;
-//}
-
-// Customize the menubar color
+// customize the menubar color
 .ui.menu {
   // background: $background-start;
   padding: 0em 0em;
