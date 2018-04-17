@@ -8,12 +8,13 @@
 
 <div class="ui top aligned grid ">
     <div class="column">
-        <div style="position: relative; top: 25px; z-index: 1" class="ui fluid centered small circular image">
+        <div class="ui fluid centered small image" style="position:relative; top:25px; z-index:1;" >
             <img src="{{ site.data.bio.basics.picture }}">
         </div>
-        <div style="max-width: 700px; padding-top:75px; margin-bottom:60px; margin-top:-45px; background-color:rgba(255, 255, 255, .70); " class="ui fluid centered card">
+        <div style="max-width:900px; padding-top:60px; margin-bottom:60px; margin-top:-45px; background-color:rgba(255, 255, 255, .20); " class="ui fluid centered card">
             <div class="center aligned content" style="font-size:225%;">
-                <span class="header" style="font-family: 'Press Start 2P', cursive!important; font-size:90%;">{{ site.data.bio.basics.name }}</span>
+                <span class="header" style="font-family: 'Press Start 2P', cursive!important; font-size:90%; padding:10px">{{ site.data.bio.basics.name }}</span>
+                <span class="header" style="font-family: 'Press Start 2P', cursive!important; font-size:50%;">{{ site.data.bio.basics.label }}</span>
                 <div class="left aligned description" style="text-align: justify; font-size:65%;">
                     {{ site.data.bio.basics.summary }}
                 </div>
