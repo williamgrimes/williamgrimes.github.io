@@ -188,6 +188,48 @@
       ]
     }
   ],
+  "mooc": [
+    {
+      "institution": "fast.ai",
+      "area": "Practical Deep Learning for Coders",
+      "studyType": "",
+      "startDate": "2017-11-01",
+      "endDate": "",
+      "gpa": "",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "Coursera",
+      "area": "Buddhism and Modern Psychology",
+      "studyType": "",
+      "startDate": "2017-11-01",
+      "endDate": "",
+      "gpa": "",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "Coursera",
+      "area": "Bitcoin and Cryptocurrency Technologies",
+      "studyType": "",
+      "startDate": "2017-06-01",
+      "endDate": "",
+      "gpa": "",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "Coursera",
+      "area": "Machine Learning",
+      "studyType": "",
+      "startDate": "2015-11-01",
+      "endDate": "",
+      "gpa": "",
+      "courses": [
+      ]
+    }
+  ],
   "work": [
     {
       "company": "Data Science for Social Good",
