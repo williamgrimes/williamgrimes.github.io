@@ -2,9 +2,11 @@
 layout: essays
 ---
 
-<div class="ui raised very padded text container segment" style="margin-top:20px; padding-bottom:40px;">
-    <h1>{{ page.title }}</h1>
-    <span class="date">{{ page.date | date_to_string }}</span>
-    <hr>
-    {{ content }}
+<div class="segment" style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right:10px;">
+    <div class="ui raised padded text segment" style="max-width:950px; margin:0 auto;">
+        <h1>{{ page.title }}</h1>
+        <span class="date">{{ page.date | date_to_string }}</span>
+        <hr>
+        {{ content }}
+    </div>
 </div>

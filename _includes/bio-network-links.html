@@ -1,0 +1,13 @@
+<!-- Used by theme-bio-builtin-1,2 -->
+
+{% if site.data.bio.basics.email %}
+<p class="ui no-bottom">
+    <a href="mailto:{{ site.data.bio.basics.email }}" style="color:#000;"> <i class="large mail outline icon "></i>{{ site.data.bio.basics.email }}</a>
+</p>
+{% endif %}
+
+{% for entry in site.data.bio.basics.profiles %}
+    <p class="ui no-bottom" style="line-height: 1.8">
+        <a href="{{ entry.url }}" target="_blank" style="color:#000;" > <i class="large {{ entry.network | downcase }} icon"></i>{{ entry.username }}</a>
+    </p>
+{% endfor %}
