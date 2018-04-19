@@ -47,43 +47,142 @@
       ]
     },
     {
-      "name": "vipassana",
+      "name": "vipassana meditation",
       "keywords": [
       ]
     }
   ],
   "skills": [
     {
-      "name": "Languages and Frameworks",
+      "name": "Programming",
       "level": "",
       "keywords": [
-        "C",
-        "C++",
+        "Python",
+        "R",
         "Java",
-        "Javascript",
-        "Assembly",
-        "Common Lisp"
+        "Matlab",
+        "SQL",
+        "Solidity"
       ]
     },
     {
-      "name": "Toolsets/OS",
+      "name": "Machine Learning",
       "level": "",
       "keywords": [
-        "MacOS",
-        "Ubuntu",
-        "Git/GitHub",
-        "g++",
-        "TI LaunchPad"
+        "regression",
+        "decision trees",
+        "ensembles",
+        "SVM",
+        "neural networks",
+        "deep learning"
+      ]
+    },
+    {
+      "name": "Libraries",
+      "level": "",
+      "keywords": [
+                   "NumPy",
+                   "pandas",
+                   "SciPy",
+                   "scikit-learn",
+                   "scikit-image",
+                   "OpenCV",
+                   "Keras",
+                   "theano",
+                   "tensorflow"
+      ]
+    },
+    {
+      "name": "Visualisation",
+      "level": "",
+      "keywords": [
+                   "matplotlib",
+                   "bokeh", 
+                   "plotly",
+                   "ggplot",
+                   "Tableau"
+      ]
+    },
+    {
+      "name": "Scripting",
+      "level": "",
+      "keywords": [
+                   "Bash",
+                   "sed",
+                   "awk",
+                   "grep",
+                   "Python",
+                   "Ruby"
+      ]
+    },
+    {
+      "name": "Databases",
+      "level": "",
+      "keywords": [
+                   "MySQL",
+                   "PostgreSQL",
+                   "SQLite"
+      ]
+    },
+    {
+      "name": "Front-end",
+      "level": "",
+      "keywords": [
+                   "Javascript",
+                   "HTML",
+                   "CSS",
+                   "HTML",
+                   "Semantic UI",
+                   "Jekyll"
+      ]
+    },
+    {
+      "name": "Misc",
+      "level": "",
+      "keywords": [
+                   "Amazon Web Services",
+                   "Azure",
+                   "Docker",
+                   "Git",
+                   "Latex",
+                   "UNIX"
       ]
     }
   ],
   "education": [
     {
-      "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2018)",
-      "studyType": "B.S.",
-      "startDate": "2013-09-01",
-      "endDate": "Present",
+      "institution": "University College London",
+      "area": "Bioinformatics and Computational Biology",
+      "studyType": "PhD",
+      "startDate": "2013-09",
+      "endDate": "2016-09",
+      "gpa": "",
+      "courses": ["Thesis:Image processing and analysis methods in quantitative endothelial cell biology"
+      ]
+    },
+    {
+      "institution": "University College London",
+      "area": "Computer Science",
+      "studyType": "MSc",
+      "startDate": "2013-09",
+      "endDate": "2012-09",
+      "gpa": "",
+      "courses": [
+                  "Algorithmics",
+                  "Architecture & Hardware",
+                  "Database Systems",
+                  "Multimedia Computing",
+                  "Programming", 
+                  "Software Engineering",
+                  "Systems Infrastructure"
+      ]
+    },
+    {
+      "institution": "Durham University",
+      "area": "Natural Sciences (Physics and Geophysics)",
+      "studyType": "BSc",
+      "startDate": "2009-09",
+      "endDate": "2012-09",
       "gpa": "",
       "courses": [
       ]
@@ -91,75 +190,148 @@
   ],
   "work": [
     {
-      "company": "UH Manoa Board of Publications",
-      "position": "Web Developer",
-      "website": "",
-      "startDate": "2015-08-01",
+      "company": "Data Science for Social Good",
+      "position": "Data Scientist",
+      "website": "https://dssg.uchicago.edu/",
+      "startDate": "2017-06-01",
       "endDate": "Present",
-      "summary": "Head of online presence for Ka Leo",
+      "summary": "Inaugural DSSG Europe member, implemented two complete data science pipelines.",
       "highlights": [
-        "Maintain, update, and oversee official college newspaper website",
-        "Drive, design and build student-community projects for UH Manoa"
+        "Developed an open-source fishing risk tool combining vessel tracking data with satellite imagery. Implemented a machine learning model to classify vessels, and score them according to likely illegal fishing behaviours, calculated based on multiple risk indicators.",
+        "Lead a team to visualise traffic flows and road traffic incidents over 12 border crossings and a 6 month period for the Netherlands Rijkswaterstaat transportation ministry. Deployed a PostgreSQL database, then performed data cleaning and aggregation, and created interactive visualisations."
       ]
     },
     {
-      "company": "UH Information Technology Services",
-      "position": "Help Desk Consultant",
-      "website": "http://www.hawaii.edu/its/",
-      "startDate": "2015-01-01",
-      "endDate": "2016-03-15",
-      "summary": "",
+      "company": "London Fire Brigade",
+      "position": "Data Science Consultant",
+      "website": "https://www.london-fire.gov.uk/",
+      "startDate": "2017-04-01",
+      "endDate": "2016-11-01",
+      "summary": "Research Attachment Program",
       "highlights": [
-        "Troubleshoot software, hardware and networking issues over the phone",
-        "Answer phone and email responses to the ITS Help Desk"
+        "Implemented and evaluated three topic modelling methods to classify 37,000 fire incident reports.",
+        "Revealed incidents not systematically recorded in categorical data, specifically ducting fires"
+      ]
+    },
+    {
+      "company": "ASI Data Science",
+      "position": "Data Science Fellow",
+      "website": "https://www.asidatascience.com/",
+      "startDate": "2017-04-01",
+      "endDate": "2017-01-03",
+      "summary": "Fellowship programme in commercial data science for researchers with strong analytic background.",
+      "highlights": [
+        "Enhanced commercial awareness and business skills including communication, negotiation, and project management.",
+        "Completed 50 hrs training in machine learning, databases, statistics, and relevant technologies."
+      ]
+    },
+    {
+      "company": "Laboratory for Molecular Cell Biology",
+      "position": "Researcher",
+      "website": "http://www.ucl.ac.uk/lmcb/",
+      "startDate": "2015-04-01",
+      "endDate": "2016-11-01",
+      "summary": "Image processing research",
+      "highlights": [
+        "Applied machine learning techniques to identify cell phenotypes with a detection accuracy of 82%",
+        "Trained Haar-like features model to track leukocytes trajectories in enothelial adhesion assays, with a tracking accuracy of 92%"
+      ]
+    },
+    {
+      "company": "A*STAR Bioinformatics Institute",
+      "position": "Researcher",
+      "website": "http://www.bii.a-star.edu.sg/",
+      "startDate": "2013-09-01",
+      "endDate": "2015-04-01",
+      "summary": "Research Attachment Program",
+      "highlights": [
+        "Built an image processing pipeline for segmentation of endothelial cells and their organelles.",
+        "Employed the workflow to analyse over 40 separate high-throughput confocal imaging studies."
+      ]
+    },
+    {
+      "company": "National Institute of Informatics (国立情報学研究所)",
+      "position": "Internship",
+      "website": "https://www.nii.ac.jp/en/",
+      "startDate": "2013-06-01",
+      "endDate": "2013-09-15",
+      "summary": "Software engineering project",
+      "highlights": [
+        "Developed Java based annotation software to assist classifying phenotypes in μCT images of mutant mice important to research determining the function of genes.",
+        "Evaluated and tested the software implementation at the National Insitute of Genetics and National Institute of Informatics in Tokyo."
       ]
     }
   ],
-  "volunteer": [
+"publications": [
     {
-      "organization": "Center for Renewable Energy and Island Sustainability",
-      "website": "http://manoa.hawaii.edu/reis",
-      "position": "Software Developer",
-      "startDate": "2016-01-01",
-      "endDate": "Present",
-      "summary": "Lead developer for weather sensing project",
-      "highlights": [
-        "Design firmware for distributed weather sensor network",
-        "Maintain custom data collection and storage infrastructure"
-      ]
+      "name": "Super-resolution microscopy as a potential approach to diagnosis of platelet granule disorders.",
+      "type": "journal",
+      "author": "D.Westmoreland, M.Shaw, W.Grimes, D.Metcalf, J.J. Burden, K. Gomez, A.E. Knight, D.F. Cutler",
+      "publisher": "Journal of Thrombosis and Haemostasis",
+      "releaseDate": "March, 2016",
+      "website": "https://www.ncbi.nlm.nih.gov/pubmed/26806224",
+      "summary2": "BACKGROUND: Many platelet functions are dependent on bioactive molecules released from their granules. Deficiencies of these granules in number, shape or content are associated with bleeding. The small size of these granules is such that imaging them for diagnosis has traditionally required electron microscopy. However, recently developed super-resolution microscopes provide sufficient spatial resolution to effectively image platelet granules. When combined with automated image analysis, these methods provide a quantitative, unbiased, rapidly acquired dataset that can readily and reliably reveal differences in platelet granules between individuals. OBJECTIVE: To demonstrate the ability of structured illumination microscopy (SIM) to efficiently differentiate between healthy volunteers and three patients with Hermansky-Pudlak syndrome. METHODS: Blood samples were taken from three patients with Hermansky-Pudlak syndrome and seven controls. Patients 1-3 have gene defects in HPS1, HPS6 and HPS5, respectively; all controls were healthy volunteers. Platelet-rich plasma was isolated from blood and the platelets fixed, stained for CD63 and processed for analysis by immunofluorescence microscopy, using a custom-built SIM microscope. RESULTS: SIM can successfully resolve CD63-positive structures in fixed platelets. A determination of the number of CD63-positive structures per platelet allowed us to conclude that each patient was significantly different from all of the controls with 99% confidence. CONCLUSIONS: super-resolution imaging approach is effective and rapid in objectively differentiating between patients with a platelet bleeding disorder and healthy volunteers. CD63 is a useful marker for predicting Hermansky-Pudlak syndrome and could be used in the diagnosis of patients suspected of other platelet granule disorders."
     },
     {
-      "organization": "",
+      "name": "Weibel-Palade body size modulates the adhesive activity of its von Willebrand Factor cargo in cultured endothelial cells.",
+      "author": "F. Ferraro, Lopes da S. Mafalda, W. Grimes, H.K. Lee, R. Ketteler, J. Kriston-Vizi, D. Cutler.",
+      "type": "journal",
+      "publisher": "Nature: Scientific Reports",
+      "releaseDate": "August, 2016",
+      "website": "https://www.nature.com/articles/srep32473",
+      "summary2": "Changes in the size of cellular organelles are often linked to modifications in their function. Endothelial cells store von Willebrand Factor (vWF), a glycoprotein essential to haemostasis in Weibel-Palade bodies (WPBs), cigar-shaped secretory granules that are generated in a wide range of sizes. We recently showed that forcing changes in the size of WPBs modifies the activity of this cargo. We now find that endothelial cells treated with statins produce shorter WPBs and that the vWF they release at exocytosis displays a reduced capability to recruit platelets to the endothelial cell surface. Investigating other functional consequences of size changes of WPBs, we also report that the endothelial surface-associated vWF formed at exocytosis recruits soluble plasma vWF and that this process is reduced by treatments that shorten WPBs, statins included. These results indicate that the post-exocytic adhesive activity of vWF towards platelets and plasma vWF at the endothelial surface reflects the size of their storage organelle. Our findings therefore show that changes in WPB size, by influencing the adhesive activity of its vWF cargo, may represent a novel mode of regulation of platelet aggregation at the vascular wall."
+    },
+    {
+      "name": "Tuning the endothelial response: differential release of exocytic cargos from Weibel-Palade Bodies.",
+      "author": "T.D. Nightingale, J. McCormack, W. Grimes, C. Robinson, M. Lopes da Silva, I.J. White, A. Vaughan, L.P. Cramer, D.F. Cutler.",
+      "type": "journal",
+      "publisher": "Journal of Thrombosis and Haemostasis",
+      "releaseDate": "(Undergoing Review)",
       "website": "",
-      "position": "Professional organization involvement",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": [
-        "Chair, ACM Manoa, 2016-Present",
-        "Member, IEEE Student Branch, 2014-Present",
-        "Webmaster/IT Officer, IEEE Student Branch, UH Manoa, 2012-2013"
-      ]
+      "summary2": "Rationale: Endothelial cells harbour specialised storage organelles, Weibel-Palade Bodies (WPB). Exocytosis of WPB content into the vascular lumen is essential to initiate primary haemostasis and inflammation. These processes are mediated by key WPB cargo proteins, including Von Willebrands factor (VWF) and the type-1 integral membrane protein, P-selectin. Historically, the secretion of this large haemostatic protein and smaller pro-inflammatory proteins, including P-selectin, were thought to be inextricably linked. However, an actomyosin ring could potentially represent machinery to allow differential release of such content. Objective: To determine if secretagogue-dependent differential release of WPB cargo occurs, and whether differential release is mediated by the actomyosin ring. Methods and Results: We used VWF string analysis, leukocyte rolling assays, ELISA, spinning disk confocal microscopy, high-throughput confocal microscopy and inhibitor and siRNA treatments to demonstrate the existence of cellular machinery that allows differential release of WPB cargo proteins. Inhibition of the actomyosin ring differentially effects two crucial processes regulated by WPB exocytosis; it perturbs VWF string formation but has no effect on leukocyte rolling. We further show that the efficiency of ring recruitment correlates with VWF release, the ratio of release of VWF to small cargoes decreases when ring recruitment is inhibited. The recruitment of the actin ring is time-dependent; fusion events occurring directly after stimulation are less likely to initiate haemostasis than later events, and is activated by PKC isoforms. Critically, we show that secretagogues differentially recruit the actomyosin ring, thus demonstrating one mechanism by which the pro-thrombotic effect of endothelial activation can be modulated. Conclusions: Precise control of VWF secretion allows greater control over inflammatory and haemostatic processes, which could potentially limit dangerous thrombosis whilst permitting a normal inflammatory response. These results have important implications for the assessment of WPB fusion, cargo content release and the treatment of patients with von Willebrand disease."
     }
   ],
   "awards": [
     {
-      "title": "B+ Scholarship",
-      "date": "2013-Present",
-      "awarder": "State of Hawaii",
-      "summary": "Scholarships awarded to incoming freshmen and continuing students who complete a rigorous high school curriculum with a minimum overall GPA of 3.0 at a Hawai'i public school."
+      "title": "Aardvark Scholarship",
+      "date": "2012-2013",
+      "awarder": "Joe Nicholson",
+      "summary": "A scholarship awarded yearly to a UCL Computer Science student."
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Mobile Education Partnerships",
+      "website": "http://www.mobileeducationpartnerships.org/",
+      "position": "Communications and development team",
+      "startDate": "2011-07",
+      "endDate": "2012-07",
+      "summary": "Website development and writer",
+      "highlights": [
+        "Created a promotional video for the charity to be used at conferences and linked to TEFL.com.",
+        "Producing monthly news e-bulletins of news and blog extracts updating members of the work done by the charity.",
+        "Developing a membership base and established links with other educational organisations.",
+        "Assisted in the layout, function and design of the website and integrated it with social networks."
+      ]
     },
     {
-      "title": "First place",
-      "date": "2015",
-      "awarder": "University of Hawaii Micromouse Competition",
-      "summary": "My team won first place in 2015.  See my portfolio site for more details."
+      "organization": "Sri Lanka Sarvodaya Charity",
+      "website": "http://www.sarvodaya.org/",
+      "position": "Teaching assistant",
+      "startDate": "2009-11",
+      "endDate": "2010-07",
+      "summary": "",
+      "highlights": [
+        "Taught English in a pre-school, secondary school and at Colombo University",
+        "Fundraised £2,150 to construct a school from a sponsored marathon and by acquiring sponsorship",
+        "Sector leader for Music and Sport in Project Sri Lanka 2010"
+      ]
     }
   ],
   "references": [
     {
-      "name": "Available upon request",
-      "reference": ""
+      "name": "",
+      "reference": "Available on request"
     }
   ]
 }

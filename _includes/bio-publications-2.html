@@ -6,23 +6,23 @@
 {% assign hasTechReport = false %}
 {% assign hasThesis = false %}
 {% for entry in site.data.bio.publications %}
-  {% if entry.type == "journal" %}
-     {% assign hasJournal = true %}
-  {% elsif entry.type == "conference" %}
-     {% assign hasConference = true %}
-  {% elsif entry.type == "workshop" %}
-     {% assign hasWorkshop = true %}
-  {% elsif entry.type == "techreport" %}
-    {% assign hasTechreport = true %}
-  {% elsif entry.type == "thesis" %}
-    {% assign hasThesis = true %}
-  {% endif %}
+    {% if entry.type == "journal" %}
+        {% assign hasJournal = true %}
+    {% elsif entry.type == "conference" %}
+        {% assign hasConference = true %}
+    {% elsif entry.type == "workshop" %}
+        {% assign hasWorkshop = true %}
+    {% elsif entry.type == "techreport" %}
+       {% assign hasTechreport = true %}
+    {% elsif entry.type == "thesis" %}
+       {% assign hasThesis = true %}
+    {% endif %}
 {% endfor %}
 
 {% if hasThesis %}
 <div class="sixteen wide column no-bottom">
-  <h3 class="ui left aligned header no-bottom">Thesis</h3>
-  <hr style="margin: 0px;">
+    <h3 class="ui left aligned header no-bottom">Thesis</h3>
+    <hr style="margin: 0px;">
 </div>
 
 <div class="sixteen wide column no-bottom">
