@@ -2,11 +2,11 @@
   "basics": {
     "name": "William Grimes",
     "label": "Data Scientist",
-    "picture": "/images/profile3-pixel2a.png",
+    "picture": "/images/profile/profile3-pixel2a.png",
     "email": "williamgrimes@gmx.com",
     "phone": "+44 7794070622",
     "website": "https://williamgrimes.github.io",
-    "summary": "Data Scientist, with two years experience delivering commercial data science projects. Worked with, Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> Hold a PhD in Bioinformatics, and a MSc in Computer Science, with over eight years programming experience. <br><br> Dedicated to applying machine learning to solve problems with a positive social impact, and particularly interested in imaging, geospatial data, and natural language processing.",
+    "summary": "Thanks for visiting my personal website! I'm a data Scientist, with experience delivering commercial data science projects, working with: the World Economic Forum, the Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad and I hold a PhD in Bioinformatics, and an MSc in Computer Science. <br><br> I'm excited by applying machine learning to solve problems with a positive social impact. I'm particularly interested in the intersection of blockchain with data science, and contemplating the future development of these technologies.",
     "profiles": [
       {
         "network": "github",
@@ -193,9 +193,9 @@
       "institution": "fast.ai",
       "area": "Practical Deep Learning for Coders",
       "studyType": "",
-      "startDate": "2017-11-01",
+      "startDate": "2018-01-01",
       "endDate": "",
-      "gpa": "",
+      "website": "http://www.fast.ai/",
       "courses": [
       ]
     },
@@ -205,7 +205,7 @@
       "studyType": "",
       "startDate": "2017-11-01",
       "endDate": "",
-      "gpa": "",
+      "website": "https://www.coursera.org/learn/science-of-meditation",
       "courses": [
       ]
     },
@@ -215,7 +215,7 @@
       "studyType": "",
       "startDate": "2017-06-01",
       "endDate": "",
-      "gpa": "",
+      "website": "https://www.coursera.org/learn/cryptocurrency",
       "courses": [
       ]
     },
@@ -225,7 +225,7 @@
       "studyType": "",
       "startDate": "2015-11-01",
       "endDate": "",
-      "gpa": "",
+      "website": "https://www.coursera.org/learn/machine-learning",
       "courses": [
       ]
     }

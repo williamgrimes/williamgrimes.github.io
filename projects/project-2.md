@@ -1,25 +1,49 @@
 ---
 layout: project
 type: project
-image: images/vacay-square.png
-title: Vacay
-permalink: projects/vacay
+image: images/project-2/tuna.jpg
+title: A Fishing Risk Framework from Satellites and Ocean Data
+permalink: projects/dssg
 # All dates must be YYYY-MM-DD format!
-date: 2015-12-15
+date: 2017-08-29
 labels:
-  - Javascript
-  - Meteor
-  - MongoDB
-  - GitHub
-summary: A responsive web application for travel planning that my team developed in ICS 415.
+  - World Economic Forum
+  - Data Science for Social Good
+  - IUU Fishing
+summary: Developing a Fishing Risk Framework from Satellites and Ocean Data. 
 ---
 
-<img class="ui medium right floated rounded image" src="../images/vacay-home-page.png">
+Illegal and overfishing are devastating our oceans. It is estimated that 70% of global fisheries are overexploited and many are now on the brink of collapse. Tuna populations, which are a critical apex predator in many marine ecosystems, have declined by over 90% in the past 40 years. Unless serious action is taken, we may be on the brink of large scale fisheries collapse, which could devastate the environment and the livelihoods of millions around the world that depend on such fisheries.
 
-Vacay is a web application that I helped create as a team project in ICS 415, Spring 2015. The project helped me learn how to design and implement a responsive web site.
+Given concern about the challenges facing our oceans, the United Nations convened a High Level Summit in June 2017 at the UN Headquarters in New York to review progress on the Ocean SDG (Goal 14). At this summit, the World Economic Forum helped convene major retailers, fishery firms, Governments and Civil Society around a Declaration to fully trace our most precarious fisheries by 2020, starting with Tuna fisheries. DSSG also made a commitment to help develop Data Science and Machine Learning Talent to support such efforts on our oceans.
 
-Vacay is implemented using [Meteor](http://meteor.com), a JavaScript application platform. Within two weeks, we created a website that implements several types of reservations including flights, hotels, and car rentals.
+In just the last 5 years, new data tracking technologies have come online, triggered by low cost satellites and sensors and rapid advances in data processing and machine learning. This has given fisheries managers powerful new resources to track fishing activity globally, and identify risky or illegal activity.
 
-In this project I gained experience with full-stack web application design and associated technologies, including [MongoDB](http://mongodb.com) for database storage, the [Twitter Bootstrap](http://getbootstrap.com/) CSS Framework for the user interface, and Javascript for both client and server-side programming. 
- 
-Source: <a href="https://github.com/theVacay/vacay"><i class="large github icon"></i>theVacay/vacay</a>
+One particularly challenging problem historically had been to identify and end Illegal, Unreported and Unregulated fishing (IUU). These IUU fishing techniques include illegally extracting fish from waters of other nations, removing fish from designated Marine Protected Areas, catching fish using illegal and ecologically damaging techniques, and under-declaring fish by transshipment at sea. Such practices are especially rife in the rich tropical waters of Southeast Asia due to the burgeoning demand in the region, and challenges of enforcement.
+
+Our goal is to create an Open-Source Risk Tool by combining multiple satellite data sources (including combining AIS with satellite imagery and machine learning) to help combat IUU fishing, and creating a ‘DSSG Fishing Risk Score’. This data science approach to detecting IUU fishing could ultimately guide governance, inform policy making and improve enforcement. In this effort we are advised by a global network of experts. The DSSG Fishing Risk Framework, Vessel Scoring, and project results will be public, and all code will be made available as open source to contribute to the ongoing efforts of NGOs, Universities and International Organizations to end IUU fishing globally.
+
+## Links
+* [Blog article](https://dssg.uchicago.edu/project/fishingriskframework/)
+* [Github](https://github.com/DSSG2017/wef_oceans)
+
+## Presentation
+<div align="center">
+<iframe title="YouTube video player" class="youtube-player" type="text/html" 
+width="560" height="315" src="http://www.youtube.com/embed/f4Q858hmZP0"
+frameborder="0" allowFullScreen></iframe>
+</div>
+
+## People
+**Fellows:** William Grimes, Iván Higuera-Mendieta, Shubham Tomar   
+
+**Mentor:** Jane Zanzig 
+
+**Project Manager:** Paul van der Boor 
+
+**Project Partner:** World Economic Forum’s New Vision for Oceans Initiative (Nishan Degnarain), Spire (Theresa Condor, Kyle Brazil), Digital Globe (Rhiannan Price, Har-Noy, Shay), Planet Labs (Will Marshall, Joseph Mascaro)    
+
+**Project Chair:** Euro Beinat
+
+**Expert Advisors:** Steve Adler (IBM Watson), Dan Schaeffer (Pew Trusts), Prof. Douglas McCauley (UCSB), Dr. Gregory Stone (Conservation International), Paul Wood (Skytruth, Nathan Miller), Kim Friedman (FAO)
+
