@@ -133,3 +133,17 @@ permalink: /links/
         </li>
     </ul>
 </ul>
+
+### Blogs
+<ul>
+   <li>
+       <a href="http://unenumerated.blogspot.pt/" target="_blank">
+           Unenumerated - Nick Szabo
+       </a>
+   </li>
+   <li>
+       <a href="https://www.scottaaronson.com/blog/" target="_blank">
+           Shtetl Optimized - Scott Aaronson
+       </a>
+   </li>
+</ul>
