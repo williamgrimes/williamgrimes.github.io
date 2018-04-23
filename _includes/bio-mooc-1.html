@@ -11,7 +11,7 @@
         <div class="twelve wide column no-bottom">
             <p class="ui no-bottom"><b>{{ entry.institution }}</b> - {{ entry.area }}</p>
                 <p class="ui no-bottom" style="font-family: Ubuntu;">
-                    <a href="{{ entry.website }}">{{ entry.website | remove: "http://" | remove: "https://"}}</a>
+                    <a href="{{ entry.website }}" target="_blank">{{ entry.website | remove: "http://" | remove: "https://"}}</a>
                 </p>
             {% if entry.courses %}
             <ul style="margin: 0px;">

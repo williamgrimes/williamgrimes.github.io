@@ -15,7 +15,7 @@
                     <b>{{ entry.position }}, {{ entry.company }}</b>
                 </p>
                 <p class="ui no-bottom" style="font-family: Ubuntu;">
-                    <a href="{{ entry.website }}">{{ entry.website | remove: "http://" | remove: "https://"}}</a>
+                    <a href="{{ entry.website }}" target="_blank">{{ entry.website | remove: "http://" | remove: "https://"}}</a>
                 </p>
                 <p class="ui no-bottom" style="font-family: Ubuntu;">{{ entry.summary }}</p>
                 {% if entry.highlights %}

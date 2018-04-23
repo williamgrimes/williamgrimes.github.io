@@ -14,7 +14,7 @@
         <p class="ui no-bottom" style="font-family: Ubuntu;">
           <b>{{ entry.name }}</b>{% if entry.author and entry.author != "" %}, {{ entry.author }}{% endif %}, <em>{{ entry.publisher }}</em>, {{ entry.releaseDate }}
           {% if entry.website %}
-        <p class="ui no-bottom"><a href="{{ entry.website }}" style="font-family: Ubuntu;">{{ entry.website | remove: "http://" | remove: "https://" }}</a></p>
+        <p class="ui no-bottom"><a href="{{ entry.website }}" target="_blank" style="font-family: Ubuntu;">{{ entry.website | remove: "http://" | remove: "https://" }}</a></p>
         {% endif %}
         </p>
         <p class="ui no-bottom">{{ entry.summary }}</p>

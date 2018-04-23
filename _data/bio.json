@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "William Grimes",
-    "label": "Data Scientist",
+    "label": "data scientist",
     "picture": "/images/profile/profile3-pixel2a.png",
     "email": "williamgrimes@gmx.com",
     "phone": "+44 7794070622",
     "website": "https://williamgrimes.github.io",
-    "summary": "Thanks for visiting my personal website! I'm a data Scientist, with experience delivering commercial data science projects, working with: the World Economic Forum, the Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad and I hold a PhD in Bioinformatics, and an MSc in Computer Science. <br><br> I'm excited by applying machine learning to solve problems with a positive social impact. I'm particularly interested in the intersection of blockchain with data science, and contemplating the future development of these technologies.",
+    "summary": "Thanks for visiting my website! <br><br> I'm a data Scientist with experience delivering commercial data science projects. I have worked with the World Economic Forum, the Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad and I hold a PhD in Bioinformatics, and an MSc in Computer Science. <br><br> I'm excited to apply machine learning to problems with a positive social impact. In particular I'm interested in working at the intersection of blockchain with data science.",
     "profiles": [
       {
         "network": "github",
@@ -26,7 +26,7 @@
       {
         "network": "file alternate",
         "username": "pdf curriculum vitae",
-        "url": "/cv/william_grimes_cv.pdf"
+        "url": "/docs/william_grimes_cv.pdf"
       }
     ]
   },
@@ -157,7 +157,7 @@
       "startDate": "2013-09",
       "endDate": "2016-09",
       "gpa": "",
-      "courses": ["Thesis:Image processing and analysis methods in quantitative endothelial cell biology"
+      "courses": ["Thesis: <i>Image processing and analysis methods in quantitative endothelial cell biology</i>"
       ]
     },
     {
@@ -172,7 +172,7 @@
                   "Architecture & Hardware",
                   "Database Systems",
                   "Multimedia Computing",
-                  "Programming", 
+                  "Java Programming", 
                   "Software Engineering",
                   "Systems Infrastructure"
       ]
@@ -249,10 +249,10 @@
       "website": "https://www.london-fire.gov.uk/",
       "startDate": "2017-04-01",
       "endDate": "2016-11-01",
-      "summary": "Research Attachment Program",
+      "summary": "Data science consultant",
       "highlights": [
         "Implemented and evaluated three topic modelling methods to classify 37,000 fire incident reports.",
-        "Revealed incidents not systematically recorded in categorical data, specifically ducting fires"
+        "Revealed incident types not systematically recorded in categorical data, specifically ducting fires"
       ]
     },
     {
@@ -261,10 +261,10 @@
       "website": "https://www.asidatascience.com/",
       "startDate": "2017-04-01",
       "endDate": "2017-01-03",
-      "summary": "Fellowship programme in commercial data science for researchers with strong analytic background.",
+      "summary": "Post-doctoral fellowship programme in commercial data science",
       "highlights": [
         "Enhanced commercial awareness and business skills including communication, negotiation, and project management.",
-        "Completed 50 hrs training in machine learning, databases, statistics, and relevant technologies."
+        "Completed 50 hrs training in machine learning, databases, statistics, and visualisation technologies."
       ]
     },
     {
@@ -285,7 +285,7 @@
       "website": "http://www.bii.a-star.edu.sg/",
       "startDate": "2013-09-01",
       "endDate": "2015-04-01",
-      "summary": "Research Attachment Program",
+      "summary": "Research attachment programme",
       "highlights": [
         "Built an image processing pipeline for segmentation of endothelial cells and their organelles.",
         "Employed the workflow to analyse over 40 separate high-throughput confocal imaging studies."
@@ -297,9 +297,10 @@
       "website": "https://www.nii.ac.jp/en/",
       "startDate": "2013-06-01",
       "endDate": "2013-09-15",
-      "summary": "Software engineering project",
+      "summary": "Software engineer",
       "highlights": [
-        "Developed Java based annotation software to assist classifying phenotypes in μCT images of mutant mice important to research determining the function of genes.",
+        "Developed a Java based annotation software to assist classifying developmental phenotypes in μCT images of mutant mice",
+        "Integrated software onto ImageJ and released as open-source plugin",
         "Evaluated and tested the software implementation at the National Insitute of Genetics and National Institute of Informatics in Tokyo."
       ]
     }
@@ -316,7 +317,7 @@
     },
     {
       "name": "Weibel-Palade body size modulates the adhesive activity of its von Willebrand Factor cargo in cultured endothelial cells.",
-      "author": "F. Ferraro, Lopes da S. Mafalda, W. Grimes, H.K. Lee, R. Ketteler, J. Kriston-Vizi, D. Cutler.",
+      "author": "F. Ferraro, M. Lopes da Silva, W. Grimes, H.K. Lee, R. Ketteler, J. Kriston-Vizi, D. Cutler.",
       "type": "journal",
       "publisher": "Nature: Scientific Reports",
       "releaseDate": "August, 2016",
@@ -338,7 +339,7 @@
       "title": "Aardvark Scholarship",
       "date": "2012-2013",
       "awarder": "Joe Nicholson",
-      "summary": "A scholarship awarded yearly to a UCL Computer Science student."
+      "summary": "A scholarship awarded once a year to an exceptional UCL Computer Science student."
     }
   ],
   "volunteer": [
@@ -351,8 +352,8 @@
       "summary": "Website development and writer",
       "highlights": [
         "Created a promotional video for the charity to be used at conferences and linked to TEFL.com.",
-        "Producing monthly news e-bulletins of news and blog extracts updating members of the work done by the charity.",
-        "Developing a membership base and established links with other educational organisations.",
+        "Producing monthly news e-bulletins and blog extracts updating members of the work done by the charity.",
+        "Developed a membership base and established links with other educational organisations.",
         "Assisted in the layout, function and design of the website and integrated it with social networks."
       ]
     },
