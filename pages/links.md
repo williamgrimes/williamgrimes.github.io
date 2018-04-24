@@ -147,3 +147,12 @@ permalink: /links/
        </a>
    </li>
 </ul>
+
+### Resources
+<ul>
+   <li>
+       <a href="https://github.com/deobald/vipassana-for-hackers/blob/master/vipassana-for-hackers.pdf" target="_blank">
+           Vipassana for Hackers - deobaldo
+       </a>
+   </li>
+</ul>
