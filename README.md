@@ -1,7 +1,17 @@
-# Technical Portfolio
+# williamgrimes.xyz
+Personal/portfolio website built using Jekyll, Semantic UI, and hosted through Github pages.
 
-This repository hosts a technical portfolio built using [TechFolio](http://techfolios.github.io). 
+## Requirements
+* Bundler: gem install bundler
+* Ruby at least version 2.0.0
 
-See the quick start guide for instructions on how to tailor the template to your own needs.
+## Running
+```
+git clone https://github.com/williamgrimes/williamgrimes.github.io.git
+cd williamgrimes.github.io
+bundle install
+bundle exec jekyll serve
+```
 
-
+## technical portfolios
+This repository was built on a template technical portfolio built using [TechFolio](http://techfolios.github.io). 
