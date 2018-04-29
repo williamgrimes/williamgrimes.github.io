@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/project-3/nuclei.png
-title: Nuclei segmentation of divergent microscopy images
+title: Advancing medical discovery through nuclei segmentation
 permalink: projects/data_science_bowl_2018
 # All dates must be YYYY-MM-DD format!
 date: 2018-04-16

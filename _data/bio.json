@@ -6,7 +6,7 @@
     "email": "williamgrimes@gmx.com",
     "phone": "+44 7794070622",
     "website": "https://williamgrimes.github.io",
-    "summary": "Thanks for visiting my website! <br><br> I'm a data Scientist with experience delivering commercial data science projects. I have worked with the World Economic Forum, the Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad and I hold a PhD in Bioinformatics, and an MSc in Computer Science. <br><br> I'm excited to apply machine learning to problems with a positive social impact. In particular I'm interested in working at the intersection of blockchain with data science.",
+    "summary": "Thanks for visiting my website! <br><br> A data Scientist with experience delivering commercial data science projects. I have worked with the World Economic Forum, the Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad and I hold a PhD in Bioinformatics, and an MSc in Computer Science. <br><br> I'm excited by applying machine learning to problems with a positive societal impact. In particular I'm interested in working at the intersection of blockchain with data science.",
     "profiles": [
       {
         "network": "github",
@@ -240,7 +240,7 @@
       "summary": "Inaugural DSSG Europe member, implemented two complete data science pipelines.",
       "highlights": [
         "Developed an open-source fishing risk tool combining vessel tracking data with satellite imagery. Implemented a machine learning model to classify vessels, and score them according to likely illegal fishing behaviours, calculated based on multiple risk indicators.",
-        "Lead a team to visualise traffic flows and road traffic incidents over 12 border crossings and a 6 month period for the Netherlands Rijkswaterstaat transportation ministry. Deployed a PostgreSQL database, then performed data cleaning and aggregation, and created interactive visualisations."
+        "Led a team to visualise traffic flows and road traffic incidents over 12 border crossings and a 6 month period for the Netherlands Rijkswaterstaat transportation ministry. Deployed a PostgreSQL database, then performed data cleaning and aggregation, and created interactive visualisations."
       ]
     },
     {
