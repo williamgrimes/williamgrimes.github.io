@@ -4,8 +4,9 @@ title: Links
 description: "Interesting links, thoughts, and tips."
 permalink: /links/
 ---
+Here are a collection of courses, blogs, and resources on topics that I am interested in studying further.
 
-### MOOCs
+### Online Courses
 <ul>
     <li>Machine Learning</li>
     <ul>

@@ -6,7 +6,7 @@
     "email": "williamgrimes@gmx.com",
     "phone": "             ",
     "website": "https://williamgrimes.github.io",
-    "summary": "Thanks for visiting my website! <br><br> A data scientist with experience delivering commercial data science projects. I have worked with the World Economic Forum, the Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad and I hold a PhD in Bioinformatics, and an MSc in Computer Science. <br><br> I'm excited by applying machine learning to problems with a positive societal impact. In particular I'm interested in working at the intersection of blockchain with data science.",
+    "summary": "Thanks for visiting my website! <br><br> I'm a data scientist with experience delivering commercial data science projects. I have worked with the World Economic Forum, the Netherland’s Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad and I hold a PhD in Bioinformatics, and an MSc in Computer Science. <br><br> I'm excited by applying machine learning to problems with a positive social impact. In particular I'm interested in working at the intersection of blockchain with data science.",
     "profiles": [
       {
         "network": "github",
@@ -143,6 +143,7 @@
                    "Azure",
                    "Docker",
                    "Git",
+                   "Jupyter Notebooks",
                    "Latex",
                    "UNIX"
       ]
@@ -188,6 +189,16 @@
     }
   ],
   "mooc": [
+    {
+      "institution": "Coursera",
+      "area": "Cryptography I",
+      "studyType": "",
+      "startDate": "2018-05-01",
+      "endDate": "",
+      "website": "https://www.coursera.org/learn/crypto/",
+      "courses": [
+      ]
+    },
     {
       "institution": "fast.ai",
       "area": "Practical Deep Learning for Coders",

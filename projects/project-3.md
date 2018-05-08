@@ -10,11 +10,11 @@ labels:
   - Image Segmentation
   - U-Net
   - Cell biology
-summary: 2018 Data Science Bowl competition to find and segment cell nuclei in divergent images to advance medical discovery.
+summary: Competition to find and segment cell nuclei in divergent images to advance medical discovery.
 ---
-Described here is an approach to the 2018 Data Science Bowl competition that scored within the top 20% of submissions, out of over 3000 teams. The objective of the competition was to segment nuclei in cell microscopy images. Identifying cell nuclei is the starting point for many biological analyses because most of the human body’s 30 trillion cells contain a nucleus full of DNA, the genetic code that programs each cell. Segmenting nuclei allows researchers to identify each individual cell in a sample, measure morphometry, and analyse how cells react to various treatments.
+Described here is an approach to the 2018 Data Science Bowl competition scoring within the top 20% of submissions, out of over 3000 teams. The objective of the competition was to segment nuclei in cell microscopy images. Identifying cell nuclei is the starting point for many biological analyses because most of the human body’s 30 trillion cells contain a nucleus full of DNA, the genetic code that programs each cell. Segmenting nuclei allows researchers to identify individual cells in a sample, measure their morphometry, and analyse how cells react to drug treatments.
 
-The objective of this competition is to create a single generalised model for segmentation that works across all kinds of microscopy and image modalities, no matter the size of the nuclei or the image color scheme. Such a model could be built into software that biologists use with all kinds of microscopes and eliminate the need for them to train on their individual data or provide metadata about their cell type, microscope, or resolution.
+The objective of this competition was to create a single generalised model for segmentation that works across different kinds of microscopy and image modalities, no matter the size of the nuclei or the image color scheme. Such a model could be built into software that biologists use with all kinds of microscopes and eliminate the need for them to train on their individual data or provide metadata about their cell type, microscope, or resolution.
 
 ## Images
 Below is a montage of images from the stage 1 test data to show the difference in image modalities that the model should perform on:
