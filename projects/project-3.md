@@ -10,7 +10,7 @@ labels:
   - Image Segmentation
   - U-Net
   - Cell biology
-summary: Competition to find and segment cell nuclei in divergent images to advance medical discovery.
+summary: Competition to find and segment cell nuclei in divergent images, thereby advancing medical discovery.
 ---
 Described here is an approach to the 2018 Data Science Bowl competition scoring within the top 20% of submissions, out of over 3000 teams. The objective of the competition was to segment nuclei in cell microscopy images. Identifying cell nuclei is the starting point for many biological analyses because most of the human body’s 30 trillion cells contain a nucleus full of DNA, the genetic code that programs each cell. Segmenting nuclei allows researchers to identify individual cells in a sample, measure their morphometry, and analyse how cells react to drug treatments.
 
