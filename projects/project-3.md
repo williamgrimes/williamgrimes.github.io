@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/project-3/nuclei.png
-title: Advancing medical discovery through nuclei segmentation
+title: Advancing Medical Discovery through Nuclei Segmentation
 permalink: projects/data_science_bowl_2018
 # All dates must be YYYY-MM-DD format!
 date: 2018-04-16
