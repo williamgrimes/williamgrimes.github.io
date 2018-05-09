@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/project-1/topic-4.png
-title: London Fire Brigade - topic modelling of incident reports
+title: London Fire Brigade - Topic Modelling of Incident Reports
 permalink: projects/lfb
 # All dates must be YYYY-MM-DD format!
 date: 2015-12-15
