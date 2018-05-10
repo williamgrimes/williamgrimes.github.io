@@ -92,6 +92,7 @@ The hash value is unique to the input data, and any change in input data will re
 * <a href="https://www.plagiarismtoday.com/2017/06/01/the-long-slow-decline-of-bittorrent/" target="_blank">The long slow decline of bittorent</a>
 * <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function" target="_blank">Cryptographic hash function wikipedia</a>
 * <a href="https://www.tutorialspoint.com/cryptography/cryptography_digital_signatures.htm" target="_blank">Digital Signatures tutorial</a>
+* <a href="https://www.youtube.com/watch?v=RIckQ6RBt5E" target="_blank">Digital Signatures explained by Andreas Antonopoulos</a>
 * <a href="http://groups.csail.mit.edu/mac/classes/6.805/student-papers/fall97-papers/fillingham-sig.html" target="_blank">A Comparison of Digital and Handwritten Signatures</a>
 * <a href="https://www.youtube.com/watch?v=NF1pwjL9-DE" target="_blank">Video explaining elliptic curve cryptography</a>
 
@@ -433,3 +434,5 @@ Privacy, IEEE Computer Society, pages 122-133, April 1980.
 </p>
 </blockquote>
 It is interesting to note the pioneering Nick Szabo's work on systems such as bit gold is not referenced here ;-)
+
+For a more indepth explanation of Bitcoin I highly recommend <a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">Andreas Antonopoulos' book "Mastering Bitcoin"</a>.
