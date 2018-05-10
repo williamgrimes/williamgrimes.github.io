@@ -435,4 +435,4 @@ Privacy, IEEE Computer Society, pages 122-133, April 1980.
 </blockquote>
 It is interesting to note the pioneering Nick Szabo's work on systems such as bit gold is not referenced here ;-)
 
-For a more indepth explanation of Bitcoin I highly recommend <a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">Andreas Antonopoulos' book "Mastering Bitcoin"</a>.
+Finally, if you are looking for a more indepth explanation of Bitcoin I highly recommend <a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">Andreas Antonopoulos' book "Mastering Bitcoin"</a>.
