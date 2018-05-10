@@ -10,15 +10,15 @@ labels:
   - notes
 ---
 
-<em>Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part.</em> <a href="https://bitcoin.org/en/"> - bitcoin.org</a>
+<em>Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part.</em> <a href="https://bitcoin.org/en/" target="_blank"> - bitcoin.org</a>
 
-<b>Background</b>: the Bitcoin white paper was released under the pseudo-name Satoshi Nakamoto on 2008-10-31, poignantly this was a time when the traditional banking system was in turmoil at the onset of a global financial crisis. The identity of Satoshi Nakamoto is not known, with some speculating that Satoshi is actually a group rather than an individual. Satoshi circulated the Bitcoin paper on an internet mailing list for Cypherpunks, a group of activists that advocate the use of cryptography and privacy enhancing technologies as a route to social and political change. Creating a digital money independent of the traditional banking system for use on the internet had been a long term aspiration of the libertarian minded Cypherpunks. Ironically, much of the cryptography underpinning the sometimes lofty idealism of the Cypherpunk movement was developed in the 1970s within government intelligence agencies the NSA (USA) and GCHQ (UK).
+<b>Background</b>: the Bitcoin white paper was released under the pseudo-name Satoshi Nakamoto on 2008-10-31, poignantly this was a time when the traditional banking system was in turmoil at the onset of a global financial crisis. The identity of Author Satoshi Nakamoto is not known, with some speculating that Satoshi is actually a group rather than an individual. Satoshi circulated the Bitcoin paper on an internet mailing list for Cypherpunks, a group of activists that advocate the use of cryptography and privacy enhancing technologies as a route to social and political change. Creating a digital money independent of the traditional banking system for use on the internet had been a long term aspiration of the libertarian minded Cypherpunks. Ironically, much of the cryptography underpinning the sometimes lofty idealism of the Cypherpunk movement was developed in the 1970s within government intelligence agencies the NSA (USA) and GCHQ (UK).
 
-<b>Motivation</b>: in this post I will give additional commentary on the Bitcoin white paper, as well as definitions, and links to resources. I will quote the paper verbatim in the grey boxes, and highlight to define or further explain. On first reading the paper can seem sparse and obtuse, but with sufficient context and understanding I hope to demonstrate to you it's elegance, and momentous implications. The paper mainly describes the technical mechanisms underpinning the Bitcoin blockchain, but also touches on issues in banking, monetary policy, and incentive structures. The brilliance of the Bitcoin protocol is in the design of a system combining cryptographic techniques in a peer-to-peer network that has a concept of memory, with a self-regulating system of incentives.
+<b>Motivation</b>: in this post I will give additional commentary on the Bitcoin white paper, as well as definitions, and links to resources. I will quote the paper verbatim in the grey boxes, and highlight text to be defined or further explained. The paper mainly describes the technical mechanisms underpinning the Bitcoin blockchain, but also touches on issues in banking, monetary policy, and incentive structures. The brilliance of the Bitcoin protocol is in the design of a system combining cryptographic techniques in a peer-to-peer network that has a concept of memory, with a self-regulating system of incentives. On first reading the paper can seem sparse and obtuse, but with sufficient context and understanding I hope to demonstrate to you it's elegance, and momentous implications. 
 
 #### Links:
 * <a href="https://bitcoin.org/bitcoin.pdf" target="_blank">Bitcoin white paper</a>
-* <a href="https://www.activism.net/cypherpunk/manifesto.html">Cypherpunk Manifesto</a>
+* <a href="https://www.activism.net/cypherpunk/manifesto.html" target="_blank">Cypherpunk Manifesto</a>
 
 ## Abstract
 ---
@@ -48,7 +48,7 @@ Bitcoin is introduced as a peer-to-peer electronic cash using digital signatures
 
 Don't worry if this doesn't make sense to you at this stage, I recommend getting familiar with the following cryptographic and networking concepts, and then re-reading the abstract. Note proof-of-work is not introduced here since it is discussed at length later.
 
-<p id="fn1"><b>Peer-to-peer</b>: a fundamental design feature of Bitcoin is that it is built as a peer-to-peer (P2P) network, as opposed to a client-server network. In a client-server architecture communication is usually to and from a central server providing resources. A P2P network is a distributed architecture, in which nodes are both conumers and suppliers of resources, removing the need for a centralised authority. In the case of Bitcoin a network designed for the transfer of value a centralised authority would be provided by a financial institution. The use of P2P networks first became widely popular with music sharing applications such as Napster, and then through file sharing with BitTorrent.
+<p id="fn1"><b>Peer-to-peer</b>: a fundamental design feature of Bitcoin is that it is built as a peer-to-peer (P2P) network, as opposed to a client-server network. In a client-server architecture communication is usually to and from a central server providing resources. A P2P network is a distributed architecture, in which nodes are both conumers and suppliers of resources, removing the need for a centralised authority. In the case of Bitcoin a network designed for the transfer of value a centralised authority would be represented by a bank or financial institution. The use of P2P networks first became widely popular with music sharing applications such as Napster, and then through file sharing with BitTorrent.
 
 <div style="margin-left: auto;margin-right: auto;text-align: justify;-ms-text-justify: distribute-all-lines;text-justify: distribute-all-lines;">
     <a style="vertical-align:top; display:inline-block; *display:inline; zoom:1;">
@@ -76,7 +76,7 @@ Out[3]: '1dbb72fc530b143d450fe3709c6c35d193fa8e1f6110acfdac6f2769f8eec7ce'
 </xmp>
 </p>
 
-<p id="fn2"><b>Digital signatures</b>: a digital signature binds a person/entity to digital data, in a way that can be verified by a receiver or third party. This is analagous to signing a document by hand that binds the signatory to a message. In order to have a purely digital replacement for physical paper signatures, each user must be able to produce a message whose authenticity can be checked by anyone, but which could not have been produced by anyone else. In Bitcoin digital signatures provide a way to ensure that all transactions are only made by the rightful owners of that coin.
+<p id="fn2"><b>Digital signatures</b>: a digital signature binds a person/entity to digital data, in a way that can be verified by a receiver or third party. This is analagous to signing a document by hand, which binds the signatory to a message. In order to have a purely digital replacement for physical paper signatures, each user must be able to produce a message whose authenticity can be checked by anyone, but which could not have been produced by anyone else. In Bitcoin digital signatures provide a way to ensure that all transactions are only made by the rightful owners of that coin.
 
 <br><br>Digital signatures are based on public key cryptography, a form of asymmetric cryptography. A public key algorithm such as RSA (Rivest–Shamir–Adleman) is commonly used, although Bitcoin and many cryptocurrencies use the more secure elliptic curve digital signature algorithm (ECDSA). In public key cryptography one can generate two keys that are mathematically linked, one private and one public. A digital signature is created by hashing a one-way hash of electronic data to be signed. The private key is then used to encrypt the hash. The encrypted hash along with extra information including the hashing algorithm is the digital signature. The hash is encrypted instead of the entire message since the hash is usually much shorter, saving time and computation.
 <div align="center">
@@ -123,7 +123,7 @@ The problem of course is the payee can't verify that one of the owners did not d
 </blockquote>
 This section describes how Bitcoin are moved through the system using a sequence of transfers made with digital signatures. The history of each and every Bitcoin transaction leads back to the point where the bitcoins were first produced. Be aware that the transaction mechanism shown here is not the same as the concept of a blockchain, which is discussed later, but rather how money is traced and transferred through the network.
 
-The important part here is to understand the figure, showing how at each stage the owner is a person/entity holding the private key that gives them the ability to spend/transfer that money. When a transaction is broadcast other users can validate based on the public key of the signer, to ensure they have sufficient funds to make the transaction. This is facilitated by the asymmetry of the public-private key pair, whereby anyone can decrypt the signature and verify the transaction but only the owner can encrypt and sign to create another transaction. Although this is a useful way to keep track of ownership, there is nothing to stop somebody spending their coins more than once, i.e. the double-spending problem. 
+The important part here is to understand the figure, showing how at each stage the owner is a person/entity holding the private key that gives them the ability to spend/transfer that money. When a transaction is broadcast other users can validate based on the public key of the signer, to ensure they have sufficient funds to make the transaction. This is facilitated by the asymmetry of the public-private key pair, whereby anyone can decrypt the signature and verify the transaction but only the owner can encrypt and sign to create another transaction. Although this is a useful way to keep track of ownership there is nothing to stop somebody spending their coins more than once, i.e. the double-spending problem. 
 
 ## 3. Timestamp Server
 ---
@@ -133,7 +133,11 @@ The solution we propose begins with a timestamp server. A timestamp server works
     <img src="/images/essay-2/timestamp_server.png" alt="transactions" style="max-width:500px; padding-right:80px;">
 </div>
 </blockquote>
-At this point Satoshi introduces the concept of a chain of timestamped blocks, also known as the blockchain. The first work on a cryptographically secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta for time stamping digital documents. The idea here is to group transactions into blocks to verify that a transaction existed at a certain time, in this way we can overcome the double-spending problem by knowing whether coins have already been spent at a certain time, since these blocks are broadcast to the network, and the most recent block on the longest chain accepted as the current state of the ledger. When you sign a transaction and broadcast to the network, it is not immediately assimilated into the blockchain. But depending on the transaction fee and load on the network it will be compiled into a block. As more blocks are added to the chain the transaction becomes ossified in the history, since it would require increasing proof-of-work to go back and change the record.
+At this point Satoshi introduces the concept of a chain of timestamped blocks, also known as the blockchain. The first work on a cryptographically secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta for time stamping digital documents. The idea here is to group transactions into blocks to verify that a transaction existed at a certain time, in this way we can overcome the double-spending problem by knowing whether coins have already been spent at a certain time, since these blocks are broadcast to the network, and the most recent block on the longest chain accepted as the current state of the ledger. 
+
+The gruesome analogy that comes to mind here is how a kidnapper might use a photo of their victim with that day's newspaper in order to authenticate that as of a certain date given by the publication of a newspaper the victim is still alive. Similarly by using a timestampped server we can authenticate that a transaction has been included in a block at a certain time and cannot be made again later. These blocks are the heartbeat of the network where information is assimilated on the ledger and a state agreed upon.
+
+When you sign a transaction and broadcast to the network, it is not immediately assimilated into the blockchain. But depending on the transaction fee and load on the network it will be compiled into a block. As more blocks are added to the chain the transaction becomes ossified in the history, since it would require increasing proof-of-work to go back and change the record.
  
 <p id="fn7"><b>Usenet</b>: An early peer-to-peer architecture mentioned in the Bitcoin paper is USENET, a distributed messaging system developed in 1979. Users read and post messages (called articles or posts, and collectively termed news) to one or more categories, known as newsgroups.</p>
 
@@ -164,7 +168,7 @@ Hash	000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
 Previous Block	0000000000000000000000000000000000000000000000000000000000000000
 </xmp>
 
-As you can see by block 100000, as more miners have joined the network the hashing power has increased, and the number of leading zeros in the hash to be found is also increased. Adjusting the number of leading zeros is how the system regulates the blocktime.  
+As you can see by block 100000, as more miners have joined the network the hashing power has increased, and the number of leading zeros in the hash to be found has increased from 10 at block 0 to 11 at block 100000. Adjusting the number of leading zeros is how the system regulates the blocktime.  
 
 <xmp>
 Block 100000
@@ -180,7 +184,7 @@ Hash	00000000000000000024fb37364cbf81fd49cc2d51c09c75c35433c3a1945d04
 Previous Block	0000000000000000007962066dcd6675830883516bcf40047d42740a85eb2919
 </xmp>
 
-When a miner finds a hash with enough leading zeros, you can think of it as them winning that competition. They can then propagate the block to the network and mint themselves some Bitocin.
+When a miner finds a hash with enough leading zeros, you can think of it as them winning that competition. They can then propagate the block to the network and mint themselves some Bitcoin, if other miners agree that the block is valid they will start working to compile the next block... so the cycle continues.
 
 This distributed proof-of-work system is how Bitcoin obtains consensus. In order to achieve this the system has to overcome the Byzantine General's Problem, a classic problem faced by any distributed computer system network. The Byzantine General's problem is explained through a scenario in which multiple divisions of an army are laying seige to a city. Each division has a general, that can communicate to other generals via a messenger. A majority have to agree to attack or to defend, but the difficulty arises since some of the generals or messengers may be untrustworthy.
 
@@ -223,7 +227,7 @@ By convention, the first transaction in a block is a special transaction that st
 <br><br>The incentive may help encourage nodes to stay honest. If a greedy attacker is able to assemble more CPU power than all the honest nodes, he would have to choose between using it to defraud people by stealing back his payments, or using it to generate new coins. He ought to find it more profitable to play by the rules, such rules that favour him with more new coins than everyone else combined, than to undermine the system and the validity of his own wealth.
 </blockquote>
 
-The total number of Bitcoins that can be mined is slightly less than 21 million, with the rate at which Bitcoins can be mined reducing over time, in a halving event approximately every 4 years, from 50 BTC per block, to 25 BTC, to 12.5 BTC etc. This leads to a deflationary currency, since the rate of increase in supply is reducing over time and will reach a stable number of coins around the year 2140. When miners can no longer mint new Bitcoins the network will sustain only on transaction fees alone.
+The total number of Bitcoins that can be mined is slightly less than 21 million, with the rate at which Bitcoins can be mined reducing over time. This reduction happens in halving events, where approximately every 4 years the number of Bitcoins mined in each block reduces from 50 Bitcoin per block, to 25 Bitcoin, to 12.5 Bitcoin  etc. This leads to a deflationary currency, since the rate of increase in supply is reducing over time and will reach a stable number of coins around the year 2140. When miners can no longer mine new Bitcoins the network will sustain only on transaction fees alone.
 
 #### Further reading:
 * <a href="https://en.bitcoin.it/wiki/Controlled_supply" target="_blank">Bitcoin supply wiki</a>
@@ -284,10 +288,11 @@ The traditional banking model achieves a level of privacy by limiting access to 
 </div>
 As an additional firewall, a new key pair should be used for each transaction to keep them from being linked to a common owner. Some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner. The risk is that if the owner of a key is revealed, linking could reveal other transactions that belonged to the same owner.
 </blockquote>
-Bitcoin is often perceived as an anonymous payment network, but in actuality it is very transparent since all transactions are recorded. By combining transactions and through analysing groups of transactions the anonymity of Bitcoin can be compromised. Other cryptocurrencies such as Monero, and Zcash attempt to provide a more anonymous payment method, but at the expense of computation.
+Bitcoin is often perceived as an anonymous payment network, but in actuality it is very transparent since all transactions are visible, but the identity of the address owners is not known. By combining transactions and through analysing groups of transactions the anonymity of Bitcoin can be compromised. Other cryptocurrencies such as Monero, and Zcash attempt to provide a more anonymous payment method, but at the expense of increased computation.
 
 #### Further reading:
 * <a href="https://bitcoin.org/en/protect-your-privacy" target="_blank">Bitcoin privacy</a>
+* <a href="https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf" target="_blank">Paper: A Fistful of Bitcoins: Characterizing Payments Among Men with No Names</a>
 
 ## 11. Calculations
 ---
@@ -399,7 +404,13 @@ q=0.45	 z=340
 <blockquote style="background:#f5f5f5;">
 We have proposed a system for electronic transactions without relying on trust. We started with the usual framework of coins made from digital signatures, which provides strong control of ownership, but is incomplete without a way to prevent double-spending. To solve this, we proposed a peer-to-peer network using proof-of-work to record a public history of transactions that quickly becomes computationally impractical for an attacker to change if honest nodes control a majority of CPU power. The network is robust in its unstructured simplicity. Nodes work all at once with little coordination. They do not need to be identified, since messages are not routed to any particular place and only need to be delivered on a best effort basis. Nodes can leave and rejoin the network at will, accepting the proof-of-work chain as proof of what happened while they were gone. They vote with their CPU power, expressing their acceptance of valid blocks by working on extending them and rejecting invalid blocks by refusing to work on them. Any needed rules and incentives can be enforced with this consensus mechanism.
 </blockquote>
-Et voila! This paper did not cause much of a stir on release, but Satoshi worked to build a minimum implementation. At a couple of points in its early history the Bitcoin project was almost completely abandoned. However, over time a core team of devoted developers emerged and the Bitcoin protocol and ecosystem has flourished since, opening a pandora's box of innovation in distributed transfer of value over the internet. That is not to say that it has not had its fair share of challenges and drama, but this remarkable peer-to-peer electronic cash is still going strong!
+Et voila! This paper did not cause much of a stir on release, but Satoshi worked to build a minimum implementation. At a couple of points in its early history the Bitcoin project was almost completely abandoned. However, over time a core team of devoted developers emerged and the Bitcoin protocol and ecosystem has flourished since, opening a pandora's box of innovation in distributed transfer of value over the internet.
+
+Since the release of this paper the network has evolved and adapted, in ways that would have been difficult to predict in 2008. Due to the incentives in mining and how potentially lucrative it is mining has gone from being done on CPUs, to more parallelisable GPUs. Then companies started designing custom Application-specific integrated circuit (ASIC) chips. That is to say chips especially designed to perform the proof-of-work required by Bitcoin. Developments in ASIC technology are highly secretive and very competitive. Meaning that for a single user to start mining on their PC it is no longer profitable. Large companies have gained significant mining power in the network, mainly operating in countries or places like China with subsidised electricity and cheap hardware. Another change has been the development of mining pools where users can group together and donate their computational resources in return for some fraction of mining reward. Both of these developments in large mining companies and mining pools have lead to increasing centralisation of the netwok. 
+
+Bitcoin has also deviated from the original vision of the paper in the fact that its use as a means of payment for low value goods is becoming rarer. That is to say it is increasingly being thought of as a kind of digital gold asset rather than an electronic cash, this is due to the high transaction fees and price volatility. However, as mentioned before additional protocol layers are being built on top of the Bitcoin network in the hope that it can again be used as a kind of electronic cash.  
+
+Despite these challenges, and plenty of drama along the way, this remarkable peer-to-peer electronic money continues to evolve and ten years later is still going strong!
 
 #### Further reading:
 * <a href="https://www.youtube.com/watch?v=DjYbsq3FXfM" target="_blank">Visualisation of Bitcoin development on github</a>
@@ -435,4 +446,4 @@ Privacy, IEEE Computer Society, pages 122-133, April 1980.
 </blockquote>
 It is interesting to note the pioneering Nick Szabo's work on systems such as bit gold is not referenced here ;-)
 
-Finally, if you are looking for a more indepth explanation of Bitcoin I highly recommend <a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">Andreas Antonopoulos' book "Mastering Bitcoin"</a>.
+<br>Finally, if you are looking for a more indepth explanation of Bitcoin I highly recommend <a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">Andreas Antonopoulos' book "Mastering Bitcoin"</a>.
