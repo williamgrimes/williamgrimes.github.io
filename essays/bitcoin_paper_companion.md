@@ -46,7 +46,7 @@ Bitcoin is introduced as a peer-to-peer electronic cash using digital signatures
 * new coins are made from Hashcash style proof-of-work, and 
 * the proof-of-work for new coin generation also powers the network to prevent double-spending.
 
-Don't worry if this doesn't make sense to you at this stage, I recommend getting familiar with the following cryptographic and networking concepts, and then re-reading the abstract. Note proof-of-work is not introduced here since since it is discussed at length later.
+Don't worry if this doesn't make sense to you at this stage, I recommend getting familiar with the following cryptographic and networking concepts, and then re-reading the abstract. Note proof-of-work is not introduced here since it is discussed at length later.
 
 <p id="fn1"><b>Peer-to-peer</b>: a fundamental design feature of Bitcoin is that it is built as a peer-to-peer (P2P) network, as opposed to a client-server network. In a client-server architecture communication is usually to and from a central server providing resources. A P2P network is a distributed architecture, in which nodes are both conumers and suppliers of resources, removing the need for a centralised authority. In the case of Bitcoin a network designed for the transfer of value a centralised authority would be provided by a financial institution. The use of P2P networks first became widely popular with music sharing applications such as Napster, and then through file sharing with BitTorrent.
 
