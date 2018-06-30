@@ -132,6 +132,11 @@ Here are a collection of courses, blogs, and resources on topics that I am inter
                 Coursera - Economics of Money and Banking
             </a>
         </li>
+        <li>
+            <a href="https://www.coursera.org/learn/digital-democracy" target="_blank">
+                Coursera - Securing Digital Democracy
+            </a>
+        </li>
     </ul>
 </ul>
 
