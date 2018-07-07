@@ -6,7 +6,7 @@
     "email": "williamgrimes@gmx.com",
     "phone": "+44 7794070622",
     "website": "https://williamgrimes.github.io",
-    "summary": "Thanks for visiting my website! <br><br> I'm a data scientist with experience delivering commercial data science projects. I have worked with the World Economic Forum, the Netherlands' Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad; I hold a PhD in Bioinformatics and an MSc in Computer Science. <br><br> I'm excited by applying machine learning to problems and making a positive social impact. In particular I'm interested in working at the intersection of blockchain with data science.",
+    "summary": "Thanks for visiting my website! <br><br> I'm a data scientist with experience delivering commercial data science projects. I have worked with the World Economic Forum, the Netherlands' Transportation Ministry, and the London Fire Brigade. <br><br> My interests are broad; I hold a PhD in Bioinformatics and an MSc in Computer Science. <br><br> I'm excited by applying machine learning to problems and making a positive social impact. In addition, I'm interested in work at the intersection of blockchain with data science.",
     "profiles": [
       {
         "network": "github",
@@ -32,7 +32,12 @@
   },
   "interests": [
     {
-      "name": "artificial intelligence",
+      "name": "machine learning",
+      "keywords": [
+      ]
+    },
+    {
+      "name": "data science",
       "keywords": [
       ]
     },
@@ -120,7 +125,7 @@
       "keywords": [
                    "MySQL",
                    "PostgreSQL",
-                   "SQLite"
+                   "MS SQL Server"
       ]
     },
     {
@@ -247,10 +252,11 @@
       "website": "https://dssg.uchicago.edu/",
       "startDate": "2017-06-01",
       "endDate": "Present",
-      "summary": "Inaugural DSSG Europe member; implemented two complete data science pipelines.",
+      "summary": "DSSG Europe 2017 member and DSSG Europe 2018 technical mentor.",
       "highlights": [
-        "Developed an open-source fishing risk tool combining vessel tracking data with satellite imagery. Implemented a machine learning model for classifying vessels and scoring them according to likely illegal fishing behaviours; calculations were based on multiple risk indicators.",
-        "Led a team to visualise traffic flows and road traffic incidents over 12 border crossings and a 6 month period for the Netherlands Rijkswaterstaat transportation ministry. Deployed a PostgreSQL database, then performed data cleaning and aggregation, and created interactive visualisations."
+        "Mentored a team in scoping and delivering a pipeline for the Netherlands Rijkswaterstaat transportation ministry to predict the likelihood of road traffic accidents along Dutch highways. Deployed a PostgreSQL database, aided with data ETL and advised on feature engineering and model selection.",
+        "Led a team to visualise traffic flows and road traffic incidents over 12 border crossings and a 6 month period for the Netherlands Rijkswaterstaat transportation ministry. Deployed a PostgreSQL database, then performed data cleaning and aggregation, and created interactive visualisations.",
+        "Developed an open-source fishing risk tool combining vessel tracking data with satellite imagery. Implemented a machine learning model for classifying vessels and scoring them according to likely illegal fishing behaviours; calculations were based on multiple risk indicators."
       ]
     },
     {
@@ -321,8 +327,8 @@
       "author": "T.D. Nightingale, J. McCormack, W. Grimes, C. Robinson, M. Lopes da Silva, I.J. White, A. Vaughan, L.P. Cramer, D.F. Cutler.",
       "type": "journal",
       "publisher": "Journal of Thrombosis and Haemostasis",
-      "releaseDate": "(Undergoing Review)",
-      "website": "",
+      "releaseDate": "June, 2018",
+      "website": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jth.14218",
       "summary2": "Rationale: Endothelial cells harbour specialised storage organelles, Weibel-Palade Bodies (WPB). Exocytosis of WPB content into the vascular lumen is essential to initiate primary haemostasis and inflammation. These processes are mediated by key WPB cargo proteins, including Von Willebrands factor (VWF) and the type-1 integral membrane protein, P-selectin. Historically, the secretion of this large haemostatic protein and smaller pro-inflammatory proteins, including P-selectin, were thought to be inextricably linked. However, an actomyosin ring could potentially represent machinery to allow differential release of such content. Objective: To determine if secretagogue-dependent differential release of WPB cargo occurs, and whether differential release is mediated by the actomyosin ring. Methods and Results: We used VWF string analysis, leukocyte rolling assays, ELISA, spinning disk confocal microscopy, high-throughput confocal microscopy and inhibitor and siRNA treatments to demonstrate the existence of cellular machinery that allows differential release of WPB cargo proteins. Inhibition of the actomyosin ring differentially effects two crucial processes regulated by WPB exocytosis; it perturbs VWF string formation but has no effect on leukocyte rolling. We further show that the efficiency of ring recruitment correlates with VWF release, the ratio of release of VWF to small cargoes decreases when ring recruitment is inhibited. The recruitment of the actin ring is time-dependent; fusion events occurring directly after stimulation are less likely to initiate haemostasis than later events, and is activated by PKC isoforms. Critically, we show that secretagogues differentially recruit the actomyosin ring, thus demonstrating one mechanism by which the pro-thrombotic effect of endothelial activation can be modulated. Conclusions: Precise control of VWF secretion allows greater control over inflammatory and haemostatic processes, which could potentially limit dangerous thrombosis whilst permitting a normal inflammatory response. These results have important implications for the assessment of WPB fusion, cargo content release and the treatment of patients with von Willebrand disease."
     },
     {
