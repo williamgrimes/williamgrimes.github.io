@@ -247,11 +247,24 @@
   ],
   "work": [
     {
+      "company": "Numerico Technologies",
+      "position": "Data Scientist and Software Engineer",
+      "website": "http://numerico.tech/",
+      "startDate": "2018-02-01",
+      "endDate": "Present",
+      "summary": "Data Scientist and Software Engineer.",
+      "highlights": [
+        "Developed and deployed a live incident prediction system for the Netherlands Rijkswaterstaat transportation ministry.",
+	"Segmented the Netherlands' highway network",
+	"Applied neural networks to predict the likelihood of road traffic accidents."
+      ]
+    },
+    {
       "company": "Data Science for Social Good",
       "position": "Data Scientist",
       "website": "https://dssg.uchicago.edu/",
       "startDate": "2017-06-01",
-      "endDate": "Present",
+      "endDate": "2018-02-01",
       "summary": "DSSG Europe 2017 member and DSSG Europe 2018 technical mentor.",
       "highlights": [
         "Mentored a team in scoping and delivering a pipeline for the Netherlands Rijkswaterstaat transportation ministry to predict the likelihood of road traffic accidents along Dutch highways. Deployed a PostgreSQL database, aided with data ETL and advised on feature engineering and model selection.",
