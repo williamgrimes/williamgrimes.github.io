@@ -104,7 +104,6 @@ Conversely, as K increases, the yielded classifier becomes less flexible, with a
 * <a href="https://youtu.be/C3nIFH649wY" target="_blank"> Bias-Variance decomposition.</a>
 
 ## Chapter 3: Linear Regression:
-
 *Simple linear regression* predicts a quantitative response  <img src="https://render.githubusercontent.com/render/math?math=Y"> from a single predictor variable <img src="https://render.githubusercontent.com/render/math?math=X">, assuming they are linearly related, formally:
 
 <p align="center">
@@ -420,3 +419,277 @@ As a general rule, parametric models will tend to outperform non-parametric mode
 * <a href="https://math.stackexchange.com/questions/63238/why-do-we-use-a-least-squares-fit" target="_blank">Why do we use a least squuares fit?</a>.
 * <a href="https://youtu.be/ewnc1cXJmGA" target="_blank">Deriving the least squares estimators of the slope and intercept.</a>
 * <a href="https://youtu.be/rODUBTRUV0U" target="_blank">Deriving the mean and variance of the least squares slope estimator in simple linear regression</a>
+
+## Chapter 4: Classification:
+Linear regression is an apt classifier in the scenario of binary qualitative responses, however beyond two levels difficulties arise. The choice of coding scheme is problematic, with different coding schemes yielding different predictions.
+
+**Logistic regression** models the probability that <img src="https://render.githubusercontent.com/render/math?math=y"> belongs to a particular category (not the response itself). The _logistic function_ ensures the prediction is between 0 and 1, and is given as:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=p(X) = \frac{e^{\beta_0 %2B \beta_1 X}}{1 %2B  e^{\beta_0 %2B \beta_1 X}}">
+</p>
+
+after re-balancing:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\frac{p(X)}{1 - p(X)} =e^{\beta_0 %2B \beta_1 X}">
+</p>
+
+The left side of the above equation is known as the odds and takes a value between zero and infinity. The _logit_ function or _log odds_ takes the logarithm of both sides:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=log \big[\frac{p(X)}{1 - p(X)} \big]=\beta_0 %2B \beta_1 X">
+</p>
+
+Logistic regression has a logit function that is linear in terms of X. Unlike linear regression where <img src="https://render.githubusercontent.com/render/math?math=\beta_1"> represents the average change in Y with a one-unit increase in X, for logistic regression, increasing X by one-unit yields a <img src="https://render.githubusercontent.com/render/math?math=\beta_1"> change in the log-odds which is equivalent to multiplying the odds by <img src="https://render.githubusercontent.com/render/math?math=\epsilon^{\beta_1}">.
+
+The relationship between _p(X)_ and _X_ is not linear, so <img src="https://render.githubusercontent.com/render/math?math=\beta_1"> does not correspond to the change in _p(X)_ given one-unit increase in _X_. However, if <img src="https://render.githubusercontent.com/render/math?math=\beta_1"> is positive, increasing _X_ will be associated with an increase in _p(X)_ and, similarly, if <img src="https://render.githubusercontent.com/render/math?math=\beta_1"> is negative, an increase in _X_ will be associated with a decrease in _p(X)_. How much change will depend on the value of _X_.
+
+**Estimating regression coefficients** for logistic regression uses a strategy called **maximum likelihood**.
+
+The maximum likelihood determines estimates for <img src="https://render.githubusercontent.com/render/math?math=\beta_0"> and <img src="https://render.githubusercontent.com/render/math?math=\beta_1"> such that the predicted probability of <img src="https://render.githubusercontent.com/render/math?math=\hat{p}(x_i)"> corresponds with the observed classes as closely as possible. Formally, this yield an equation called a likelihood function:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\ell(\beta_0, \beta_1)) \displaystyle \prod_{i:y_{i}=1}p(X_{i})\times \displaystyle \prod_{j:y_{j}=0}(1-p(X_{j}))">
+</p>
+
+Estimates for <img src="https://render.githubusercontent.com/render/math?math=\beta_0"> and<img src="https://render.githubusercontent.com/render/math?math=\beta_1"> are chosen so as to maximize this likelihood function. Linear regression’s least squares approach is actually a special case of maximum likelihood.
+
+Logistic regression measures the accuracy of coefficient estimates using a quantity called the **z-statistic**, which is similar to the t-statistic. The z-statistic for <img src="https://render.githubusercontent.com/render/math?math=\beta_1"> is represented by 
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\normalsize \textrm{z-statistic}(\beta_{1}) = \frac{\hat{\beta}_{1}}{\mathrm{SE}(\hat{\beta}_{1})}">
+</p>
+
+A large z-statistic supports the hypothesis, where in logistic regression, the null hypothesis is:
+
+* _H0_: <img src="https://render.githubusercontent.com/render/math?math=\beta_1 = 0">
+implies that
+
+<img src="https://render.githubusercontent.com/render/math?math=p(X)=\frac{\epsilon^{\beta_0}}{1 %2B \epsilon^{\beta_0}}">
+
+and, therefore, p(X) does not depend on X.
+
+*Predictions with logistic regression* are made plugging in the estimates found from the maximum likelihood estimation in to the model equation
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\hat{p}(X) = \frac{e^{\hat{\beta_0} %2B \hat{\beta_1} X}}{1 %2B  e^{\hat{\beta_0} %2B \hat{\beta_1} X}}">
+</p>
+
+Generally the estimated intercept, <img src="https://render.githubusercontent.com/render/math?math=\hat{\beta_0}"> captures the ratio of positive and negative classifications in the given data set, and is not directly interpretable in most situations.
+
+**Multiple logistic regression** is an extension of logistic regression with more predictors, that uses a strategy similar to that employed for linear regression, multiple logistic regression can be generalised as,
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=log \big[\frac{p(X)}{1 - p(X)} \big]=\beta_0 %2B \beta_1 X_1 %2B ... %2B \beta_p X_p">
+</p>
+
+The log-odds equation for multiple logistic regression can be expressed as
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=p(X)=\frac{\epsilon^{\beta_0 %2B \beta_1 X_1 %2B ... %2B \beta_p X_p}}{1 %2B \epsilon^{\beta_0 %2B \beta_1 X_1 %2B ... %2B \beta_p X_p}}">
+</p>
+
+Maximum likelihood is also used to estimate <img src="https://render.githubusercontent.com/render/math?math=\beta_0, \beta_1, ..., \beta_p"> in the case of multiple logistic regression.
+
+In general, the scenario in which the result obtained with a single predictor does not match the result with multiple predictors, especially when there is correlation among the predictors, is referred to as **confounding**. More specifically, confounding describes situations in which the experimental controls do not adequately allow for ruling out alternative explanations for the observed relationship between the predictors and the response.
+
+Though multiple-class logistic regression is possible, discriminant analysis tends to be the preferred means of handling multiple-class classification.
+
+**Linear discriminant analysis (LDA)** is a technique to find a linear combination of features that characterizes or separates two or more classes of objects or events. The resulting combination may be used as a linear classifier, or, more commonly, for dimensionality reduction before later classification. 
+
+Logistic regression models the conditional distribution of the response Y given the predictors X, whilst linear discriminant analysis takes the approach of modeling the distribution of the predictors X separately in each of the response classes , Y, and then uses Bayes’ theorem to invert these probabilities to estimate the conditional distribution.
+
+Linear discriminant analysis is popular when there are more than two response classes. It has some advantages over logistic regression:
+* The parameter estimates for logistic regression can be surprisingly unstable when the response classes are well separated. Linear discriminant analysis does not suffer from this problem.
+* Logistic regression is more unstable than linear discriminant analysis when n is small and the distribution of the predictors X is approximately normal in each of the response classes.
+
+Classification With Bayes’ Theorem
+Assuming a qualitative variable Y that can take on <img src="https://render.githubusercontent.com/render/math?math=K \geq 2"> distinct, unordered values, the prior probability describes the probability that a given observation is associated with the kth class of the response variable Y.
+
+The density function of X for an observation that comes from the kth class is defined as
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=f_k(X) = Pr(X=x|Y=k)">
+</p>
+
+
+This means that <img src="https://render.githubusercontent.com/render/math?math=f_k(X)"> should be relatively large if there’s a high probability that an observation from the kth class features X=x. Conversely, <img src="https://render.githubusercontent.com/render/math?math=f_k(X)"> will be relatively small if it is unlikely that an observation in class k would feature X=x.
+
+Following this intuition, Bayes’ theorem states
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=Pr(Y=k|X=x)=p_k(X)=\displaystyle \frac{\pi_k f_k(X)}{\sum_{j=1}^k\pi_j f_j(X)}">
+</p>
+
+where <img src="https://render.githubusercontent.com/render/math?math=\pi_k"> denotes the prior probability that the chosen observation comes from the kth class. This equation is sometimes abbreviated as <img src="https://render.githubusercontent.com/render/math?math=p_k(x)">.
+
+
+<img src="https://render.githubusercontent.com/render/math?math=p_k(X)=Pr(Y=k|X)"> is also known as the posterior probability, or the probability that an observation belongs to the kth class, given the predictor value for that observation.
+
+Estimating <img src="https://render.githubusercontent.com/render/math?math=\pi_k">, the prior probability, is easy given a random sample of responses from the population.
+
+Estimating the density function, <img src="https://render.githubusercontent.com/render/math?math=f_k(X)"> tends to be harder, but making some assumptions about the form of the densities can simplify things. A good estimate for <img src="https://render.githubusercontent.com/render/math?math=f_k(X)"> allows for developing a classifier that approximates the Bayes’ classifier which has the lowest possible error rate since it always selects the class for which <img src="https://render.githubusercontent.com/render/math?math=p_k(x)">  is largest.
+
+**Linear discriminant analysis for one predictor** we assume that <img src="https://render.githubusercontent.com/render/math?math=f_k(X)"> has a normal distribution, or Gaussian distribution, the normal density is described by
+
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=f_k(X) = \frac{1}{2\sqrt{2\pi}\sigma_k} exp[-\frac{1}{2\sigma_k^2}(x - \mu_k)^2]">
+</p>
+
+where <img src="https://render.githubusercontent.com/render/math?math=\mu_k"> is the mean parameter for the kth class and <img src="https://render.githubusercontent.com/render/math?math=\sigma_k^2"> is the variable parameter for the kth class.
+
+The density function can be further simplified by assuming that the variance terms, 
+
+<img src="https://render.githubusercontent.com/render/math?math=\sigma_1^2, ..., \sigma_k^2">, are all equal in which case the variance is denoted by <img src="https://render.githubusercontent.com/render/math?math=\sigma_1^2, ..., \sigma^2">.
+Plugging the simplified normal density function into Bayes’ theorem yields
+
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=p_k(x)= \displaystyle  \frac{\pi_k \frac{1}{\sqrt{2\pi}\sigma} exp[-\frac{1}{2\sigma_k^2}(x - \mu_k)^2]}{\sum_{j=1}^k\pi_j \frac{1}{\sqrt{2\pi}\sigma} exp[-\frac{1}{2\sigma_k^2}(x - \mu_j)^2]}">
+</p>
+
+It can be shown that by taking a log of both sides and removing terms that are not class specific, a simpler equation can be extracted:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\delta_{k}(x) = \frac{x\mu_{k}}{\sigma^{2}} - \frac{\mu_{k}^{2}}{2\sigma^{2}}
++ \log(\pi_{k})"> 
+</p>
+
+Using this equation, an observation can be classified by taking the class yields the largest value.
+
+Linear discriminant analysis uses the following estimated values for <img src="https://render.githubusercontent.com/render/math?math=\mu^k"> and <img src="https://render.githubusercontent.com/render/math?math=\sigma^2">:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\hat{\mu}_{k} = \frac{1}{n_{k}}\sum_{i:y_{i} = k}x_{i}">
+</p>
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\sigma^{2} = \frac{1}{n - k} \displaystyle \sum_{k=1}^{k} \displaystyle \sum_{i:y_{i} = k} (x_{i} - \mu_{k})^{2}">
+</p>
+
+where n is the total number of training observations and <img src="https://render.githubusercontent.com/render/math?math=n_k"> is the number of training observations in class k.
+
+The estimate of <img src="https://render.githubusercontent.com/render/math?math=\mu^k"> is the average value of x for all training observations in class k.
+
+The estimate of <img src="https://render.githubusercontent.com/render/math?math=\sigma^2"> can be seen as a weighted average of the sample variance for all k classes.
+
+When the class prior probabilities, <img src="https://render.githubusercontent.com/render/math?math=\pi_1, ... \pi_n">, is not known, it can be estimated using the proportion of training observations that fall into the kth class:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\hat{\pi_k} = \frac{n_k}{n}">
+</p>
+
+Plugging the estimates for 
+<img src="https://render.githubusercontent.com/render/math?math=\hat{\mu}_k"> and <img src="https://render.githubusercontent.com/render/math?math=\hat{\sigma}_k^2"> into the modified Bayes’ theorem yields the linear discriminant analysis classifer:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\hat{\delta}_{k}(x) = \frac{x\hat\mu_{k}}{\hat\sigma^{2}} - \frac{\hat\mu_{k}^{2}}{2\hat\sigma^{2}} + \log(\hat\pi_{k})"> 
+</p>
+
+which assigns an observation X=x to whichever class yields the largest value.
+
+This classifier is described as linear because the discriminant function <img src="https://render.githubusercontent.com/render/math?math=\hat\sigma_k(x)"> is linear in terms of x and not a more complex function.
+
+The Bayes decision boundary for linear discriminant analysis is identified by the boundary where <img src="https://render.githubusercontent.com/render/math?math=\delta_k(x) = \delta_j(x)">.
+The linear discriminant analysis classifier assumes that the observations from each class follow a normal distribution with a class specific average vector and constant variance, <img src="https://render.githubusercontent.com/render/math?math=\sigma^2">, and uses these simplifications to build a Bayes’ theorem based classifier.
+
+**Multivariate linear discriminant analysis** assumes that <img src="https://render.githubusercontent.com/render/math?math=X=(X_1, X_2 , ..., X_p)"> comes from a multivariate normal distribution with a class-specific mean vector and a common covariance matrix.
+
+The multivariate Gaussian distribution used by linear discriminant analysis assumes that each predictor follows a one-dimensional normal distribution with some correlation between the predictors. The more correlation between predictors, the more the bell shape of the normal distribution will be distorted.
+
+A p-dimensional variable X can be indicated to have a multivariate Gaussian distribution with the notation <img src="https://render.githubusercontent.com/render/math?math=X ~ N(\mu, \Sigma)">, where <img src="https://render.githubusercontent.com/render/math?math=E(x)=\mu"> is the mean of X (a vector with p components) and <img src="https://render.githubusercontent.com/render/math?math=Cov(X)=\Sigma"> is the p x p covariance matrix of X.
+
+Multivariate Gaussian density is formally defined as:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\normalsize f(x) = \frac{1}{(2\pi)^{p/2}|\Sigma|^{1/2}} \exp \big \lgroup -\frac{1}{2}(x - \mu)^{T}\Sigma^{-1}(x - \mu) \big \rgroup">
+</p>
+
+For linear discriminant analysis with multiple predictors, the multivariate Gaussian distribution, <img src="https://render.githubusercontent.com/render/math?math=N(\mu_k, \Sigma)">, is assumed to have a class specific mean vector, <img src="https://render.githubusercontent.com/render/math?math=\mu_k">, and a covariance vector common to all classes, <img src="https://render.githubusercontent.com/render/math?math=\Sigma">.
+
+Combining the multivariate Gaussian density function with Bayes’ theorem yields the vector/matrix version of the linear discriminant analysis Bayes’ classifier:
+
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\normalsize \delta_{k}(x) = x^{T} \Sigma^{-1} \mu_{k} - \frac{1}{2} \mu_{k}^{T}
+\Sigma^{-1} \mu_{k} %2B \log \pi_{k}">
+</p>
+Again, whichever class yields the largest value is the highest probability classification.
+
+The Bayes decision boundaries are defined by the values for which 
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\normalsize x^{T} \Sigma^{-1} \mu_{j} - \frac{1}{2} \mu_{j}^{T} \Sigma^{-1}\mu_{j} =
+x^{T} \Sigma^{-1} \mu_{k} - \frac{1}{2} \mu_{k}^{T} \Sigma^{-1} \mu_{k}">
+</p>
+
+It should be noted that since all classes are assumed to have the same number of training observations, the 
+<img src="https://render.githubusercontent.com/render/math?math=log \pi"> terms cancel out.
+
+As was the case for one-dimensional linear discriminant analysis, it is necessary to estimate the unknown parameters <img src="https://render.githubusercontent.com/render/math?math=\mu_1,..., \mu_k"> and <img src="https://render.githubusercontent.com/render/math?math=\pi_1,..., \pi_k">
+and <img src="https://render.githubusercontent.com/render/math?math=\Sigma">. The formulas used in the multi-dimensional case are similar to those used with just a single dimension.
+
+Since, even in the multivariate case, the linear discriminant analysis decision rule relates to X in a linear fashion, the name linear discriminant analysis holds.
+
+As with other methods, the higher the ratio of parameters, p, to number of samples, n, the more likely overfitting will occur.
+
+In general, binary classifiers are subject to two kinds of error: false positives and false negatives. A confusion matrix can be a useful way to display these error rates. Class-specific performance is also important to consider because in some cases a particular class will contain the bulk of the error.
+
+In medicine and biology, the term sensitivity refers to the percentage of observations correctly positively classified (true positives) and specificity refers to the percentage of observations correctly negatively classified (true negatives).
+
+In a two-class scenario, the Bayes classifier, and by extension, linear discriminant analysis, uses a 50% threshold for the posterior probability when determining classifications. In some cases it may be desirable to lower this threshold.
+
+A ROC curve is a useful graphic for displaying the two types of error rates for all possible thresholds. ROC is a historic acronym that comes from communications theory and stands for receiver operating characteristics.
+
+The overall performance of a classifier summarized over all possible thresholds is quantified by the area under the ROC curve.
+
+**Quadratic discriminant analysis** offers an alternative approach to linear discriminant analysis that makes most of the same assumptions, except that quadratic discriminant analysis assumes that each class has its own covariance matrix. This amounts to assuming that an observation from the kth class has a distribution of the form <img src="https://render.githubusercontent.com/render/math?math=X~N(\mu_k, \Sigma_k)"> where <img src="https://render.githubusercontent.com/render/math?math=\Sigma_k"> is a covariance matrix for class k.
+
+This yields a Bayes classifier that assigns an observation X=x to the class with the largest value for
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\normalsize \delta_{k}(x) = - \frac{1}{2}(x - \mu_{k})^{T} \Sigma_{k}^{-1} (x
+- \mu_{k}) - \frac{1}{2} \log |\Sigma_{k}| %2B log \pi_{k}">
+</p>
+
+which is equivalent to
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=
+\normalsize \delta_{k}(x) = - \frac{1}{2}x^{T} \Sigma_{k}^{-1} %2B x^{T}
+\Sigma_{k}^{-1}\mu_{k} - \frac{1}{2}\mu_{k}^{T} \Sigma_{k}^{-1} \mu_{k} -
+\frac{1}{2} \log | \Sigma_{k} | %2B \log \pi_{k}">
+</p>
+
+The quadratic discriminant analysis Bayes classifier gets its name from the fact that it is a quadratic function in terms of x.
+The choice between a shared covariance matrix (like that assumed in linear discriminant analysis) and a class-specific covariance matrix (like that assumed in quadratic discriminant analysis) amounts to a bias-variance trade-off. This is because when there are p predictors, estimating a covariance matrix requires estimating <img src="https://render.githubusercontent.com/render/math?math=\frac{p(p+1)}{2}"> parameters. Since quadratic discriminant analysis estimates a separate covariance matrix for each class, this amounts to estimating <img src="https://render.githubusercontent.com/render/math?math=\frac{kp(p+1)}{2}"> parameters.
+
+By assuming a common covariance matrix, linear discriminant analysis is linear in terms of x which means Kp linear coefficients must be estimated. Because of this, linear discriminant analysis is much less flexible than quadratic discriminant analysis, but as a result has much lower variance. If the assumption of a common covariance matrix is highly inaccurate, it can cause linear discriminant analysis to suffer from high bias.
+
+In general terms, linear discriminant analysis tends to be a better choice if the importance of reducing variance is important because there are relatively few training examples. Conversely, quadratic discriminant analysis can be a better choice if the training set is large such that the variance of the classifier is not a concern or if the assumption of a common covariance matrix is not realistic.
+
+**Comparing the models**
+Since logistic regression and linear discriminant analysis are both linear in terms of x, the primary difference between the two methods is their fitting procedures. Linear discriminant analysis assumes that observations come from a Gaussian distribution with a common covariance matrix, and as such, out performs logistic regression in cases where these assumptions hold true.
+
+K-nearest neighbors can outperform linear regression and linear discriminant analysis when the decision boundary is highly non-linear, but at the cost of a less interpretable model.
+
+Quadratic discriminant analysis falls somewhere between the linear approaches of linear discriminant analysis and logistic regression and the non-parametric approach of K-nearest neighbors. Since quadratic linear analysis models a quadratic decision boundary, it has more capacity for modeling a wider range of problems.
+
+Quadratic discriminant analysis is not as flexible as K-nearest neighbors, however it can perform better than K-nearest neighbors when there are fewer training observations due to its high bias.
+
+Linear discriminant analysis and logistic regression will perform well when the true decision boundary is linear.
+
+Quadratic discriminant analysis may give better results when the decision boundary is moderately non-linear.
+
+Non-parametric approaches like K-nearest neighbors may give better results when the decision boundary is more complex and the right level of smoothing is employed.
+
+As was the case in the regression setting, it is possible to apply non-linear transformations to the predictors to better accommodate non-linear relationships between the response and the predictors.
+
+The effectiveness of this approach will depend on whether or not the increase in variance introduced by the increase in flexibility is offset by the reduction in bias.
+
+It is possible to add quadratic terms and cross products to the linear discriminant analysis model such that it has the same form as quadratic discriminant analysis, however the parameter estimates for each of the models would be different. In this fashion, it’s possible to build a model that falls somewhere between linear discriminant analysis and quadratic discriminant analysis.
+
+#### Further reading:
+* <a href="https://youtu.be/XepXtl9YKwc" target="_blank">Maximum likelihoood clearly explained!</a>
