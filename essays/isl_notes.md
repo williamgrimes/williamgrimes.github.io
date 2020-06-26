@@ -767,3 +767,269 @@ For example, the estimated standard error of an estimated quantity <img src="htt
 
 #### Further reading:
 * <a href="https://en.wikipedia.org/wiki/Bootstrapping_(statistics)" target="_blank">Bootstrapping wikipedia</a>
+
+## Chapter 6: Linear Model Selection and Regularization:
+
+Fitting procedures other than least squares can yield better model interpretability and predictive accuracy.
+
+* Prediction accuracy: the bias of least squares will be low if the true relationship between the response and the predictors is approximately linear. If <img src="https://render.githubusercontent.com/render/math?math=n \gt\gt p">, least squares estimates will tend to have low variance too. Otherwise there can be too much variability to the least squares fit leading to over-fitting and poor predictions. When <img src="https://render.githubusercontent.com/render/math?math=n \lt p"> no unique least squares estimate exists, and therefore least squares cannot be used. Constraining or shrinking the estimated coefficients can reduce variance while incurring only a negligible increase in bias.
+* Interpretability: not all variables in a multiple regression will be associated with the response. Irrelevant variables add complexity and reduce interpretability. Feature selection can automatically exclude irrelevant variables froma  multiple regression model.
+
+**Subset selection** is the process of identifying the subset of variables that are related to the response.
+
+* **Best subset selection** fits all <img src="https://render.githubusercontent.com/render/math?math=2^p"> possible combinations of predictors and then selects the best model. Determining the best model is not trivial and involves the following:
+    1. Let <img src="https://render.githubusercontent.com/render/math?math=M_0"> denote the null model which uses no predictors and always yields the sample mean for predictions
+    2. For <img src="https://render.githubusercontent.com/render/math?math=K = 1, 2, ..., p">:
+        1. Fit all <img src="https://render.githubusercontent.com/render/math?math=\binom{p}{k}"> models that contain exactly k predictors.
+        2. Let <img src="https://render.githubusercontent.com/render/math?math=M_k"> denote the <img src="https://render.githubusercontent.com/render/math?math=\binom{p}{k}"> model that yields the smallest residual sum of squares or equivalently the largest <img src="https://render.githubusercontent.com/render/math?math=R^2">.
+        3. Select the best model from <img src="https://render.githubusercontent.com/render/math?math=M_0, ..., M_p"> using cross-validated prediction error, Akaike information criterion, Bayes information criterion, or adjusted <img src="https://render.githubusercontent.com/render/math?math=R^2">.
+
+    Step 3 of the above should be performed carefully as the number of features used by the models increases, the residual sum of squares decreases monotonically and the <img src="https://render.githubusercontent.com/render/math?math=R^2"> increases monotonically. Hence, statistically the best model will always involve all of the variables, however this does not always transfer to a low test error.
+
+    Best subset selection has computational limitations since <img src="https://render.githubusercontent.com/render/math?math=2^p"> models must be considered. Stepwise methods are an alternative to overcoming these computational limitations.
+
+* **Forward stepwise selection** begins with a model that uses no predictors and successively adds predictors in a greedy manner, selecting that which yields the greatest improvement, until all are used.
+    1. Let <img src="https://render.githubusercontent.com/render/math?math=M_0"> denote the null model which uses no predictors
+    2. For <img src="https://render.githubusercontent.com/render/math?math=K = 0, 1,..., (p-1)">:
+        1. Consider all (p-k) modesl that augment the predictors of <img src="https://render.githubusercontent.com/render/math?math=M_k"> with one additional parameter.
+        2. Choose the best (p-k) model that yields the smallest residual sum of squares or largest r-squared and call it <img src="https://render.githubusercontent.com/render/math?math=M_{k+1}">
+    3. Select a single best model from the models <img src="https://render.githubusercontent.com/render/math?math=M_0, M_1, ... M_p"> using cross-validated prediction error, Akaike information criterion, Bayes information cirterion or adjsuted r-squared.
+
+    Forward stepwise selection fits <img src="https://render.githubusercontent.com/render/math?math=1 %2B \frac{p(p+1)}{2}"> models which is a significant improvement over best subset selection <img src="https://render.githubusercontent.com/render/math?math=2^p"> models. Forward stepwise selection may not always yield the best possible model due to its additive (greedy) nature. It can be used in high-dimensional scernarios where <img src="https://render.githubusercontent.com/render/math?math=n \lt p">.
+
+* **Backward stepwise selection** is another efficient subset selection variant, starting with the full least squares model,  and iteratively removing the least useful predictor with each iteration.
+    1. Let <img src="https://render.githubusercontent.com/render/math?math=M_p"> denote a model using all predictors.
+    2. For <img src="https://render.githubusercontent.com/render/math?math=k = p, p-1,...,1">
+        1. Consider all k models that use k=1 predictors from <img src="https://render.githubusercontent.com/render/math?math=M_k">.
+        2. Choose the best of these k models as determined by the smallest residual sum of squares or highest r-squared, call this model <img src="https://render.githubusercontent.com/render/math?math=M_{k-1}">
+    3. Select the single best model from <img src="https://render.githubusercontent.com/render/math?math=M_0, ..., M_p"> using cross-validated prediction error, AIC, BIC, or adjusted r-squared
+
+    Similar to forward stepwise selection, backward stepwise selection is not guaranteed to yield the best result. It does not work in high-dimensional scenarios where <img src="https://render.githubusercontent.com/render/math?math=n \lt p"> so the full model can be fit. Both forward stepwise selection and backward stepwise selection perform a guided search over the model space.
+
+* **Hybrid approaches** methods add variables to the model sequentially, analogous to forward stepwise selection, but with each iteration they may also remove any variables that no longer offer any improvement to model fit. Hybrid approaches try to better simulate best subset selection while maintaining the computational advantages of stepwise approaches.
+
+**Choosing an optimal model** since <img src="https://render.githubusercontent.com/render/math?math=R^2"> and RSS are both related to training error, the model with all the predictors will always appear to be the best. To combat this, it would be better to select the model from the set of models that yields the lowest estimated test error. Two common approaches for estimating test error are:
+
+1. Indirectly estimating test error by making adjustments to the training error to account for the bias caused by overfitting.
+2. Directly estimating test error using a validation set or cross validation.
+
+**Cp, AIC, BIC, and adjusted r-squared**
+Training mean squared error (RSS / n) usually underestimates test mean squared error since the least squares approach ensures the smallest training residual sum of squares. An important difference being that training error will decrease as variables are added, where test error may not decrease. THis prevents the use of training residual sum of squares and the <img src="https://render.githubusercontent.com/render/math?math=R^2"> for comparing models with different numbers of variables.
+
+There are, however, a number of techniques for adjusting training error according to model size which enables comparing models with different numbers of variables. Four of these strategies are: Cp, Akaike information criterion, Bayes information criterion, and adjusted R2.
+
+The Cp estimate of test mean squared error for a model containing d predictors fitted with least squares is calculated as:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=C_p = \frac{1}{n}(RSS %2B 2d\hat{\sigma}^2)">
+</p>
+
+where <img src="https://render.githubusercontent.com/render/math?math=\hat{\sigma}^2"> is an estimate of the variance of the error <img src="https://render.githubusercontent.com/render/math?math=\epsilon"> associated with each response measurement. So the Cp statistics adds a penalty of <img src="https://render.githubusercontent.com/render/math?math=2d\hat{\sigma}^2"> to the training residual sum of squares to adjust for the tendency for training error to underestimate test error and adjust for additional predictors. It can be shown that if  
+<img src="https://render.githubusercontent.com/render/math?math=\hat{\sigma}^2"> is an unbiased estimate of <img src="https://render.githubusercontent.com/render/math?math=\sigma^2">, then Cp will be an unbiased estimate of test mean squared error. As a result, Cp tends to take on small values when test mean square error is low, so a model with a low Cp is preferable.
+
+**Akaike information criterion (AIC)** is defined for a large class of models fit by maximum likelihood. In the case of simple linear regression, when errors follow a Gaussian distribution, maximum likelihood and least squares are the same thing, in which case, AIC is given by:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=AIC = \frac{1}{n\hat{\sigma}^{2}}(RSS %2B 2d\hat{\sigma}^{2})">
+</p>
+
+Cp and AIC are proportional for least squares models and as such AIC offers no benefit in this case.
+
+*Bayes information criterion (BIC)* for least squares models with d predictors is given by:
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=BIC = \frac{1}{n}(RSS %2B log(n) d \hat{\sigma}^{2})">
+</p>
+
+Similar to Cp, BIC tends to take on smaller values when test MSE is low, so smaller values of BIC are preferable. The BIC statistic tends to penalize models with more variables more heavily than Cp, which in turn results in the selection of smaller models.
+
+*Adjusted r-squared* is another popular choice for comparing models with differing numbers of variables. For a least squares fitted model with d predictors, adjusted r-squared is given by:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=Adjusted\ R^{2} = 1 - \frac{RSS/(n - d - 1)}{TSS/(n - 1)}">
+</p>
+
+For adjusted r-squared a larger value signifies a lower test error. Adjusted r-squared aims to penalize models that include unnecessary variables. This stems from the idea that after all of the correct variables have been added, adding additional noise variables will only decrease the residual sum of squares slightly. Validation and cross validation can be useful in situations where it’s hard to pinpoint the model’s degrees of freedom or when it’s hard to estimate the error variance. The one-standard-error rule advises that when many models have low estimated test error and it’s difficult or variable as to which model has the lowest test error, one should select the model with the fewest variables that is within one standard error of the lowest estimated test error. The rationale being that given a set of more or less equally good models, it’s often better to pick the simpler model.
+
+**Shrinkage** is an alternative to subset selection that uses all the predictors, but employs a technique to constrain or regularize the coefficient estimates. Constraining coefficient estimates can significantly reduce their variance. Two well known techniques of shrinking regression coefficients toward zero are ridge regression and the lasso.
+
+**Ridge regression** is a method of shrinkage very similar to least squares fitting except the coefficients are estimated by minimizing a modified quantity. Recall that the least squares fitting procedure estimates the coefficients by minimizing the residual sum of squares where the residual sum of squares is given by
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=RSS = \sum_{i=1}^{n} \bigg\lgroup y_{i} - \beta_{0} - \sum_{j=1}^{p}\beta_{j}X_{ij} \bigg\rgroup ^{2}">
+</p>
+
+Ridge regression instead selects coefficients by selecting coefficients that minimize
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=RSS %2B \lambda\sum_{j=1}^{p}\beta_{j}^{2}">
+</p>
+
+where <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is a tuning parameter, and the second sum term is a shrinkage penalty. The tuning parameter serves to control the balance of how the two terms affect coefficient estimates. When λ is zero, the second term is nullified, yielding estimates exactly matching those of least squares. As λ approaches infinity, the impact of the shrinkage penalty grows, pushing/shrinking the ridge regression coefficients closer and closer to zero.
+
+The <img src="https://render.githubusercontent.com/render/math?math=\ell {2}"> norm of a vector is defined as
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\|\beta\|_{2} = \sqrt{\sum_{j=1}^{p}\beta_{j}^{2}}">
+</p>
+which measures the distance of vector <img src="https://render.githubusercontent.com/render/math?math=\beta"> from zero. In regard to ridge regression, as λ increases, the <img src="https://render.githubusercontent.com/render/math?math=\ell_{2}"> norm of <im src="https://render.githubusercontent.com/rpender/math?math=\beta^R_{\lambda}"> will always decrease as the coefficient estimates shrink closer to zero.
+
+An important difference between ridge regression and least squares regression is that least squares regression’s coefficient estimates are scale equivalent and ridge regression’s are not. This means that multiplying X by a constant, C, leads to a scaling of the least squares coefficient estimates by a factor of <img src="https://render.githubusercontent.com/render/math?math=\frac{1}{C}">. Another way of looking at it is that regardless of how the jth predictor is scaled, the value of <img src="https://render.githubusercontent.com/render/math?math=X_j \beta_j"> remains the same. In contrast, ridge regression coefficients can change dramatically when the scale of a given predictor is changed. This means that <img src="https://render.githubusercontent.com/render/math?math=X_j \hat{\beta}_{\lambda}^{R}"> may depend on the scaling of other predictors. Because of this, it is best to apply ridge regression after standardizing the predictors using the formula below:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\widetilde{x}_{ij} =\frac{x_{ij}}{\sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_{ij} - \bar{x}_{j})^{2}}}">
+</p>
+
+This formula puts all the predictors on the same scale by normalizing each predictor relative to its estimated standard deviation. As a result, all the predictors will have a standard deviation of 1 which will yield a final fit that does not depend on the scale of the predictors.
+
+Ridge regression’s advantage over least squares stems from the bias-variance trade-off. As the tuning parameter λ increases, the flexibility of the ridge regression fit decreases leading to a decrease in variance, but also causing an increase in bias. Since least squares is equivalent to the most flexible form of ridge regression (where λ=0) it offers less bias at the cost of higher variance. As such, ridge regression is best employed in situations where least squares estimates have high variance.
+
+Ridge regression also offers computational advantages for fixed values of λ. In fact, it can be shown that the computational requirements of calculating ridge regression coefficient estimates for all values of λ simultaneously are almost identical to those for fitting a model using least squares.
+
+Compared to subset methods, ridge regression is at a disadvantage when it comes to number of predictors used since ridge regression will always use all p predictors. Ridge regression will shrink predictor coefficients toward zero, but it will never set any of them to exactly zero (except when λ=∞ ). Though the extra predictors may not hurt prediction accuracy, they can make interpretability more difficult, especially when p is large.
+
+**The lasso** a more recent alternative to ridge regression that allows for excluding some variables. Coefficient estimates for the lasso are generated by minimizing the quantity
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=RSS %2B \lambda\sum_{j=1}^{p}\|\beta_{j}\|">
+</p>
+
+The main difference between ridge regression and lasso regression is that lasso regression uses the <img src="https://render.githubusercontent.com/render/math?math=\ell_{1}"> norm of the coefficient vector <img src="https://render.githubusercontent.com/render/math?math=\beta"> as its penalty. So instead of having a squared term there is an absolute term. Practically this means that in lasso regression if <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is sufficiently large then coefficient estimates can be forced to zero. These models are sometimes called sparse models as since they include only a subset of variables. The variable selection of the lasso can be considered a kind of soft thresholding.
+
+Selecting the tuning parameter, λ, can be accomplished for both ridge regression and the lasso through the use of cross-validation. A general algorithm for selecting a tuning parameter might proceed like so:
+
+1. Select a range of λ values
+2. Compute the cross-validation error for the given shrinkage method for each value of λ.
+3. Select the value of λ for which the cross-validation error is the smallest.
+4. Refit the model using all available observations and the selected tuning parameter value.
+
+Neither ridge regression nor the lasso is universally dominant over the other. The lasso will perform better in scenarios where not all of the predictors are related to the response, or where some number of variables are only weakly associated with the response. Ridge regression will perform better when the response is a function of many predictors, all with coefficients roughly equal in size.
+
+Like ridge regression, the lasso can help reduce variance at the expense of a small increase in bias in situations where the least squares estimates have excessively high variance.
+
+**Dimension reduction methods** are techniques that transform the predictors then fit a least squares model using the transformed variables instead of the original predictors. Let<img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_m"> represent <img src="https://render.githubusercontent.com/render/math?math=M \lt P"> linear combinations of the original predictors, p. Formally,
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=Z_{m} = \sum_{j=1}^{p} \phi_{jm}X_{j}">
+</p>
+ For some constants <img src="https://render.githubusercontent.com/render/math?math=\phi_{1m}, \phi_{2m}, ..., \phi_{pm}">, <img src="https://render.githubusercontent.com/render/math?math=m =1, ..., M">. It is then possible to use least squares to fit the linear regression model:
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=y_{i} = \theta_{0} + \sum_{m=1}^{M} \theta_{m}Z_{im} + \epsilon_{i}">
+</p>
+
+where <img src="https://render.githubusercontent.com/render/math?math=i=1,...,n"> and the regression coefficients are represented by <img src="https://render.githubusercontent.com/render/math?math=\theta_0, \theta_1, ..., , \theta_M">. If the constants <img src="https://render.githubusercontent.com/render/math?math=\phi_{1M}, \phi_{2M}, ..., , \phi_{pm}"> are chosen carefully, dimension reduction approaches can outperform least squares regression of the original predictors. The term dimension reduction references the fact that this approach reduces the problem of estimating the p+1 coefficients <img src="https://render.githubusercontent.com/render/math?math=\theta_0, \theta_1, ..., , \theta_M">, where M < p, there by reducing the dimension of the problem from P+1 to M+1. 
+
+This approach can be seen as a special constrained version of the original linear regression considering that
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\sum_{m=1}^{M} \theta_{m}Z_{im} = \sum_{m=1}^{M} \theta_{m} \sum_{j=1}^{p} = \phi_{jm} X_{ij} = \sum_{j=1}^{p} \sum_{m=1}^{M}\theta_{m}\phi_{jm}X_{ij} = \sum_{j=1}^{p}\beta_{j}X_{ij}">
+</p>
+
+where <img src="https://render.githubusercontent.com/render/math?math=\beta_{j} = \sum_{m=1}^{M}\theta_{m}\phi_{jm}">, this serves to constrain the estimated <img src="https://render.githubusercontent.com/render/math?math=\beta_j"> coefficients since they must now take the form <img src="https://render.githubusercontent.com/render/math?math=\beta_{j} = \sum_{m=1}^{M}\theta_{m}\phi_{jm}">.
+
+This constraint has the potential to bias the coefficient estimates, but in situations where p is large relative to n, selecting a value of M much less than p can significantly reduce the variance of the fitted coefficients.
+
+If M=p and all the linear combinations <img src="https://render.githubusercontent.com/render/math?math=Z_M">  are linearly independent, the constraint has no effect and no dimension reduction occurs and the model is equivalent to performing least squares regression on the original predictors.
+
+All dimension reduction methods work in two steps. First, the transformed predictors, <img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_M"> are obtained. Second, the model is fit using the M transformed predictors.
+
+The difference in dimension reduction methods tends to arise from the means of deriving the transformed predictors, <img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_M"> or the selection of the <img src="https://render.githubusercontent.com/render/math?math=\phi_{jm}"> coefficients.
+
+Two popular forms of dimension reduction are principal component analysis and partial least squares.
+
+**Principal component regression** uses principal component analysis to derive a low dimensional set of features from a large set of variables
+
+Principal component analysis (PCA) is a technique for reducing the dimension of an n×p data matrix X.
+The first principal component direction of the data is the line along which the observations vary the most.
+
+Put another way, the first principal component direction is the line such that if the observations were projected onto the line then the projected observations would have the largest possible variance and projecting observations onto any other line would yield projected observations with lower variance.
+
+Another interpretation of principal component analysis describes the first principal component vector as the line that is as close as possible to the data. In other words, the first principal component line minimizes the sum of the squared perpendicular distances between each point and the line. This means that the first principal component is chosen such that the projected observations are as close as possible to the original observations.
+
+Projecting a point onto a line simply involves finding the location on the line which is closest to the point.
+
+For a two predictor scenario, the first principal component can be summarized mathematically as
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=Z_{1} = \phi_{11} \times (x_{1j} - \bar{x}_{1}) %2B \phi_{21} \times (x_{2j} -
+\bar{x}_{2})">
+</p>
+
+where <img src="https://render.githubusercontent.com/render/math?math=\phi^2_11 %2B \phi^2_21 = 1">
+and for which the selected values of <img src="https://render.githubusercontent.com/render/math?math=\phi_{11}"> and <img src="https://render.githubusercontent.com/render/math?math=\phi_{21}"> maximize the variance of the linear combination.
+
+It is necessary to consider only linear combinations of the form <img src="https://render.githubusercontent.com/render/math?math=\phi^2_11 %2B \phi^2_21 = 1"> because otherwise <img src="https://render.githubusercontent.com/render/math?math=\phi_{11}"> and <img src="https://render.githubusercontent.com/render/math?math=\phi_{21}"> could be increased arbitrarily to exaggerate the variance.
+
+In general, up to min(p,n−1) distinct principal components can be constructed.
+
+The second principal component, <img src="https://render.githubusercontent.com/render/math?math=Z_2"> is a linear combination of the variables that is uncorrelated with <img src="https://render.githubusercontent.com/render/math?math=Z_1"> and that has the largest variance subject to that constraint.
+
+It turns out that the constraint that <img src="https://render.githubusercontent.com/render/math?math=Z_2"> must not be correlated with <img src="https://render.githubusercontent.com/render/math?math=Z_1"> is equivalent to the condition that the direction of <img src="https://render.githubusercontent.com/render/math?math=Z_2"> must be perpendicular, or orthogonal, to the first principal component direction.
+
+Generally, this means
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=Z_{2} = \phi_{21} \times (x_{2} - \bar{x}_{2}) - \phi_{11} \times (x_{1} - \bar{x}_{1})">
+</p>
+
+Constructing additional principal components, in cases where p>2, would successively maximize variance subject to the constraint that the additional components be uncorrelated with the previous components.
+
+**The principal component regression approach** first constructs the first M principal components, <img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_M">, and then uses the components as the predictors in a linear regression model that is fit with least squares.
+
+The premise behind this approach is that a small number of principal components can often suffice to explain most of the variability in the data as well as the relationship between the predictors and the response. This relies on the assumption that the directions in which <img src="https://render.githubusercontent.com/render/math?math=X_1,..., X_p"> show the most variation are the directions that are associated with the predictor Y. Though not always true, it is true often enough to approximate good results.
+
+In scenarios where the assumption underlying principal component regression holds true, then the result of fitting a model to <img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_M"> will likely be better than the result of fitting a model to <img src="https://render.githubusercontent.com/render/math?math=X_1,..., X_p"> since most of the information in the data that relates to the response is captured by <img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_M"> and by estimating only M≪p coefficients overfitting is mitigated.
+
+The number of principal components used relates to the bias-variance trade-off in that using fewer principal components will increase bias, but reduce variance and conversely, using more principal components will decrease bias, but increase variance.
+
+Principal component regression will tend to do better in scenarios where fewer principal components are sufficient to capture most of the variation in the predictors and the relation with response. The closer M is to p, the more principal component regression will resemble the results of a least squares model fit to the original predictors.
+
+It should be noted that principal component regression is not a feature selection method since each of the M principal components used in the regression is a linear combination of all p original predictors. For this reason, principal component regression is more similar to ridge regression than it is to the lasso. In fact, it can be shown that principal component regression and ridge regression are closely related with ridge regression acting as a continuous version of principle component regression.
+
+As with the shrinkage methods, the value chosen for M is best informed by cross-validation.
+
+It is generally recommended that all predictors be standardized prior to generating principal components. As with ridge regression, standardization can be achieved via
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\widetilde{x}_{ij} = \frac{X_{ij}}{\sqrt{\frac{1}{n}\sum_{i=1}^{n}(X_{ij} - \bar{x}_{j})^{2}}}">
+</p>
+
+Standardization ensures all variables are on the same scale which limits the degree to which the high-variance predictors dominate the principal components obtained. Additionally, the scale on which the variables are measured will ultimately affect the principal component regression model obtained. That said, if the variables are all in the same units, one might choose not to standardize them.
+
+Partial Least Squares
+Unlike principal component regression, partial least squares is a supervised learning method in that the value of the response is used to supervise the dimension reduction process.
+
+**Partial least squares (PLS)** identifies a new set of features <img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_M"> that are linear combinations of the original predictors and then uses these M new features to fit a linear model using least squares.
+
+Unlike principal component regression, partial least squares makes use of the response Y to identify new features that not only approximate the original predictors well, but that are also related to the response.
+
+The first partial least squares component is computed by first standardizing the p predictors. Next, the values of each <img src="https://render.githubusercontent.com/render/math?math=\phi_{j1}"> coefficient is set by performing a simple linear regression of Y onto <img src="https://render.githubusercontent.com/render/math?math=X_j">. It can be shown that the derived coefficient is proportional to the correlation between Y and <img src="https://render.githubusercontent.com/render/math?math=X_j">. Because of this proportional relationship, it can be seen that partial least squares places the highest weight on variables that are most strongly related to the response as it computes
+
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=Z_{1} = \sum_{j=1}^{p} \phi_{j1}X_{j}">
+</p>
+
+To identify the second partial least squares direction, it is first necessary to adjust each of the variables for Z1. This is achieved by regressing each variable onto Z1 and taking the residuals. These residuals can be interpreted as the remaining information not explained by the first partial least squares direction.
+
+This orthogonalized data is used to compute Z2 in the same way that the original data was used to compute Z1. This iterative approach can be repeated M times to identify multiple partial least squares components, <img src="https://render.githubusercontent.com/render/math?math=Z_1, Z_2, ..., Z_M">.
+Like principal component regression, the number of partial least squares directions, M, used with partial least squares is generally selected using cross validation.
+
+Before performing partial least squares, the predictors and the response are typically standardized.
+
+In practice, partial least squares often performs no better than principal component regression or ridge regression. Though the supervised dimension reduction of partial least squares can reduce bias, it also has the potential to increase variance. Because of this, the benefit of partial least squares compared to principal component regression is often negligible.
+
+**Considerations for high-dimensional data**, since most  statistical techniques for regression and classification are intended for low dimensional settings where p≪n. Data containing more features than observations are often referred to as high-dimensional. When p≥n, least squares will yield a set of coefficient estimates that perfectly fit the data whether or not there is truly a relationship between the features and the response. As such, least squares should never be used in a high-dimensional setting.
+
+Cp, AIC, and BIC are also not appropriate in the high-dimensional setting because estimating <img src="https://render.githubusercontent.com/render/math?math=\sigma^2"> is problematic.
+
+**Regression in high dimensions**. Methods for generating less flexible least squares models like forward stepwise selection, ridge regression, and the lasso turn out to be especially useful in the high-dimensional setting, since they essentially avoid overfitting by using a less flexible fitting approach.
+
+Regularization and/or shrinkage play a key role in high-dimensional problems.
+
+Appropriate tuning parameter selection is crucial for good predictive performance in the high-dimensional setting.
+
+Test error tends to increase as the dimension of the problem increases unless the additional features are truly associated with the response. This is related to the curse of dimensionality, as the additional noise features increase the dimensionality of the problem, increasing the risk of overfitting without any potential upside.
+
+The risk of multicollinearity is also exacerbated in the high-dimensional setting. Since any variable in the model can be written as a linear combination of all the other variables in the model, it can be extremely difficult to determine which variables (if any) are truly predictive of the outcome. Even the best regression coefficient estimates can never be identified. The best that can be hoped for is that large regression coefficients are assigned to the variables that are truly predictive of the outcome.
+
+In the high-dimensional setting, one should never use sum of squared errors, p-values, r-squared, or other traditional measures of model fit on the training data as evidence of good model fit. MSE or r-squared of an independent test set is a valid measure of model fit, but MSE or r-squared of the training set is certainly not.
