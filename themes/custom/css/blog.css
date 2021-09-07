@@ -10,6 +10,8 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2
   font-size-adjust: 0.5; }
 
 #main {
+  color: #2E3440;
+  background-color: #ECEFF4;
   font-size: 16px;
   /* equivalent to 16px */
   line-height: 1.25;
@@ -148,8 +150,8 @@ hr {
   padding: 0;
   margin: 40px 0;
   border: none;
-  border-top: 2px solid #522158;
-  border-bottom: 2px solid #522158;
+  border-top: 2px solid #3B4252;
+  border-bottom: 2px solid #3B4252;
   border-radius: 2px;
   text-align: center; }
 
@@ -158,7 +160,7 @@ blockquote {
   margin: 1em 0;
   /* (20px / 20px) */
   color: #555;
-  border-left: 5px solid #522158;
+  border-left: 5px solid #3B4252;
   padding: .5em;
   font-style: italic;
   font-size: 1.25em;
@@ -186,7 +188,7 @@ code, kbd, samp {
 
 .button {
   background: none;
-  border: 2px solid #522158;
+  border: 2px solid #3B4252;
   position: relative;
   display: inline-block;
   padding: 7px 12px;
@@ -200,8 +202,8 @@ code, kbd, samp {
   text-decoration: none;
   letter-spacing: 2px; }
   .button:hover {
-    background: #522158;
-    color: #fff; }
+    background: #3B4252;
+    color: #ECEFF4; }
   .button:active {
     top: 1px; }
 
@@ -217,7 +219,7 @@ code, kbd, samp {
     list-style-type: none;
     padding: 0; }
     #menucont .menu li a {
-      color: #FFF;
+      color: #ECEFF4;
       width: 100%;
       margin: 0;
       font-weight: 300;
@@ -231,6 +233,7 @@ code, kbd, samp {
       background: rgba(0, 0, 0, 0.2); }
       #menucont .menu li.active a {
         font-weight: 600; }
+        color: #D08770;
     #menucont .menu li .menu-item-text {
       padding: 10px 20px;
       width: 100%; }
@@ -270,7 +273,7 @@ code, kbd, samp {
       background: transparent; }
       #menucont .menu li.active a, #menucont .menu li.active a:hover {
         font-weight: 600;
-        color: #FFF; }
+        color: #ECEFF4; }
     #menucont .menu li a {
       width: 100%;
       display: inline-block;
@@ -369,15 +372,15 @@ body {
   color: #111; }
 
 ::selection, ::-moz-selection {
-  background: #522158;
+  background: #3B4252;
   color: #fbfbfb; }
 
 a {
-  color: #a131ae;
+  color: #5E81AC;
   text-decoration: none;
   text-decoration: underline solid currentColor; }
   a:hover {
-    color: #cb6ed7; }
+    color: #D08770; }
 
 @media screen and (min-width: 700px) {
   .mobile-only {
@@ -399,8 +402,8 @@ img {
    Sections
 ================================================== */
 #sidebar {
-  background: #522158;
-  color: #fff;
+  background: #3B4252;
+  color: #ECEFF4;
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-flow: column nowrap;
@@ -412,7 +415,7 @@ img {
   #sidebar #logo {
     padding: 20px;
     width: 100%;
-    color: #fff; }
+    color: #ECEFF4; }
     #sidebar #logo .icon {
       box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 0.05);
       display: block;
@@ -423,7 +426,7 @@ img {
       margin: 0 auto 10px;
       border-radius: 80px; }
     #sidebar #logo .text {
-      color: #fff;
+      color: #D8DEE9;
       width: 100%;
       font-size: 30px;
       line-height: .8;
@@ -466,7 +469,6 @@ img {
         width: 30px;
         margin-left: 10px; } }
   #socialmedia ul .icon {
-    fill: #fff;
     max-height: 100%;
     max-width: 100%;
     opacity: 0.85; }
