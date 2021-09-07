@@ -18,9 +18,9 @@
         <aside id="sidebar">
             <div id="logo">
                 <a title="{{title}}" href="{{index-uri}}">
-                    <img class="icon" src="{{blog-prefix}}/img/white-lotus.svg">
                     <div class="text desktop-and-tablet-only">{{title}}</div>
                     <div class="text mobile-only">{{title}}</div>
+                    <img class="icon" src="{{blog-prefix}}/img/headshot.png">
                 </a>
             </div>
 
@@ -41,6 +41,7 @@
                             <a href="{{nav-page.uri}}"><div class="menu-item-text">{{nav-page.title}}</div></a>
                         </li>
                         {% endfor %}
+                        <li {% if CV %} class="active" {% endif %}><a title="CV" href="{{index-uri}}"><div class="menu-item-text">CV</div></a></li>
                         <!-- <li><a title="RSS" href="{{rss-uri}}"><div class="menu-item-text">RSS</div></a></li> -->
                     </ul>
                 </nav>
