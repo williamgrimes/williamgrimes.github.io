@@ -220,12 +220,12 @@ code, kbd, samp {
     #menucont .menu li a {
       color: #ECEFF4;
       width: 100%;
-      margin: 0;
+      margin: 10;
       font-weight: bold;
       text-transform: uppercase;
-      line-height: 28px;
+      line-height: 26px;
       text-decoration: none;
-      letter-spacing: 4px; }
+      letter-spacing: 2px; }
     #menucont .menu li:hover {
       background: rgba(0, 0, 0, 0.2); }
     #menucont .menu li.active {
@@ -249,7 +249,7 @@ code, kbd, samp {
   #menucont .menutitle {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 30px 30px;
     cursor: pointer;
     text-transform: uppercase;
     opacity: 0.85; }
@@ -305,6 +305,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  padding-top: 30px;
   align-items: stretch; }
   @media (max-width: 700px) {
     #sidebar-links {
@@ -426,15 +427,15 @@ img {
       margin: 0 auto 0px;}
     #sidebar #logo .text {
       color: #D8DEE9;
-      width: 100%;
-      padding-top: 50px;
+      width: 250px;
+      padding-top: 0px;
       padding-bottom: 50px;
-      font-size: 50px;
+      font-size: 34px;
       line-height: .8;
-      font-weight: 600;
       font-family: charter;
-      font-style: italic;
-      text-align: center;}
+      font-weight: 700;
+      text-align: justify;
+      margin: 0 auto 0px;}
       @media (min-width: 700px) {
         #sidebar #logo .text.desktop-and-tablet-only {
           display: table-caption; } }
