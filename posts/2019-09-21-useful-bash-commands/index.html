@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>William Grimes: Bash: Useful Commands</title>
-        
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+    <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
+    <!-- Modified to fit Cryogen.-->
+    <meta charset="UTF-8">
+    <title>William Grimes: Bash: Useful Commands</title>
+    
 <meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
 
 <meta name="description" content="A list of powerful bash commands...">
@@ -14,64 +19,81 @@
 <meta property="og:title" content="Bash: Useful Commands" />
 <meta property="og:type" content="article" />
 
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link rel="icon" href="/img/headshot.png">
-        <link type="text/css" href="/fonts/sample.css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
-        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
-        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <aside id="sidebar">
-            <div id="logo">
-                <a title="William Grimes" href="/">
-                    <div class="text desktop-and-tablet-only">William Grimes</div>
-                    <div class="text mobile-only">William Grimes</div>
-                    <img class="icon" src="/img/headshot.png">
-                </a>
-            </div>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+    <link rel="shortcut icon" href="images/ico/favicon.png">
+    <link rel="icon" href="/img/headshot.png">
+    <link href="/fonts/sample.css" rel="stylesheet" type="text/css" >
+    <!--[if IE]><![endif]-->
+    <link href="/css/buttons.css" rel="stylesheet" type="text/css" />
+    <link href="/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/typography.css" rel="stylesheet" type="text/css" />
+    <link href="/css/highlightjs.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night-eighties.min.css"> -->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
 
-            <nav id="sidebar-links">
-                <nav id="menucont">
-                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
-                    <ul class="menu">
-                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
-                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
-                        
-                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
-                        
-                        
-                        <li >
-                            <a href="/pages/cv/"><div class="menu-item-text">Curriculum Vitae</div></a>
-                        </li>
-                        
-                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
-                    </ul>
+<div id="left">
 
-                <nav id="socialmedia">
-                    <ul>
-                      <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github fa-2x" style="color:#ECEFF4"></span></a></li>
-                      <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow fa-2x" style="color:#ECEFF4"></span></a></li>
-                      <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin fa-2x" style="color:#ECEFF4"></span></a></li>
-                    </ul>
-                </nav>
-            </nav>
-        </aside>
+    <p id="logo">
+        <a title="William Grimes" href="/">
+            <!-- <span class="fa fa-rocket"></span> -->
+            <span class="text">William Grimes</span>
+            <img class="icon" src="/img/headshot.png">
+        </a>
+    </p>
 
-        <article id="main">
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/">Home</a></li>
+            <li ><a title="Archives" href="/archives/">Archives</a></li>
             
+            <li ><a title="Tags" href="/tags/">Tags</a></li>
+            
+            
+            <li >
+                <a href="/pages/cv/">Curriculum Vitae</a>
+            </li>
+            
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
+
+    <div id="socialmedia" class="clearfix">
+        <ul style="font-variant-caps:">
+            <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
+            <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+            <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
+            <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+            <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+            <li><a title="RSS" href="/feed.xml" rel="external"><span class="fa fa-rss"></span></a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="right" class="clearfix">
+    
 <div id="post">
     <div class="post-header">
     <div id="post-meta">
         <h1>Bash: Useful Commands</h1>
-        <div class="byline">
-            <span class="date">21 September 2019</span>
-            
-        </div>
+        <span class="date" style="font-variant-caps: small-caps;">21 September 2019</span>
+        
     </div>
 </div>
 <div>
+    <br/>
     
     <p><em>A list of powerful bash commands...</em></p><h4 id="find-count-number-of-files-in-each-dir-from-present-dir">find count number of files in each dir from present dir</h4><pre><code class="bash">find ./ -mindepth 2 -type f | cut -d/ -f2 | sort | uniq -c | sort -nr
 </code></pre><h4 id="cp-all-files-and-preserve-attributes">cp all files and preserve attributes</h4><pre><code class="bash">cp -a /source/* /destination/
@@ -172,18 +194,14 @@ setfacl -m u:&lt;user&gt;:rwx &lt;file/dir&gt;
 
 <br/>
 
-
-    
     <div id="prev-next">
-    
-    <a class="prev" href="/posts/2020-05-12-isl-notes/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Introduction to Statistical Learning</div></a>
-    
-    
-    <a class="next" href="/posts/2019-09-21-unix-file-system/"><div class="nav-text"">Unix: Filesystem Dirs</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
-    
-</div>
-
-    
+        
+        <a class="button" href="/posts/2020-05-12-isl-notes/">&laquo; Introduction to Statistical Learning</a>
+        
+        
+        <a class="right button" href="/posts/2019-09-21-unix-file-system/">Unix: Filesystem Dirs &raquo;</a>
+        
+    </div>
 
     
     <div id="disqus_thread"></div>
@@ -203,17 +221,17 @@ setfacl -m u:&lt;user&gt;:rwx &lt;file/dir&gt;
 
 </div>
 
-            <hr/>
-            <div id="footercont">
-                Copyright &copy; 2021 William Grimes
-                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
-            </div>
-        </article>
+<hr/>
+<div id="footercont" class="clearfix">Copyright &copy; 2021 William Grimes
+    <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
 
-        <script src="/js/highlight.pack.js" type="application/javascript"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+</div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/js/highlight.pack.js" type="application/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/scripts.js" type="application/javascript"></script>
 
-        
-        
-    </body>
+
+</body>
 </html>

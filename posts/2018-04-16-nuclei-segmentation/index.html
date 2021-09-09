@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>William Grimes: Advancing Medical Discovery through Nuclei Segmentation</title>
-        
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+    <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
+    <!-- Modified to fit Cryogen.-->
+    <meta charset="UTF-8">
+    <title>William Grimes: Advancing Medical Discovery through Nuclei Segmentation</title>
+    
 <meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
 
 <meta name="description" content="Described here is an approach to the 2018 Data Science Bowl competition, this soluction  scored within the top 20% of submissions, out of over 3000 teams. The objective of the competition was to segment nuclei in cell microscopy images.">
@@ -14,64 +19,81 @@
 <meta property="og:title" content="Advancing Medical Discovery through Nuclei Segmentation" />
 <meta property="og:type" content="article" />
 
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link rel="icon" href="/img/headshot.png">
-        <link type="text/css" href="/fonts/sample.css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
-        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
-        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <aside id="sidebar">
-            <div id="logo">
-                <a title="William Grimes" href="/">
-                    <div class="text desktop-and-tablet-only">William Grimes</div>
-                    <div class="text mobile-only">William Grimes</div>
-                    <img class="icon" src="/img/headshot.png">
-                </a>
-            </div>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+    <link rel="shortcut icon" href="images/ico/favicon.png">
+    <link rel="icon" href="/img/headshot.png">
+    <link href="/fonts/sample.css" rel="stylesheet" type="text/css" >
+    <!--[if IE]><![endif]-->
+    <link href="/css/buttons.css" rel="stylesheet" type="text/css" />
+    <link href="/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/typography.css" rel="stylesheet" type="text/css" />
+    <link href="/css/highlightjs.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night-eighties.min.css"> -->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
 
-            <nav id="sidebar-links">
-                <nav id="menucont">
-                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
-                    <ul class="menu">
-                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
-                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
-                        
-                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
-                        
-                        
-                        <li >
-                            <a href="/pages/cv/"><div class="menu-item-text">Curriculum Vitae</div></a>
-                        </li>
-                        
-                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
-                    </ul>
+<div id="left">
 
-                <nav id="socialmedia">
-                    <ul>
-                      <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github fa-2x" style="color:#ECEFF4"></span></a></li>
-                      <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow fa-2x" style="color:#ECEFF4"></span></a></li>
-                      <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin fa-2x" style="color:#ECEFF4"></span></a></li>
-                    </ul>
-                </nav>
-            </nav>
-        </aside>
+    <p id="logo">
+        <a title="William Grimes" href="/">
+            <!-- <span class="fa fa-rocket"></span> -->
+            <span class="text">William Grimes</span>
+            <img class="icon" src="/img/headshot.png">
+        </a>
+    </p>
 
-        <article id="main">
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/">Home</a></li>
+            <li ><a title="Archives" href="/archives/">Archives</a></li>
             
+            <li ><a title="Tags" href="/tags/">Tags</a></li>
+            
+            
+            <li >
+                <a href="/pages/cv/">Curriculum Vitae</a>
+            </li>
+            
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
+
+    <div id="socialmedia" class="clearfix">
+        <ul style="font-variant-caps:">
+            <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
+            <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+            <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
+            <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+            <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+            <li><a title="RSS" href="/feed.xml" rel="external"><span class="fa fa-rss"></span></a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="right" class="clearfix">
+    
 <div id="post">
     <div class="post-header">
     <div id="post-meta">
         <h1>Advancing Medical Discovery through Nuclei Segmentation</h1>
-        <div class="byline">
-            <span class="date">16 April 2018</span>
-            
-        </div>
+        <span class="date" style="font-variant-caps: small-caps;">16 April 2018</span>
+        
     </div>
 </div>
 <div>
+    <br/>
     
     <p>Described here is an approach to the 2018 Data Science Bowl competition, this soluction  scored within the top 20% of submissions, out of over 3000 teams. The objective of the competition was to segment nuclei in cell microscopy images.</p><p>Identifying cell nuclei is the starting point for many biological analyses. Most of the human body’s 30 trillion cells contain a nucleus full of DNA, the genetic code that programs each cell. Segmenting nuclei allows researchers to identify individual cells in a sample, measure their morphometry, and analyse how cells react to drug treatments.</p><p>The objective of this competition was to create a single generalised model for segmentation that works across different kinds of microscopy and image modalities, robust to variation in the size of the nuclei and the image color scheme. Such a model could be built into software that biologists use with all kinds of microscopes and eliminate the need for them to train on their individual data or provide metadata about their cell type, microscope, or resolution.</p><h2 id="images">Images</h2><p>Below is a montage of images from the stage 1 test data to show the difference in image modalities that the model should perform on:</p><div align="center"><img src="/img/montage_test.png" alt="Front End" style="width:60%" /></div><h2 id="approach">Approach:</h2><p>For this competition I attempted three approaches. First, a simple adaptive <a href="https://en.wikipedia.org/wiki/Otsu%27s_method" target="_blank">Otsu threshold</a> on greyscale converted images to set a baseline result. Following on from this I tried a U-net convolutional neural network, and mask R-CNN models. The mask R-CNN performed the best, I also tried various data augmentation steps, and post morphological processing with the watershed transform.</p><h2 id="model-evaluation">Model evaluation</h2><p><a href="https://www.kaggle.com/c/data-science-bowl-2018#evaluation" target=" _blank">Evalutation of this model</a> uses the mean average precision at different intersection over union (IoU) thresholds. The IoU of a proposed set of object pixels and a set of true object pixels is calculated.</p><p>The metric sweeps over a range of IoU thresholds, at each point calculating an average precision value. The threshold values range from 0.5 to 0.95 with a step size of 0.05: <code>(0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95)</code>. In other words, at a threshold of 0.5, a predicted object is considered a "hit" if its intersection over union with a ground truth object is greater than 0.5.</p><p>At each threshold value <code>t</code>, a precision value is calculated based on the number of true positives (TP), false negatives (FN), and false positives (FP) resulting from comparing the predicted object to all ground truth objects.</p><p>A true positive is counted when a single predicted object matches a ground truth object with an IoU above the threshold. A false positive indicates a predicted object had no associated ground truth object. A false negative indicates a ground truth object had no associated predicted object. The average precision of a single image is then calculated as the mean of the above precision values at each IoU threshold.</p><p>Lastly, the score returned by the competition metric is the mean taken over the individual average precisions of each image in the test dataset.</p><p>This was implemented locally in the <code>./utils/evaluate.py</code> file.</p><h2 id="submission-run-length-encoding">Submission: run-length encoding</h2><p><a href="https://www.kaggle.com/c/data-science-bowl-2018#evaluation" target=" _blank">Run length encoding</a> is used for competition submissions to reduce the submission file size. Instead of submitting an exhaustive list of indices for your segmentation, pairs of values that contain a start position and a run length. E.g. '1 3' implies starting at pixel 1 and running a total of 3 pixels (1,2,3).</p><p>The competition format requires a space delimited list of pairs. For example, '1 3 10 5' implies pixels 1,2,3,10,11,12,13,14 are to be included in the mask. The pixels are one-indexed and numbered from top to bottom, then left to right: 1 is pixel (1,1), 2 is pixel (2,1), etc.</p><p>The metric checks that the pairs are sorted, positive, and the decoded pixel values are not duplicated. It also checks that no two predicted masks for the same image are overlapping.</p><p>This was implemented locally in the  <code>./utils/evaluate.py</code> file.</p><h2 id="resources">Resources:</h2><ul><li><a href="https://github.com/williamgrimes/nuclei_segmentation/" target="_blank">Github</a></li><li><a href="https://www.kaggle.com/c/data-science-bowl-2018" target="_blank">Website</a></li><li><a href="https://arxiv.org/abs/1505.04597" target="_blank">Paper: U-net</a></li><li><a href="https://arxiv.org/abs/1703.06870" target="_blank">Paper: Mask R-CNN</a></li></ul>
 </div>
@@ -90,18 +112,14 @@
 
 <br/>
 
-
-    
     <div id="prev-next">
-    
-    <a class="prev" href="/posts/2018-04-27-bitcoin-paper-companion/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Bitcoin: A Reader&#39;s Companion</div></a>
-    
-    
-    <a class="next" href="/posts/2017-08-29-fishing-risk-score/"><div class="nav-text"">A Fishing Risk Framework from Satellites and Ocean Data</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
-    
-</div>
-
-    
+        
+        <a class="button" href="/posts/2018-04-27-bitcoin-paper-companion/">&laquo; Bitcoin: A Reader&#39;s Companion</a>
+        
+        
+        <a class="right button" href="/posts/2017-08-29-fishing-risk-score/">A Fishing Risk Framework from Satellites and Ocean Data &raquo;</a>
+        
+    </div>
 
     
     <div id="disqus_thread"></div>
@@ -121,17 +139,17 @@
 
 </div>
 
-            <hr/>
-            <div id="footercont">
-                Copyright &copy; 2021 William Grimes
-                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
-            </div>
-        </article>
+<hr/>
+<div id="footercont" class="clearfix">Copyright &copy; 2021 William Grimes
+    <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
 
-        <script src="/js/highlight.pack.js" type="application/javascript"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+</div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/js/highlight.pack.js" type="application/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/scripts.js" type="application/javascript"></script>
 
-        
-        
-    </body>
+
+</body>
 </html>
