@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>William Grimes: Bash: Useful Commands</title>
+        
+<meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
+
+<meta name="description" content="A list of powerful bash commands...">
+
+<meta property="og:description" content="A list of powerful bash commands...">
+
+<meta property="og:url" content="http://williamgrimes.xyz/posts/2019-09-21-useful-bash-commands/" />
+<meta property="og:title" content="Bash: Useful Commands" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" href="/img/headshot.png">
+        <link type="text/css" href="/fonts/sample.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="William Grimes" href="/">
+                    <div class="text desktop-and-tablet-only">William Grimes</div>
+                    <div class="text mobile-only">William Grimes</div>
+                    <img class="icon" src="/img/headshot.png">
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages/cv/"><div class="menu-item-text">Curriculum Vitae</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+
+                <nav id="socialmedia">
+                    <ul>
+                      <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github fa-2x" style="color:#ECEFF4"></span></a></li>
+                      <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow fa-2x" style="color:#ECEFF4"></span></a></li>
+                      <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin fa-2x" style="color:#ECEFF4"></span></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Bash: Useful Commands</h1>
+        <div class="byline">
+            <span class="date">21 September 2019</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p><em>A list of powerful bash commands...</em></p><h4 id="find-count-number-of-files-in-each-dir-from-present-dir">find count number of files in each dir from present dir</h4><pre><code class="bash">find ./ -mindepth 2 -type f | cut -d/ -f2 | sort | uniq -c | sort -nr
+</code></pre><h4 id="cp-all-files-and-preserve-attributes">cp all files and preserve attributes</h4><pre><code class="bash">cp -a /source/* /destination/
+</code></pre><h4 id="bc-calculator-float-division">bc calculator float division</h4><pre><code class="bash">echo "2/3" | bc -l
+</code></pre><h4 id="sed-edit-a-file-with-sed-replace-underscores-with-space">sed edit a file with sed replace underscores with space</h4><pre><code class="bash">sed 's/_/ /g' &lt;file.txt&gt;
+</code></pre><h4 id="sed-remove-string-of-x--of-digits-from-file">sed remove string of x # of digits from file</h4><pre><code class="bash">sed 's/_[0-9]{3}_/_/g' &lt;file.txt&gt;
+</code></pre><h4 id="sed-edit-file-in-place-add-prefix-to-beginning-of-each-line">sed edit file in place; add prefix to beginning of each line</h4><pre><code class="bash">sed -i -e 's/^/prefix2add/' &lt;file.txt&gt;
+</code></pre><h4 id="tr-translatereplace-newline-characters-in-file-with-space">tr translate/replace newline characters in file with space</h4><pre><code class="bash">tr '\n' ' ' &lt; &lt;file.txt&gt;
+</code></pre><h4 id="tr-translatereplace-lowercase-to-uppercase-characters">tr translate/replace lowercase to uppercase characters</h4><pre><code class="bash">tr "[:lower:]" "[:upper:]" &lt; &lt;file.txt&gt;
+</code></pre><h4 id="awk-read-nth-column-of-file-eg-2nd--3rd-cols">awk read nth column of file (e.g. 2nd &amp; 3rd cols)</h4><pre><code class="bash">awk '{ print $2,$3 }' &lt;file.txt&gt;
+</code></pre><h4 id="wc-count-number-of-lines-in-file">wc count number of lines in file</h4><pre><code class="bash">wc -l &lt;file.txt&gt;
+</code></pre><h4 id="sed-create-new-file">sed create new file</h4><pre><code class="bash">sed -i -e 's/^/prefix2add/' oldfile &gt; newfile
+</code></pre><h4 id="sed-delete-lines-in-a-file-which-contain-a-certain-string">sed delete lines in a file which contain a certain string</h4><pre><code class="bash">sed -i.bak '/string2snipe/d' ./file2clean
+</code></pre><h4 id="logical-or">logical OR</h4><pre><code class="bash">if [ $a == 0 ] || [ $a == 1 ]; then echo $a; fi
+</code></pre><h4 id="symlink-file-with-a-whitespace-treat-as-string">symlink file with a whitespace (treat as string)</h4><pre><code class="bash">ln -s "/path/White Space.ext" .
+</code></pre><h4 id="find-files-from-a-given-date">find files from a given date</h4><pre><code class="bash">date=1999-12-31
+for f in *ext; do if stat -c %y $f | grep $date; then echo $f; fi; done
+</code></pre><h4 id="count--of-ocurrences-of-a-string-in-a-file">count # of ocurrences of a string in a file</h4><pre><code class="bash">grep 'string' &lt;file.txt&gt; | wc -l
+</code></pre><h4 id="watch-output-of-command-change-over-time--n1--every-second">watch output of command change over time (-n1 =&gt; every second)</h4><pre><code class="bash">watch -n1 "date"
+</code></pre><h4 id="watchfollow-the-tail-of-a-log-file">watch/follow the tail of a log file</h4><pre><code class="bash">tail -f -n40 &lt;log&gt;
+</code></pre><h4 id="rename-files-with-index-in-name-eg-abc-000005-doremi">rename files with index in name (e.g. abc_000005_doremi)</h4><pre><code class="bash">rename s/_00000[0-9]_/_/g $f
+</code></pre><h4 id="get-unique-values-in-3rd-field">get unique values in 3rd field</h4><pre><code class="bash">for f in *ext; do cat $f | awk '{print $3}'; done | sort -u
+</code></pre><h4 id="ls-list-all-files-without-an-extension">ls list all files without an extension</h4><pre><code class="bash">ls --ignore='*.*'
+</code></pre><h4 id="get-destination-path-of-symbolic-link">get destination path of symbolic link</h4><pre><code class="bash">readlink $symlink
+</code></pre><h4 id="kill-all-threads-running-badprocess">kill all threads running 'badprocess'</h4><pre><code class="bash">ps -ef | grep badprocess | awk '{print $2}' | for f in `xargs $1`; do kill $f; done
+</code></pre><h4 id="or">...or...</h4><pre><code class="bash">for pid in $(ps -ef | awk '/badprocess/ {print $2}'); do kill -9 $pid; done
+</code></pre><h4 id="find-all-unique-filetypes-in-a-directory">find all unique filetypes in a directory</h4><pre><code class="bash">for f in *; do echo $f | rev | cut -d'.' -f1 | rev; done | sort -u
+</code></pre><h4 id="replace-space-with-underscore-in-filenames">replace space with underscore in filenames</h4><pre><code class="bash">find -name "* *" -type f | rename 's/ /_/g'
+</code></pre><h4 id="search-for-a-string-in-files-of-a-certain-format-eg-py">search for a string in files of a certain format (e.g. .py)</h4><pre><code class="bash">grep -rn "string" --include \*.py
+</code></pre><h4 id="diff-contents-of-dirs">diff contents of dirs</h4><pre><code class="bash">diff -qr dir1 dir2 | sort
+</code></pre><h4 id="search-command-history">search command history</h4><pre><code class="bash">Ctrl+R
+</code></pre><h4 id="directory-structure">Directory structure</h4><pre><code class="bash">tree
+</code></pre><h4 id="limited-to-n-levels">...limited to N levels</h4><pre><code class="bash">tree -L N
+</code></pre><h4 id="w-file-size">...w file size</h4><pre><code class="bash">tree -hs
+</code></pre><h4 id="human-readable-filesize-mb">human-readable filesize (MB)</h4><pre><code class="bash">ls -l --block-size=MB &lt;file&gt;
+</code></pre><h4 id="install-deb-package">install .deb package</h4><pre><code class="bash">sudo dpkg -i &lt;.deb&gt;
+</code></pre><h4 id="find-packages-associated-with-apt-get-installation-and-their-locations">find packages associated with apt-get installation (and their locations)</h4><pre><code class="bash">dpkg -L &lt;package&gt;
+</code></pre><h4 id="search-for-ubuntu-package">search for Ubuntu package</h4><pre><code class="bash">apt-cache search &lt;keyword&gt;
+</code></pre><h4 id="uncompress-a-gzipped-tarball">uncompress a gzipped tarball</h4><pre><code class="bash">tar xvzf &lt;file&gt;.tar.gz
+# x = extract
+# v = verbose, list all files
+# z = uncompress
+# f = file
+# c = compress
+</code></pre><h4 id="compress-a-directory-to-targz">compress a directory to .tar.gz</h4><pre><code class="bash">tar -zcvf archive.tar.gz directory/
+</code></pre><h4 id="unique-entries-in-a-csv-column">unique entries in a CSV column</h4><pre><code class="bash">cut -d',' -f$X &lt;file&gt;.csv | sort -u
+# (where $X=column index)
+</code></pre><h4 id="read-file-line-by-line">Read file line-by-line</h4><pre><code class="bash">i=1
+while read line; do
+      echo $line
+        ((i++))
+        done &lt; $file
+</code></pre><h4 id="append-to-same-line-of-file--n-excludes-newline">append to same line of file (-n excludes newline)</h4><pre><code class="bash">echo -n "text" &gt;&gt; $file
+</code></pre><h4 id="find-files-creatededited-in-the-last-24-hours">find files created/edited in the last 24 hours</h4><pre><code class="bash">find . -maxdepth 3 -mtime -1 -type f
+</code></pre><h4 id="time-a-function">time a function</h4><pre><code class="bash">echo "Starting @" `date`;
+tic=$SECONDS;
+sleep 1;
+toc=$SECONDS;
+echo "Ending @ " `date`;
+echo "Time elapsed:" $((toc-tic)) "secs"
+</code></pre><h4 id="write-stdout-and-stderr-to-log-file-and-print-to-std-out">write stdout and stderr to log file (and print to std out)</h4><pre><code class="bash">script.sh 2&gt;&amp;1 | tee -a log.txt
+</code></pre><h4 id="print-file-ignoring-header-start-reading-from-line-2">print file ignoring header (start reading from line 2)</h4><pre><code class="bash">tail -n +2 $file
+</code></pre><h4 id="delete-lines-from-a-text-file">delete lines from a text file</h4><pre><code class="bash">sed -i.bak '/pattern to match/d' $f
+</code></pre><h4 id="add-a-header-to-a-file">add a header to a file</h4><pre><code class="bash">sed -i i1'Header,Text' $f
+</code></pre><h4 id="remove-header-from-file">remove header from file</h4><pre><code class="bash">sed -i 1d $f
+</code></pre><h4 id="remove-carriage-return-m">remove carriage return (^M)</h4><pre><code class="bash">sed -i 's/\r//g' $f
+</code></pre><h4 id="view-a-csv-file-in-tab-separated-table-format">view a CSV file in tab-separated table format</h4><pre><code class="bash">column -s, -t &lt; file.csv | less -#2 -N -S
+</code></pre><h4 id="json-inspection-with-colouring">JSON inspection with colouring</h4><pre><code class="bash">cat file.json | jq ''
+</code></pre><h4 id="see-hostname-aka-name-of-machine">see hostname (aka name of machine)</h4><pre><code class="bash">uname -n` or `hostname
+</code></pre><h4 id="change-hostname">change hostname</h4><pre><code class="bash">hostnamectl set-hostname &lt;new_hostname&gt;
+</code></pre><h4 id="change-directory-ownership">change directory ownership</h4><pre><code class="bash">sudo chown -R username:group directory
+</code></pre><h4 id="list-all-users">list all users</h4><pre><code class="bash">getent passwd | cut -d':' -f1` or `cat /etc/passwd | cut -d: -f1
+</code></pre><h4 id="get-users-id-and-groups">get user's id and groups</h4><pre><code class="bash">id &lt;user&gt;
+</code></pre><h4 id="groups">groups</h4><pre><code class="bash">id -G &lt;user&gt;
+</code></pre><h4 id="list-all-system-groups">list all system groups</h4><pre><code class="bash">groups
+</code></pre><h4 id="list-all-system-groups-that--belongs-to">list all system groups that <user> belongs to</user></h4><pre><code class="bash">groups &lt;user&gt;
+</code></pre><h4 id="list-all-users-in">List all users in <group></group></h4><pre><code class="bash">getent group &lt;group&gt;
+</code></pre><h4 id="add--to">add <user> to <group></group></user></h4><pre><code class="bash">usermod -G &lt;group&gt; &lt;user&gt;
+sudo su
+setfacl -m u:&lt;user&gt;:rwx &lt;file/dir&gt;
+</code></pre><h4 id="exit-code-of-last-executed-command-eg-to-check-fsck-error-code">exit code of last executed command (e.g. to check fsck error code)</h4><pre><code class="bash">echo $?
+</code></pre><h4 id="list-system-hardware-devices">list system hardware devices</h4><pre><code class="bash">lshw
+</code></pre><h4 id="list-files-by-timestamp-reverse">list files by timestamp (reverse)</h4><pre><code class="bash">ls -ltr
+</code></pre><h4 id="change-string-to-lowercase">change string to lowercase</h4><pre><code class="bash">echo $string | tr '[A-Z]' '[a-z]'
+</code></pre><h4 id="check-a-volumes-and-keep-the-df-header">check a volume's, and keep the df header</h4><pre><code class="bash">df -h | grep 'Use\|/mnt/data'
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/bash/">bash</a>
+    
+    <a href="/tags-output/notes/">notes</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/2020-05-12-isl-notes/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Introduction to Statistical Learning</div></a>
+    
+    
+    <a class="next" href="/posts/2019-09-21-unix-file-system/"><div class="nav-text"">Unix: Filesystem Dirs</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://williamgrimes.xyz/posts/2019-09-21-useful-bash-commands/";
+            this.page.identifier = "Bash: Useful Commands";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//williamgrimes.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2021 William Grimes
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

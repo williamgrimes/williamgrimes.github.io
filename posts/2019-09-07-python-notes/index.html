@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>William Grimes: Python: Language Features</title>
+        
+<meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
+
+<meta name="description" content="Some Notes on Python language features, with examples... ">
+
+<meta property="og:description" content="Some Notes on Python language features, with examples... ">
+
+<meta property="og:url" content="http://williamgrimes.xyz/posts/2019-09-07-python-notes/" />
+<meta property="og:title" content="Python: Language Features" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" href="/img/headshot.png">
+        <link type="text/css" href="/fonts/sample.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="William Grimes" href="/">
+                    <div class="text desktop-and-tablet-only">William Grimes</div>
+                    <div class="text mobile-only">William Grimes</div>
+                    <img class="icon" src="/img/headshot.png">
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages/cv/"><div class="menu-item-text">Curriculum Vitae</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+
+                <nav id="socialmedia">
+                    <ul>
+                      <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github fa-2x" style="color:#ECEFF4"></span></a></li>
+                      <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow fa-2x" style="color:#ECEFF4"></span></a></li>
+                      <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin fa-2x" style="color:#ECEFF4"></span></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Python: Language Features</h1>
+        <div class="byline">
+            <span class="date">7 September 2019</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    <ol class="toc"><li><a href="#miscellaneous">Miscellaneous:</a></li><ol><li><a href="#variable-naming-underscores-and-dunders">Variable naming, underscores and dunders</a></li><li><a href="#assertion-statements">Assertion Statements</a></li><li><a href="#context-managers-and-the-with-statement">Context Managers and the with statement</a></li><li><a href="#object-comparisons-is-vs-">Object comparisons: <code>is</code> vs <code>==</code></a></li><li><a href="#avoiding-long-ifelse-chains">Avoiding Long if/else chains</a></li><li><a href="#dictionary-merging">Dictionary merging</a></li></ol><li><a href="#functions">Functions:</a></li><ol><li><a href="#lexical-closures">Lexical closures</a></li><li><a href="#lambda-functions">Lambda functions:</a></li></ol><li><a href="#decorators-functions">Decorators functions:</a></li><ol><li><a href="#args-and-kwargs">*args and **kwargs</a></li><li><a href="#the-point-of-no-return">The point of no return</a></li></ol><li><a href="#classes-objects-and-oop">Classes, Objects, and OOP</a></li><ol><li><a href="#string-conversions-with---str---and---repr--">String conversions with <code>__str__</code> and <code>__repr__</code></a></li><li><a href="#defining-exception-classes">Defining exception classes</a></li><li><a href="#cloning-objects">Cloning Objects</a></li><li><a href="#abstract-base-classes-abcs">Abstract Base Classes (ABCs)</a></li><li><a href="#namedtuples">Namedtuples</a></li><li><a href="#class-vs-instance-variables">Class vs Instance Variables</a></li><li><a href="#class-vs-instance-vs-static-methods">Class vs Instance vs Static Methods</a></li></ol><li><a href="#data-types">Data Types</a></li><ol><li><a href="#dictionaries">Dictionaries</a></li><li><a href="#arrays">Arrays</a></li></ol></ol>
+    <p><em>Some Notes on Python language features, with examples... </em></p><p><b>Motivation</b>: here I provide some notes made whilst reviewing the book "Python tricks" by Dan Bader, which is a very useful highly recommended book available <a href="https://dbader.org/products/python-tricks-book/" target="_blank">here</a>. Python has become the third most popular programming language behind Java and C, and it continues to become more popular. It is an easy to learn high-level language, that is fun to use and learn. Some of the more advanced and interesting language features are discussed here.</p><p><b>The Zen of Python</b><br /><em>
+Beautiful is better than ugly.<br />
+Explicit is better than implicit.<br />
+Simple is better than complex.<br />
+Complex is better than complicated.<br />
+Flat is better than nested.<br />
+Sparse is better than dense.<br />
+Readability counts.<br />
+Special cases aren't special enough to break the rules.<br />
+Although practicality beats purity.<br />
+Errors should never pass silently.<br />
+Unless explicitly silenced.<br />
+In the face of ambiguity, refuse the temptation to guess.<br />
+There should be one-- and preferably only one --obvious way to do it.<br />
+Although that way may not be obvious at first unless you're Dutch.<br />
+Now is better than never.<br />
+Although never is often better than <em>right</em> now.<br />
+If the implementation is hard to explain, it's a bad idea.<br />
+If the implementation is easy to explain, it may be a good idea.<br />
+Namespaces are one honking great idea -- let's do more of those!<br /></em></p><h2 id="miscellaneous">Miscellaneous:</h2><h3 id="variable-naming-underscores-and-dunders">Variable naming, underscores and dunders</h3><table><thead><tr><th>Variable name</th><th>Description</th></tr></thead><tbody><tr><td><code>_var</code></td><td>Hints to a programmer that the variable is intended for internal use, these variables will not be imported with a wildcard e.g. <code>from my_module import *</code> (although this is bad practice to use wildcard imports "explicit is better than implict").</td></tr><tr><td><code>var_</code></td><td>Useful when the name <code>var</code> is already in use and as an alternative to <code>_var</code></td></tr><tr><td><code>__var</code></td><td>Names starting with a dunder will be are rewritten to avoid conflicts in a process called name wrangling, such that the class name is added for example <code>_ClassName__var</code>. Name mangling is helpful for letting subclasses override methods without breaking intraclass method calls <a href="https://dbader.org/products/python-tricks-book/" target="_blank"> see here</a>.</td></tr><tr><td><code>__var__</code></td><td>For such variables name mangling is not applied, but these are reserved for special use in the language called 'magic' methods. This naming convention is best avoided to avoid any future collisions with the Python Language.</td></tr><tr><td><code>_</code></td><td>A temporary variable may be used to indicate a standalone or insignificant, temporary variable. This is by convention only, the <code>_</code> is also used REPL to access the last variable, which is very handy.</td></tr></tbody></table><h3 id="assertion-statements">Assertion Statements</h3><ul><li>The <code>assert</code> statement exists in almost every programming language. It helps detect problems early in a program, where the cause is clear, rather than later as a side-effect of some other operation.</li><li>When you do... <code>assert condition</code> ... you're telling the program to test that condition, and immediately trigger an error if the condition is false.</li><li>Assertions can include an optional message, and you can disable them when running the interpreter as <code>python -O script.py</code>. Since they can be disabled do not use <code>assert</code> for data validation.</li><li>To print a message if the assertion fails:  <code>assert False, "Oh no! This assertion failed!"</code></li><li>Do <strong>not</strong> use parenthesis to call <code>assert</code> like a function. It is a statement. If you do <code>assert(condition, message)</code> you'll be running the <code>assert</code> with a <code>(condition, message)</code> tuple as first parameter which always evaluates to True.</li></ul><h3 id="context-managers-and-the-with-statement">Context Managers and the with statement</h3><ul><li>The most common use of context managers is to manage resources, and this is why we use them when reading from a file. Opening a file consumes a resource (called a file descriptor), and this resource is limited by the OS.</li><li>To check on unix the number of files that can be opened see:</li></ul><pre><code>$ cat /proc/sys/fs/file-max 
+1188554
+</code></pre><ul><li>A file descriptor is an integer handle assigned to an open file by the OS rather than accessing the file itself. This is useful to pass references to  files between processes and to maintain kernel security.</li><li>A file descriptor is leaked by not closing opened files, in python this is done by calling <code>open()</code> without a <code>close()</code> statement.</li><li>For example, using this statement the <code>hello.txt</code> will always be closed:</li></ul><pre><code class="python">with open('hello.txt', 'w') as f:
+    f.write('hello, world!')
+</code></pre><ul><li>The with statement simplifies exception handling by encapsulating standard uses of <code>try/finally</code> statements in context-managers. This ensures the safe  acquisition and release of system resources, acquiring in the with context and leaving releasing when execution leaves the with context.</li></ul><h3 id="object-comparisons-is-vs-">Object comparisons: <code>is</code> vs <code>==</code></h3><ul><li>the <code>==</code> checks for equality, the <code>is</code> operator compares identities.</li></ul><h3 id="avoiding-long-ifelse-chains">Avoiding Long if/else chains</h3><pre><code class="python">&gt;&gt;&gt; def dispatch_if(operator, x, y):
+...     if operator == 'add':
+...         return x + y
+...     elif operator == 'sub':
+...         return x - y
+...     elif operator == 'mul':
+...         return x * y
+...     elif operator == 'div':
+...         return x / y
+</code></pre><p>with</p><pre><code class="python">&gt;&gt;&gt; def dispatch_dict(operator, x, y):
+...     return {
+...         'add': lambda: x + y,
+...         'sub': lambda: x - y,
+...         'mul': lambda: x * y,
+...         'div': lambda: x / y,
+...     }.get(operator, lambda: None)()
+</code></pre><h3 id="dictionary-merging">Dictionary merging</h3><ul><li>In <em>Python 3.5+</em> dictionaries can be merged as <code>zs = {**xs, **ys}</code> where duplicate entries are overwritten by the rightmost object in this case <code>ys</code>.</li></ul><h2 id="functions">Functions:</h2><h3 id="lexical-closures">Lexical closures</h3><ul><li>Functions that access variables in a parent function are called 'lexical closures'</li><li>A closure remembers the values from its enclosing lexical scope even when the program flow is no longer in that scope.</li></ul><pre><code class="python">def get_speak_func(text, volume):
+    def whisper():
+        return text.lower() + '...'
+    def yell():
+        return text.upper() + '...'
+    if volume &gt; 0.5:
+        return yell
+    else:
+        return whisper
+</code></pre><h3 id="lambda-functions">Lambda functions:</h3><ul><li>Lambda functions are single-expression functions that are not necessarily bound to a name (anonymous)</li><li>Lambda functions can’t use regular Python statements and always include an implicit return statement.</li></ul><pre><code class="python">&gt;&gt;&gt; add = lambda x, y: x + y
+&gt;&gt;&gt; add(5, 3)
+8
+</code></pre><p>or called on one line</p><pre><code class="python">&gt;&gt;&gt; (lambda x, y: x + y)(5, 3)
+8
+</code></pre><ul><li>This is conceptually the same as using <code>def</code> but written inline.</li></ul><h2 id="decorators-functions">Decorators functions:</h2><ul><li>Extend, and modify the behaviour of callable functions, without modifying
+the callable itself, useful for:
+<ul><li>logging</li><li>enforcing access control and authentication</li><li>instrumentation and timing functions</li><li>rate-limiting</li><li>caching</li></ul></li><li>Decorators take a callable as input and return another callable</li><li>Functions are decorated with the <code>@</code> syntax either at definition or at call</li><li>This example decorator gives some useful info for debugging a function:</li></ul><pre><code class="python">import functools
+
+def trace(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        print(f'TRACE: calling {func.__name__}() '
+              f'with {args}, {kwargs}')
+        original_result = func(*args, **kwargs)
+        print(f'TRACE: {func.__name__}() '
+              f'returned {original_result!r}')
+        return original_result
+    return wrapper
+</code></pre><ul><li>Applying the <code>functools.wraps</code> to the wrapper closure returned by the decorator carries over the docstring and other metadata of the input function.</li></ul><h3 id="args-and-kwargs">*args and **kwargs</h3><ul><li><code>*args</code> and <code>**kwargs</code> let you write functions with a variable number of arguments in Python.</li><li><code>*args</code> collects extra positional arguments as a tuple. <code>**kwargs</code> collects the extra keyword arguments as a dictionary.</li><li>The actual syntax is <code>*</code> and <code>**</code> . Calling them args and kwargs is just a convention (and one you should stick to).</li></ul><h3 id="the-point-of-no-return">The point of no return</h3><ul><li>Python adds an implicit <code>None</code> if a return statement is not written</li></ul><h2 id="classes-objects-and-oop">Classes, Objects, and OOP</h2><h3 id="string-conversions-with---str---and---repr--">String conversions with <code>__str__</code> and <code>__repr__</code></h3><ul><li>To string conversions can be set with <code>__str__</code> and <code>__repr__</code> dunder class methods</li><li>The results of <code>__str__</code> should be readable, and <code>__repr__</code> unambiguous.</li><li>Always add a <code>__repr__</code> since the default implemntation of <code>__str__</code> just calls <code>__repr__</code></li></ul><pre><code class="python">class Car:
+    def __init__(self, color, mileage):
+        self.color = color
+        self.mileage = mileage def __repr__(self):
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'{self.color!r}, {self.mileage!r})')
+
+    def __str__(self):
+        return f'a {self.color} car'
+</code></pre><h3 id="defining-exception-classes">Defining exception classes</h3><ul><li>Makes code easier to debug, and states intent</li><li>Can define logically grouped exception hierarchies</li></ul><pre><code class="python">class BaseValidationError(ValueError):
+    pass
+
+class NameTooShortError(BaseValidationError):
+    pass
+
+class NameToolongError(BaseValidationError):
+    pass
+</code></pre><h3 id="cloning-objects">Cloning Objects</h3><ul><li>A <em>shallow copy</em> constructs a new collection object and then populates it with
+references to the child objects found in the original, it is only one level
+deep <code>copy.copy()</code></li><li>A <em>deep copy</em> makes the copying process recursive, constructing a new
+collection then populating it with copes of the child objects found in the
+original <code>copy.deepcopy()</code>.</li></ul><pre><code class="python">import copy
+xs = [[1, 2, 3], [4, ,5, 6]]
+zs = copy.deepcopy(xs)
+</code></pre><h3 id="abstract-base-classes-abcs">Abstract Base Classes (ABCs)</h3><ul><li>ABCs ensure that derived classes implement particular methods from the base
+class at instantiation time.</li><li>Using ABCs can help avoid bugs and makes class hierarchies easier to maintain</li></ul><pre><code class="python">from abc import ABC, abstractmethod 
+class Animal(ABC): 
+    def move(self): 
+        pass
+  
+class Human(Animal): 
+    def move(self): 
+        print("I can walk and run") 
+  
+class Snake(Animal): 
+    def move(self): 
+        print("I can crawl") 
+  
+class Dog(Animal): 
+    def move(self): 
+        print("I can bark") 
+  
+class Lion(Animal): 
+    def move(self): 
+        print("I can roar") 
+</code></pre><h3 id="namedtuples">Namedtuples</h3><ul><li><code>collection.namedtuple</code> is a memory-efficient shortcut to manually define an immutable class in Python.</li><li>Namedtuples can help clean up your code by enforcing an easier to understand structure on your data.</li><li>Immutatble contains, accessed by human readable index.</li></ul><pre><code class="python">&gt;&gt;&gt; from collections import namedtuple
+&gt;&gt;&gt; Car = namedtuple('Car' , 'color mileage')
+</code></pre><h3 id="class-vs-instance-variables">Class vs Instance Variables</h3><ul><li><strong>Class variables</strong> are declared inside the class deﬁnition (but outside of any instance methods). They’re not tied to any particular instance of a class. Instead, class variables store their contents on the class itself, and all objects created from a particular class share access to the same set of class variables. This means, for example, that modifying a class variable aﬀects all object instances at the same time.</li><li><strong>Instance variables</strong> are always tied to a particular object instance. Their contents are not stored on the class, but on each individual object created from the class. Therefore, the contents of an instance variable are completely independent from one object instance to the next. And so, modifying an instance variable only aﬀects one object instance at a time.</li></ul><pre><code class="python">class Dog: 
+    num_legs = 4 # &lt;- Class variable 
+    
+    def __init__(self, name): 
+        self.name = name # &lt;- Instance variable
+</code></pre><h3 id="class-vs-instance-vs-static-methods">Class vs Instance vs Static Methods</h3><ul><li><strong>Instance methods</strong>: the method named <code>MyClass.method</code>, is a regular instance method. It takes one parameter, <code>self</code>, which points to an instance of <code>MyClass</code> when the method is called. Through the self parameter, instance methods can freely access attributes and other methods on the same object. This gives them a lot of power when it comes to modifying an object’s state. Not only can they modify object state, instance methods can also access the class itself through the <code>self.__class__</code> attribute.</li><li><strong>Class methods</strong>: the <code>MyClass.classmethod</code>, marked with a <code>@classmethod</code> decorator takes a <code>cls</code> parameter that points to the class and not the object instance when the method is called. Since the class method only has access to this cls argument, it can’t modify object instance state. That would require access to self . However, class methods can still modify class state that applies across all instances of the class.</li><li><strong>Static methods</strong>: the third method, <code>MyClass.staticmethod</code> is marked with a <code>@staticmethod</code> decorator to flag it as a static method. This type of method doesn’t take a self or a <code>cls</code> parameter, although, of course, it can be made to accept an arbitrary number of other parameters. As a result, a static method cannot modify object state or class state. Static methods are restricted in what data they can access they are primarily a way to namespace your methods.</li></ul><pre><code class="python">class MyClass:
+    def method(self):
+        return 'instance method called', self
+
+    @classmethod
+    def classmethod(cls):
+        return 'class method called', cls
+
+    @staticmethod
+    def staticmethod():
+        return 'static method called'
+</code></pre><h2 id="data-types">Data Types</h2><h3 id="dictionaries">Dictionaries</h3><ul><li>maps, hasmaps, lookup tables, associative arrays</li><li>OrderedDict maintains order of insertion, this is standard as of Python 3.7</li><li>DefaultDict defines a default value for dictionary keys and creates if not available for missing keys</li><li><code>collections.ChainMap</code> groups dictionaries into a single mapping <code>ChainMap(dict1, dict2)</code></li></ul><h3 id="arrays">Arrays</h3><ul><li><code>list</code> mutable dynamic arrays</li><li><code>tuple</code> - immutable containers</li><li><code>array.array('f, [1.0, 8.0]')</code> space-efficient storage of basic C-style data types, constrained
+to a single data type, so are more space efficient than lists or tuples.</li><li><code>str</code> is an immutable store of textual data as unicode characters</li><li><code>bytes</code> objects are immutable sequences of single bytes, conceptually similar to string objects.</li><li><code>bytesarray</code> - mutable array of single bytes</li><li><code>set</code> an unordered collection of objects that does not allow duplicates</li><li><code>frozenset</code> an immutable version of a set (no insert or deletion)</li><li><code>multisets</code> in <code>collections.Counter</code> implements a multiset that allows elements in the set to have more than one occurance</li><li><code>stacks</code> - last-in, first-out (LIFO) semantics, don't allow for random access.</li><li><code>queue</code> - first-in, first-out (FIFO)</li><li><code>deque</code> - a fast double-ended queue doubly linked lists</li></ul>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/notes/">notes</a>
+    
+    <a href="/tags-output/python/">python</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/2019-09-21-unix-file-system/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Unix: Filesystem Dirs</div></a>
+    
+    
+    <a class="next" href="/posts/2018-04-27-bitcoin-paper-companion/"><div class="nav-text"">Bitcoin: A Reader&#39;s Companion</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://williamgrimes.xyz/posts/2019-09-07-python-notes/";
+            this.page.identifier = "Python: Language Features";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//williamgrimes.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2021 William Grimes
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

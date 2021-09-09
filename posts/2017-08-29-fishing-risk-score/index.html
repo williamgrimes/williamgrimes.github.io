@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>William Grimes: A Fishing Risk Framework from Satellites and Ocean Data</title>
+        
+<meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
+
+<meta name="description" content="This proof-of-concept system assess vessels in a risk framework considering multiple factors to suggest the likelihood that a vessel has been engaging in illegal, unregulated, or unreported (IUU) fishing. The framework combines automatic identification system (AIS) tracking data with satellite imagery in construction of a risk framework. The framework combines several indicators including: the likelihood that a vessel has previously fished in a marine protected area (MPA) or exclusive economic zone (EEZ), and the intermittency of the vessel&#39;s AIS signal.">
+
+<meta property="og:description" content="This proof-of-concept system assess vessels in a risk framework considering multiple factors to suggest the likelihood that a vessel has been engaging in illegal, unregulated, or unreported (IUU) fishing. The framework combines automatic identification system (AIS) tracking data with satellite imagery in construction of a risk framework. The framework combines several indicators including: the likelihood that a vessel has previously fished in a marine protected area (MPA) or exclusive economic zone (EEZ), and the intermittency of the vessel&#39;s AIS signal.">
+
+<meta property="og:url" content="http://williamgrimes.xyz/posts/2017-08-29-fishing-risk-score/" />
+<meta property="og:title" content="A Fishing Risk Framework from Satellites and Ocean Data" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" href="/img/headshot.png">
+        <link type="text/css" href="/fonts/sample.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="William Grimes" href="/">
+                    <div class="text desktop-and-tablet-only">William Grimes</div>
+                    <div class="text mobile-only">William Grimes</div>
+                    <img class="icon" src="/img/headshot.png">
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages/cv/"><div class="menu-item-text">Curriculum Vitae</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+
+                <nav id="socialmedia">
+                    <ul>
+                      <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github fa-2x" style="color:#ECEFF4"></span></a></li>
+                      <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow fa-2x" style="color:#ECEFF4"></span></a></li>
+                      <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin fa-2x" style="color:#ECEFF4"></span></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>A Fishing Risk Framework from Satellites and Ocean Data</h1>
+        <div class="byline">
+            <span class="date">29 August 2017</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>This proof-of-concept system assess vessels in a risk framework considering multiple factors to suggest the likelihood that a vessel has been engaging in illegal, unregulated, or unreported (IUU) fishing. The framework combines automatic identification system (AIS) tracking data with satellite imagery in construction of a risk framework. The framework combines several indicators including: the likelihood that a vessel has previously fished in a marine protected area (MPA) or exclusive economic zone (EEZ), and the intermittency of the vessel's AIS signal.</p><p>Vessel risk indicators may be considered individually, or weighted according to the users interest, or combined into a unified vessel risk score. This information is displayed in a front end web application, which gives governments, NGOs, retailers, and enforcement agencies the information to distinguish responsible and legitimate vessels from vessels engaging in IUU fishing. For example, this could be used by retailers to check the risk score of vessels that supply their tuna, or to guide enforcement agencies in choosing which areas to patrol.</p><p>The below image demonstrates how the tool can be interacted with to show for a unique vessel its aggregate risk score as well as the components contributing to this score, and it's most recent location.</p><div align="center"><img src="/img/front_end.jpg" alt="Front End" style="width:60%" /></div><h3 id="background">Background</h3><p>Illegal and overfishing are devastating our oceans. It is estimated that 70% of global fisheries are overexploited and many are now on the brink of collapse. Tuna populations, which are a critical apex predator in many marine ecosystems, have declined by over 90% in the past 40 years. Unless serious action is taken, we may be on the brink of large scale fisheries collapse, which could devastate the environment and the livelihoods of millions around the world that depend on such fisheries.</p><p>Given concern about the challenges facing our oceans, the United Nations convened a High Level Summit in June 2017 at the UN Headquarters in New York to review progress on the Ocean SDG (Goal 14). At this summit, the World Economic Forum helped convene major retailers, fishery firms, Governments and Civil Society around a Declaration to fully trace our most precarious fisheries by 2020, starting with Tuna fisheries. DSSG also made a commitment to help develop Data Science and Machine Learning Talent to support such efforts on our oceans.</p><p>In just the last 5 years, new data tracking technologies have come online, triggered by low cost satellites and sensors and rapid advances in data processing and machine learning. This has given fisheries managers powerful new resources to track fishing activity globally, and identify risky or illegal activity.</p><p>One particularly challenging problem historically had been to identify and end Illegal, Unreported and Unregulated fishing (IUU). These IUU fishing techniques include illegally extracting fish from waters of other nations, removing fish from designated Marine Protected Areas, catching fish using illegal and ecologically damaging techniques, and under-declaring fish by transshipment at sea. Such practices are especially rife in the rich tropical waters of Southeast Asia due to the burgeoning demand in the region, and challenges of enforcement.</p><p>Our goal is to create an Open-Source Risk Tool by combining multiple satellite data sources (including combining AIS with satellite imagery and machine learning) to help combat IUU fishing, and creating a ‘DSSG Fishing Risk Score’. This data science approach to detecting IUU fishing could ultimately guide governance, inform policy making and improve enforcement. In this effort we are advised by a global network of experts. The DSSG Fishing Risk Framework, Vessel Scoring, and project results will be public, and all code will be made available as open source to contribute to the ongoing efforts of NGOs, Universities and International Organizations to end IUU fishing globally.</p><h2 id="presentation">Presentation</h2><div align="center"><iframe title="YouTube video player" class="youtube-player" type="text/html" width="560" height="315" src="http://www.youtube.com/embed/f4Q858hmZP0" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div><h2 id="people">People</h2><p><strong>Fellows:</strong> William Grimes, Iván Higuera-Mendieta, Shubham Tomar</p><p><strong>Mentor:</strong> Jane Zanzig</p><p><strong>Project Manager:</strong> Paul van der Boor</p><p><strong>Project Partner:</strong> World Economic Forum’s New Vision for Oceans Initiative (Nishan Degnarain), Spire (Theresa Condor, Kyle Brazil), Digital Globe (Rhiannan Price, Har-Noy, Shay), Planet Labs (Will Marshall, Joseph Mascaro)</p><p><strong>Project Chair:</strong> Euro Beinat</p><p><strong>Expert Advisors:</strong> Steve Adler (IBM Watson), Dan Schaeffer (Pew Trusts), Prof. Douglas McCauley (UCSB), Dr. Gregory Stone (Conservation International), Paul Wood (Skytruth, Nathan Miller), Kim Friedman (FAO)</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/DSSG2017/wef_oceans/" target="_blank">Github</a></li><li><a href="https://dssg.uchicago.edu/project/fishingriskframework/" target="_blank">Website</a></li><li><a href="/docs/poster_wef.pdf" target="_blank">Poster</a></li><li><a href="http://www.youtube.com/embed/f4Q858hmZP0" target="_blank">Presentation</a></li></ul>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/illegal%20fishing/">illegal fishing</a>
+    
+    <a href="/tags-output/machine%20learning/">machine learning</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/2018-04-16-nuclei-segmentation/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Advancing Medical Discovery through Nuclei Segmentation</div></a>
+    
+    
+    <a class="next" href="/posts/2017-04-01-text-mining-fire-incident-reports/"><div class="nav-text"">London Fire Brigade - Topic Modelling of Incident Reports</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://williamgrimes.xyz/posts/2017-08-29-fishing-risk-score/";
+            this.page.identifier = "A Fishing Risk Framework from Satellites and Ocean Data";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//williamgrimes.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2021 William Grimes
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>
