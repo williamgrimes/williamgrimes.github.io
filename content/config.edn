@@ -20,8 +20,8 @@
  :theme                        "custom"
  :resources                    ["img" "CNAME"]
  :keep-files                   [".git"]
- :disqus?                      false
- :disqus-shortname             ""
+ :disqus?                      true
+ :disqus-shortname             "williamgrimes"
  :ignored-files                [#"\.#.*" #".*\.swp$"]
  :previews?                    true
  :posts-per-page               10
