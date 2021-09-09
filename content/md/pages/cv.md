@@ -235,7 +235,7 @@ AWARDS
   </div>
   <div class="column right">
     <p>
-    <em>Tuning the endothelial response: differential release of exocytic cargos from Weibel-Palade Bodies.</em>
+    <em><b>Tuning the endothelial response: differential release of exocytic cargos from Weibel-Palade Bodies.</em></b>
     <br>T.D. Nightingale, J. McCormack, W. Grimes, C. Robinson, M. Lopes da Silva, I.J. White, A. Vaughan, L.P. Cramer, D.F. Cutler., <em>Journal of Thrombosis and Haemostasis</em>, June, 2018
     <br><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jth.14218" target="_blank">onlinelibrary.wiley.com/doi/abs/10.1111/jth.14218</a></p>
     </p>
@@ -243,7 +243,7 @@ AWARDS
     ----
     -->
     <p>
-    <em>Weibel-Palade body size modulates the adhesive activity of its von Willebrand Factor cargo in cultured endothelial cells.</em>
+    <em><b>Weibel-Palade body size modulates the adhesive activity of its von Willebrand Factor cargo in cultured endothelial cells.</em></b>
     <br>F. Ferraro, M. Lopes da Silva, W. Grimes, H.K. Lee, R. Ketteler, J. Kriston-Vizi, D. Cutler., <em>Nature: Scientific Reports</em>, August, 2016
     <br><a href="https://www.nature.com/articles/srep32473https://onlinelibrary.wiley.com/doi/abs/10.1111/jth.14218" target="_blank">nature.com/articles/srep32473</a></p>
     </p>
@@ -251,7 +251,7 @@ AWARDS
     ----
     -->
     <p>
-    <em>Super-resolution microscopy as a potential approach to diagnosis of platelet granule disorders.</em>
+    <em><b>Super-resolution microscopy as a potential approach to diagnosis of platelet granule disorders.</em></b>
     <br>D.Westmoreland, M.Shaw, W.Grimes, D.Metcalf, J.J. Burden, K. Gomez, A.E. Knight, D.F. Cutler, <em>Journal of Thrombosis and Haemostasis</em>, March, 2016
     <br><a href="https://www.ncbi.nlm.nih.gov/pubmed/26806224" target="_blank"></a>www.ncbi.nlm.nih.gov/pubmed/26806224</p>
     </p>
