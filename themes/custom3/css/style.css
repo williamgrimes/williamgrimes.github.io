@@ -45,24 +45,24 @@ body {
     color: #555;
     font-weight: 400;
     line-height: 28px;
-    background: #FFF;
+    background: #ECEFF4;
 
     text-rendering: optimizeLegibility;
     vertical-align: baseline;
 }
 
 ::selection {
-    background: #A71E2E;
-    color: #FFF;
+    background: #3B4252;
+    color: #ECEFF4;
 }
 
 ::-moz-selection {
-    background: #A71E2E;
-    color: #FFF;
+    background: #3B4252;
+    color: #ECEFF4;
 }
 
 a {
-    color: #A71E2E;
+    color: #3B4252;
     text-decoration: none;
 }
 
@@ -85,7 +85,7 @@ img.imgfull {
     width: 100%;
     max-width: 1000px;
     margin: 0 0 20px 0;
-    border-top: 5px solid #A71E2E;
+    border-top: 5px solid #3B4252;
 }
 
 /* ==================================================
@@ -118,8 +118,8 @@ img.imgfull {
     bottom: 0;
     width: 100%;
     max-width: 280px;
-    background: #A71E2E;
-    color: #FFF;
+    background: #3B4252;
+    color: #ECEFF4;
     z-index: 3;
     overflow-y: auto;
 
@@ -135,7 +135,7 @@ img.imgfull {
     display: block;
     padding: 30px 20px;
     width: 100%;
-    color: #FFF;
+    color: #ECEFF4;
     margin: 0 0 20px auto;
 }
 
@@ -183,7 +183,7 @@ img.imgfull {
 
 #left #socialmedia ul li a {
     font-size: 23px;
-    color: #FFF;
+    color: #ECEFF4;
     opacity: 0.4;
 }
 

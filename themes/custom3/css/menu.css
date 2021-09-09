@@ -14,7 +14,7 @@
 
 #menucont ul.menu li a {
     float: left;
-    color: #FFF;
+    color: #ECEFF4;
     width: 100%;
     padding: 10px 20px;
     margin: 0;
@@ -33,6 +33,7 @@
 #menucont ul.menu li.active a,
 #menucont ul.menu li.active a:hover {
     background: rgba(0, 0, 0, 0.2);
+    color: #D08770;
     font-weight: 600;
 }
 
@@ -67,7 +68,7 @@
         padding: 5px 0;
         text-indent: 0;
         line-height: 23px;
-        color: rgba(255, 255, 255, 0.6);
+        color: #ECEFF4;
         background: none;
         font-weight: 300;
         //text-transform: uppercase;
@@ -76,12 +77,12 @@
     #menucont ul.menu li.active a,
     #menucont ul.menu li.active a:hover {
         font-weight: 600;
-        color: #FFF;
+        color: #ECEFF4;
         background: none;
     }
 
     #menucont ul.menu li a:hover {
-        color: #FFF;
+        color: #ECEFF4;
         background: none;
     }
 
@@ -96,7 +97,7 @@
         display: block;
         cursor: pointer;
         text-align: left;
-        color: #FFF;
+        color: #ECEFF4;
         //text-transform: uppercase;
     }
 
