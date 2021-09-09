@@ -12,6 +12,10 @@
 @import url("http://fonts.googleapis.com/css?family=Charter:400,700");
 @import url("{{blog-prefix}}/fonts/sample.css");
 
+#post {
+    margin: 0 auto;
+    max-width: 700px; }
+
 /* ==================================================
    Global Styles
 ================================================== */
@@ -22,13 +26,18 @@
     box-sizing: border-box;
 }
 
+
+
+/*
 pre code{
     display: block;
     overflow-x: auto;
-    background: #2d2d2d;
+    background-color: #EEEEEE;
     color: #cccccc;
-    padding: 0.5em;
+    border-radius: 0px;
+    padding: 1px 3px;
 }
+*/
 
 html {
     height: 100%;
@@ -41,10 +50,11 @@ html {
 
 body {
     font-family: "Charter";
-    font-size: 15px;
-    color: #555;
+    font-size: 16px;
+    color: #2E3440;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.25;
+    font-size-adjust: 0.5;
     background: #ECEFF4;
 
     text-rendering: optimizeLegibility;
@@ -62,13 +72,14 @@ body {
 }
 
 a {
-    color: #3B4252;
+    color: #5E81AC;
     text-decoration: none;
 }
 
 a:hover {
-    color: #222;
+    color: #D08770;
 }
+
 
 /* ==================================================
    Images
@@ -199,6 +210,7 @@ img.imgfull {
     max-width: 1240px;
     z-index: 2;
     padding: 40px 50px 40px 320px;
+    line-height: 1.25;
 }
 
 #right p {
