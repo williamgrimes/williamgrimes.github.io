@@ -420,8 +420,8 @@ img {
       display: block;
       padding: 0px;
       background: rgba(0, 0, 0, 0);
-      height: 250px;
-      width: 250px;
+      height: 150px;
+      width: 150px;
       padding-top: 0px;
       padding-bottom: 0px;
       margin: 0 auto 0px;}
@@ -505,6 +505,7 @@ img {
 ================================================== */
 
 #two-column {
+  padding-left: 20px;
   width: 1000px;
 }
 
