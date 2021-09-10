@@ -181,8 +181,8 @@ img.imgfull {
 #left #socialmedia ul {
     position: absolute;
     bottom: 30px;
-    left: 30px;
-    margin: 0;
+    left: 55px;
+    margin: 0 auto;
 }
 
 #left #socialmedia ul li {
@@ -193,9 +193,9 @@ img.imgfull {
 }
 
 #left #socialmedia ul li a {
-    font-size: 23px;
+    font-size: 35px;
     color: #ECEFF4;
-    opacity: 0.4;
+    opacity: 0.1;
 }
 
 #left #socialmedia ul li a:hover {
