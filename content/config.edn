@@ -17,7 +17,7 @@
  :archive-group-format         "yyyy"
  :sass-src                     []
  :sass-path                    "sass"
- :theme                        "custom"
+ :theme                        "charter"
  :resources                    ["img" "CNAME"]
  :keep-files                   [".git"]
  :disqus?                      true
