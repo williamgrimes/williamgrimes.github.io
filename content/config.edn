@@ -18,7 +18,7 @@
  :sass-src                     []
  :sass-path                    "sass"
  :theme                        "charter"
- :resources                    ["img" "CNAME"]
+ :resources                    ["img" "CNAME" "fonts"]
  :keep-files                   [".git"]
  :disqus?                      true
  :disqus-shortname             "williamgrimes"
