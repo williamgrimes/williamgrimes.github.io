@@ -3,7 +3,7 @@
  :toc false
  :tags  ["unix" "notes"]}
 
-In Unix everything to be a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at `/` that contains all other files and directories.
+In Unix everything is a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at `/` that contains all other files and directories.
 
 A file or directory is uniquely identified by its path, and a unique identifier called an inode.
 
@@ -86,4 +86,3 @@ Directories have specific purposes and generally hold the same types of files, t
 - srv stands for service
 - contains server specific services related data
 - for example, `/srv/cvs` contains cvs related data
-
