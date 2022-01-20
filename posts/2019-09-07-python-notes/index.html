@@ -7,7 +7,7 @@
     <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
     <!-- Modified to fit Cryogen.-->
     <meta charset="UTF-8">
-    <title>William Grimes: Python: Language Features</title>
+    <title>williamgrimes.xyz: Python: Language Features</title>
     
 <meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
 
@@ -43,34 +43,19 @@
 <div id="left">
 
     <p id="logo">
-        <a title="William Grimes" href="/">
+        <a title="williamgrimes.xyz" href="/">
             <!-- <span class="fa fa-rocket"></span> -->
-            <span class="text">William Grimes</span>
+            <br>
             <img class="icon" src="/img/headshot.png">
+            <br>
+            <span class="author">William Grimes</span>
+            <br>
+            <span class="title">(innovate iterate integrate)</span>
         </a>
     </p>
 
-    <div id="menucont" class="bodycontainer clearfix">
-        <div class="menutitle">
-            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
-        </div>
-        <ul class="menu">
-            <li ><a title="Home" href="/">Home</a></li>
-            <li ><a title="Archives" href="/archives/">Archives</a></li>
-            
-            <li ><a title="Tags" href="/tags/">Tags</a></li>
-            
-            
-            <li >
-                <a href="/pages/cv/">Curriculum Vitae</a>
-            </li>
-            
-            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
-        </ul>
-    </div>
-
     <div id="socialmedia" class="clearfix">
-        <ul style="font-variant-caps:">
+        <ul>
             <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
             <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
             <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
@@ -80,6 +65,24 @@
         </ul>
     </div>
 
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/"> &#187; Home</a></li>
+            <li ><a title="Archives" href="/archives/"> &#187; Archives</a></li>
+            
+            <li ><a title="Tags" href="/tags/"> &#187; Tags</a></li>
+            
+            
+            <li >
+                <a href="/pages/cv/">&#187; Curriculum Vitae</a>
+            </li>
+            
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
 </div>
 
 <div id="right" class="clearfix">
@@ -88,13 +91,14 @@
     <div class="post-header">
     <div id="post-meta">
         <h1>Python: Language Features</h1>
+        <br>
         <span class="date" style="font-variant-caps: small-caps;">7 September 2019</span>
         
     </div>
 </div>
 <div>
     <br/>
-    <ol class="toc"><li><a href="#miscellaneous">Miscellaneous:</a></li><ol><li><a href="#variable-naming-underscores-and-dunders">Variable naming, underscores and dunders</a></li><li><a href="#assertion-statements">Assertion Statements</a></li><li><a href="#context-managers-and-the-with-statement">Context Managers and the with statement</a></li><li><a href="#object-comparisons-is-vs-">Object comparisons: <code>is</code> vs <code>==</code></a></li><li><a href="#avoiding-long-ifelse-chains">Avoiding Long if/else chains</a></li><li><a href="#dictionary-merging">Dictionary merging</a></li></ol><li><a href="#functions">Functions:</a></li><ol><li><a href="#lexical-closures">Lexical closures</a></li><li><a href="#lambda-functions">Lambda functions:</a></li></ol><li><a href="#decorators-functions">Decorators functions:</a></li><ol><li><a href="#args-and-kwargs">*args and **kwargs</a></li><li><a href="#the-point-of-no-return">The point of no return</a></li></ol><li><a href="#classes-objects-and-oop">Classes, Objects, and OOP</a></li><ol><li><a href="#string-conversions-with---str---and---repr--">String conversions with <code>__str__</code> and <code>__repr__</code></a></li><li><a href="#defining-exception-classes">Defining exception classes</a></li><li><a href="#cloning-objects">Cloning Objects</a></li><li><a href="#abstract-base-classes-abcs">Abstract Base Classes (ABCs)</a></li><li><a href="#namedtuples">Namedtuples</a></li><li><a href="#class-vs-instance-variables">Class vs Instance Variables</a></li><li><a href="#class-vs-instance-vs-static-methods">Class vs Instance vs Static Methods</a></li></ol><li><a href="#data-types">Data Types</a></li><ol><li><a href="#dictionaries">Dictionaries</a></li><li><a href="#arrays">Arrays</a></li></ol></ol>
+    <h3>Contents</h3><ol class="toc"><li><a href="#miscellaneous">Miscellaneous:</a></li><ol><li><a href="#variable-naming-underscores-and-dunders">Variable naming, underscores and dunders</a></li><li><a href="#assertion-statements">Assertion Statements</a></li><li><a href="#context-managers-and-the-with-statement">Context Managers and the with statement</a></li><li><a href="#object-comparisons-is-vs-">Object comparisons: <code>is</code> vs <code>==</code></a></li><li><a href="#avoiding-long-ifelse-chains">Avoiding Long if/else chains</a></li><li><a href="#dictionary-merging">Dictionary merging</a></li></ol><li><a href="#functions">Functions:</a></li><ol><li><a href="#lexical-closures">Lexical closures</a></li><li><a href="#lambda-functions">Lambda functions:</a></li></ol><li><a href="#decorators-functions">Decorators functions:</a></li><ol><li><a href="#args-and-kwargs">*args and **kwargs</a></li><li><a href="#the-point-of-no-return">The point of no return</a></li></ol><li><a href="#classes-objects-and-oop">Classes, Objects, and OOP</a></li><ol><li><a href="#string-conversions-with---str---and---repr--">String conversions with <code>__str__</code> and <code>__repr__</code></a></li><li><a href="#defining-exception-classes">Defining exception classes</a></li><li><a href="#cloning-objects">Cloning Objects</a></li><li><a href="#abstract-base-classes-abcs">Abstract Base Classes (ABCs)</a></li><li><a href="#namedtuples">Namedtuples</a></li><li><a href="#class-vs-instance-variables">Class vs Instance Variables</a></li><li><a href="#class-vs-instance-vs-static-methods">Class vs Instance vs Static Methods</a></li></ol><li><a href="#data-types">Data Types</a></li><ol><li><a href="#dictionaries">Dictionaries</a></li><li><a href="#arrays">Arrays</a></li></ol></ol>
     <p><em>Some Notes on Python language features, with examples... </em></p><p><b>Motivation</b>: here I provide some notes made whilst reviewing the book "Python tricks" by Dan Bader, which is a very useful highly recommended book available <a href="https://dbader.org/products/python-tricks-book/" target="_blank">here</a>. Python has become the third most popular programming language behind Java and C, and it continues to become more popular. It is an easy to learn high-level language, that is fun to use and learn. Some of the more advanced and interesting language features are discussed here.</p><p><b>The Zen of Python</b><br /><em>
 Beautiful is better than ugly.<br />
 Explicit is better than implicit.<br />
@@ -271,7 +275,7 @@ to a single data type, so are more space efficient than lists or tuples.</li><li
 </div>
 
 <hr/>
-<div id="footercont" class="clearfix">Copyright &copy; 2021 William Grimes
+<div id="footercont" class="clearfix">Copyright &copy; 2022 William Grimes
     <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
 
 </div>

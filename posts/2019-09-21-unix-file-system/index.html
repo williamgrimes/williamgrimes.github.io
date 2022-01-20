@@ -7,13 +7,13 @@
     <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
     <!-- Modified to fit Cryogen.-->
     <meta charset="UTF-8">
-    <title>William Grimes: Unix: Filesystem Dirs</title>
+    <title>williamgrimes.xyz: Unix: Filesystem Dirs</title>
     
 <meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
 
-<meta name="description" content="In Unix everything to be a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at / that contains all other files and directories.">
+<meta name="description" content="In Unix everything is a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at / that contains all other files and directories.">
 
-<meta property="og:description" content="In Unix everything to be a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at / that contains all other files and directories.">
+<meta property="og:description" content="In Unix everything is a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at / that contains all other files and directories.">
 
 <meta property="og:url" content="http://williamgrimes.xyz/posts/2019-09-21-unix-file-system/" />
 <meta property="og:title" content="Unix: Filesystem Dirs" />
@@ -43,34 +43,19 @@
 <div id="left">
 
     <p id="logo">
-        <a title="William Grimes" href="/">
+        <a title="williamgrimes.xyz" href="/">
             <!-- <span class="fa fa-rocket"></span> -->
-            <span class="text">William Grimes</span>
+            <br>
             <img class="icon" src="/img/headshot.png">
+            <br>
+            <span class="author">William Grimes</span>
+            <br>
+            <span class="title">(innovate iterate integrate)</span>
         </a>
     </p>
 
-    <div id="menucont" class="bodycontainer clearfix">
-        <div class="menutitle">
-            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
-        </div>
-        <ul class="menu">
-            <li ><a title="Home" href="/">Home</a></li>
-            <li ><a title="Archives" href="/archives/">Archives</a></li>
-            
-            <li ><a title="Tags" href="/tags/">Tags</a></li>
-            
-            
-            <li >
-                <a href="/pages/cv/">Curriculum Vitae</a>
-            </li>
-            
-            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
-        </ul>
-    </div>
-
     <div id="socialmedia" class="clearfix">
-        <ul style="font-variant-caps:">
+        <ul>
             <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
             <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
             <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
@@ -80,6 +65,24 @@
         </ul>
     </div>
 
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/"> &#187; Home</a></li>
+            <li ><a title="Archives" href="/archives/"> &#187; Archives</a></li>
+            
+            <li ><a title="Tags" href="/tags/"> &#187; Tags</a></li>
+            
+            
+            <li >
+                <a href="/pages/cv/">&#187; Curriculum Vitae</a>
+            </li>
+            
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
 </div>
 
 <div id="right" class="clearfix">
@@ -88,6 +91,7 @@
     <div class="post-header">
     <div id="post-meta">
         <h1>Unix: Filesystem Dirs</h1>
+        <br>
         <span class="date" style="font-variant-caps: small-caps;">21 September 2019</span>
         
     </div>
@@ -95,7 +99,7 @@
 <div>
     <br/>
     
-    <p>In Unix everything to be a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at <code>/</code> that contains all other files and directories.</p><p>A file or directory is uniquely identified by its path, and a unique identifier called an inode.</p><p>Directories have specific purposes and generally hold the same types of files, the following are directories that exist on most major versions of Unix:</p><h4 id="--root">/ = root</h4><ul><li>every single file and directory starts from the root directory</li><li>only root user has write privilege under this directory</li><li>please note that <code>/root</code> is root user’s home directory, which is not same as <code>/</code></li></ul><h4 id="bin--binary-executables">/bin = binary executables</h4><ul><li>contains binary executables</li><li>common linux commands you need to use in single-user modes are located here</li><li>commands used by all the users of the system are located here</li><li>for example: <code>ps</code>, <code>ls</code>, <code>ping</code>, <code>grep</code>, <code>cp</code></li></ul><h4 id="sbin--system-binaries">/sbin = system binaries</h4><ul><li>just like <code>/bin</code>, <code>/sbin</code> also contains binary executables</li><li>linux commands for sys admin and sys maintenance</li><li>for example: <code>iptables</code>, <code>reboot</code>, <code>fdisk</code>, <code>ifconfig</code>, <code>swapon</code></li></ul><h4 id="etc--configuration-files">/etc = configuration files</h4><ul><li>contains configuration files required by all programs</li><li>this also contains startup and shutdown shell scripts used to start/stop individual programs</li><li>for example: <code>/etc/resolv.conf</code>, <code>/etc/logrotate.conf</code></li></ul><h4 id="dev--device-files">/dev = device files</h4><ul><li>contains device files</li><li>these include terminal devices, usb, or any device attached to the system</li><li>for example: <code>/dev/tty1</code>, <code>/dev/usbmon0</code></li></ul><h4 id="proc--process-information">/proc = process information</h4><ul><li>contains information about system process</li><li>this is a pseudo filesystem contains information about running process. for example: <code>/proc/{pid}</code> directory contains information about the process with that particular <code>pid</code></li><li>this is a virtual filesystem with text information about system resources. for example: <code>/proc/uptime</code></li></ul><h4 id="var---variable-files">/var - variable files</h4><ul><li>var stands for variable files</li><li>content of the files that are expected to grow can be found under this directory</li><li>this includes — system log files (/var/log); packages and database files (/var/lib); emails (/var/mail); print queues (/var/spool); lock files (/var/lock); temp files needed across reboots (/var/tmp);</li></ul><h4 id="tmp--temporary-files">/tmp = temporary files</h4><ul><li>directory that contains temporary files created by system and users</li><li>files under this directory are deleted when system is rebooted</li></ul><h4 id="usr--user-programs">/usr – user programs</h4><ul><li>contains binaries, libraries, documentation, and source-code for second level programs</li><li><code>/usr/bin</code> contains binary files for user programs. if you can’t find a user binary under <code>gc/bin</code>gc, look under <code>gc/usr/bin</code>. for example: at, <code>awk</code>, <code>cc</code>, <code>less</code>, <code>scp</code></li><li><code>/usr/sbin</code> contains binary files for system administrators. if you can’t find a system binary under <code>/sbin</code>, look under <code>/usr/sbin</code>. for example: <code>atd</code>, <code>cron</code>, <code>sshd</code>, <code>useradd</code>, <code>userdel</code></li><li><code>/usr/lib</code> contains libraries for <code>/usr/bin</code> and <code>/usr/sbin</code></li><li><code>/usr/local</code> contains users programs that you install from source. for example, when you install apache from source, it goes under <code>/usr/local/apache2</code></li></ul><h4 id="home--home-directories">/home – home directories</h4><ul><li>home directories for all users to store their personal files</li><li>for example: <code>/home/john</code></li></ul><h4 id="boot--boot-loader-files">/boot – boot loader files</h4><ul><li>contains boot loader related files</li><li>kernel <code>initrd</code>, <code>vmlinux</code>, <code>grub</code> files are located under <code>/boot</code></li><li>for example: <code>initrd.img-2.6.32-24-generic</code>, <code>vmlinuz-2.6.32-24-generic</code></li></ul><h4 id="lib--system-libraries">/lib – system libraries</h4><ul><li>contains library files that supports the binaries located under <code>/bin</code> and <code>/sbin</code></li><li>library filenames are either <code>ld*</code> or <code>lib*.so.*</code></li><li>for example: <code>ld-2.11.1.so</code>, <code>libncurses.so.5.7</code></li></ul><h4 id="opt--optional-add-on-applications">/opt – optional add-on applications</h4><ul><li>opt stands for optional</li><li>contains add-on applications from individual vendors</li><li>add-on applications should be installed under either <code>/opt/</code> or <code>/opt/ sub-directory</code></li></ul><h4 id="mnt--mount-directory">/mnt – mount directory</h4><ul><li>temporary mount directory where sysadmins can mount filesystems</li></ul><h4 id="media--removable-media-devices">/media – removable media devices</h4><ul><li>temporary mount directory for removable devices</li><li>for examples, <code>/media/cdrom</code> for cd-rom; <code>/media/floppy</code> for floppy drives; <code>/media/cdrecorder</code> for cd writer</li></ul><h4 id="srv--service-data">/srv – service data</h4><ul><li>srv stands for service</li><li>contains server specific services related data</li><li>for example, <code>/srv/cvs</code> contains cvs related data</li></ul>
+    <p>In Unix everything is a file, including physical devices such as USB devices. Unix has a hierarchical file system structure, branching out from its root at <code>/</code> that contains all other files and directories.</p><p>A file or directory is uniquely identified by its path, and a unique identifier called an inode.</p><p>Directories have specific purposes and generally hold the same types of files, the following are directories that exist on most major versions of Unix:</p><h4 id="--root">/ = root</h4><ul><li>every single file and directory starts from the root directory</li><li>only root user has write privilege under this directory</li><li>please note that <code>/root</code> is root user’s home directory, which is not same as <code>/</code></li></ul><h4 id="bin--binary-executables">/bin = binary executables</h4><ul><li>contains binary executables</li><li>common linux commands you need to use in single-user modes are located here</li><li>commands used by all the users of the system are located here</li><li>for example: <code>ps</code>, <code>ls</code>, <code>ping</code>, <code>grep</code>, <code>cp</code></li></ul><h4 id="sbin--system-binaries">/sbin = system binaries</h4><ul><li>just like <code>/bin</code>, <code>/sbin</code> also contains binary executables</li><li>linux commands for sys admin and sys maintenance</li><li>for example: <code>iptables</code>, <code>reboot</code>, <code>fdisk</code>, <code>ifconfig</code>, <code>swapon</code></li></ul><h4 id="etc--configuration-files">/etc = configuration files</h4><ul><li>contains configuration files required by all programs</li><li>this also contains startup and shutdown shell scripts used to start/stop individual programs</li><li>for example: <code>/etc/resolv.conf</code>, <code>/etc/logrotate.conf</code></li></ul><h4 id="dev--device-files">/dev = device files</h4><ul><li>contains device files</li><li>these include terminal devices, usb, or any device attached to the system</li><li>for example: <code>/dev/tty1</code>, <code>/dev/usbmon0</code></li></ul><h4 id="proc--process-information">/proc = process information</h4><ul><li>contains information about system process</li><li>this is a pseudo filesystem contains information about running process. for example: <code>/proc/{pid}</code> directory contains information about the process with that particular <code>pid</code></li><li>this is a virtual filesystem with text information about system resources. for example: <code>/proc/uptime</code></li></ul><h4 id="var---variable-files">/var - variable files</h4><ul><li>var stands for variable files</li><li>content of the files that are expected to grow can be found under this directory</li><li>this includes — system log files (/var/log); packages and database files (/var/lib); emails (/var/mail); print queues (/var/spool); lock files (/var/lock); temp files needed across reboots (/var/tmp);</li></ul><h4 id="tmp--temporary-files">/tmp = temporary files</h4><ul><li>directory that contains temporary files created by system and users</li><li>files under this directory are deleted when system is rebooted</li></ul><h4 id="usr--user-programs">/usr – user programs</h4><ul><li>contains binaries, libraries, documentation, and source-code for second level programs</li><li><code>/usr/bin</code> contains binary files for user programs. if you can’t find a user binary under <code>gc/bin</code>gc, look under <code>gc/usr/bin</code>. for example: at, <code>awk</code>, <code>cc</code>, <code>less</code>, <code>scp</code></li><li><code>/usr/sbin</code> contains binary files for system administrators. if you can’t find a system binary under <code>/sbin</code>, look under <code>/usr/sbin</code>. for example: <code>atd</code>, <code>cron</code>, <code>sshd</code>, <code>useradd</code>, <code>userdel</code></li><li><code>/usr/lib</code> contains libraries for <code>/usr/bin</code> and <code>/usr/sbin</code></li><li><code>/usr/local</code> contains users programs that you install from source. for example, when you install apache from source, it goes under <code>/usr/local/apache2</code></li></ul><h4 id="home--home-directories">/home – home directories</h4><ul><li>home directories for all users to store their personal files</li><li>for example: <code>/home/john</code></li></ul><h4 id="boot--boot-loader-files">/boot – boot loader files</h4><ul><li>contains boot loader related files</li><li>kernel <code>initrd</code>, <code>vmlinux</code>, <code>grub</code> files are located under <code>/boot</code></li><li>for example: <code>initrd.img-2.6.32-24-generic</code>, <code>vmlinuz-2.6.32-24-generic</code></li></ul><h4 id="lib--system-libraries">/lib – system libraries</h4><ul><li>contains library files that supports the binaries located under <code>/bin</code> and <code>/sbin</code></li><li>library filenames are either <code>ld*</code> or <code>lib*.so.*</code></li><li>for example: <code>ld-2.11.1.so</code>, <code>libncurses.so.5.7</code></li></ul><h4 id="opt--optional-add-on-applications">/opt – optional add-on applications</h4><ul><li>opt stands for optional</li><li>contains add-on applications from individual vendors</li><li>add-on applications should be installed under either <code>/opt/</code> or <code>/opt/ sub-directory</code></li></ul><h4 id="mnt--mount-directory">/mnt – mount directory</h4><ul><li>temporary mount directory where sysadmins can mount filesystems</li></ul><h4 id="media--removable-media-devices">/media – removable media devices</h4><ul><li>temporary mount directory for removable devices</li><li>for examples, <code>/media/cdrom</code> for cd-rom; <code>/media/floppy</code> for floppy drives; <code>/media/cdrecorder</code> for cd writer</li></ul><h4 id="srv--service-data">/srv – service data</h4><ul><li>srv stands for service</li><li>contains server specific services related data</li><li>for example, <code>/srv/cvs</code> contains cvs related data</li></ul>
 </div>
 
 <div id="post-tags">
@@ -138,7 +142,7 @@
 </div>
 
 <hr/>
-<div id="footercont" class="clearfix">Copyright &copy; 2021 William Grimes
+<div id="footercont" class="clearfix">Copyright &copy; 2022 William Grimes
     <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
 
 </div>

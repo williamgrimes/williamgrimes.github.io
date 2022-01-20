@@ -7,7 +7,7 @@
     <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
     <!-- Modified to fit Cryogen.-->
     <meta charset="UTF-8">
-    <title>William Grimes: Bitcoin: A Reader&#39;s Companion</title>
+    <title>williamgrimes.xyz: Bitcoin: A Reader&#39;s Companion</title>
     
 <meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
 
@@ -43,34 +43,19 @@
 <div id="left">
 
     <p id="logo">
-        <a title="William Grimes" href="/">
+        <a title="williamgrimes.xyz" href="/">
             <!-- <span class="fa fa-rocket"></span> -->
-            <span class="text">William Grimes</span>
+            <br>
             <img class="icon" src="/img/headshot.png">
+            <br>
+            <span class="author">William Grimes</span>
+            <br>
+            <span class="title">(innovate iterate integrate)</span>
         </a>
     </p>
 
-    <div id="menucont" class="bodycontainer clearfix">
-        <div class="menutitle">
-            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
-        </div>
-        <ul class="menu">
-            <li ><a title="Home" href="/">Home</a></li>
-            <li ><a title="Archives" href="/archives/">Archives</a></li>
-            
-            <li ><a title="Tags" href="/tags/">Tags</a></li>
-            
-            
-            <li >
-                <a href="/pages/cv/">Curriculum Vitae</a>
-            </li>
-            
-            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
-        </ul>
-    </div>
-
     <div id="socialmedia" class="clearfix">
-        <ul style="font-variant-caps:">
+        <ul>
             <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
             <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
             <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
@@ -80,6 +65,24 @@
         </ul>
     </div>
 
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/"> &#187; Home</a></li>
+            <li ><a title="Archives" href="/archives/"> &#187; Archives</a></li>
+            
+            <li ><a title="Tags" href="/tags/"> &#187; Tags</a></li>
+            
+            
+            <li >
+                <a href="/pages/cv/">&#187; Curriculum Vitae</a>
+            </li>
+            
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
 </div>
 
 <div id="right" class="clearfix">
@@ -88,13 +91,14 @@
     <div class="post-header">
     <div id="post-meta">
         <h1>Bitcoin: A Reader&#39;s Companion</h1>
+        <br>
         <span class="date" style="font-variant-caps: small-caps;">27 April 2018</span>
         
     </div>
 </div>
 <div>
     <br/>
-    <ol class="toc"><li><a href="#links">Links:</a></li><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#transactions">Transactions</a></li><li><a href="#timestamp-server">Timestamp Server</a></li><li><a href="#proof-of-work">Proof-of-Work</a></li><li><a href="#network">Network</a></li><li><a href="#incentive">Incentive</a></li><li><a href="#reclaiming-disk-space">Reclaiming Disk Space</a></li><li><a href="#simplified-payment-verification">Simplified Payment Verification</a></li><li><a href="#combining-and-splitting-value">Combining and Splitting Value</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#calculations">Calculations</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#references">References</a></li></ol>
+    <h3>Contents</h3><ol class="toc"><li><a href="#links">Links:</a></li><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#transactions">Transactions</a></li><li><a href="#timestamp-server">Timestamp Server</a></li><li><a href="#proof-of-work">Proof-of-Work</a></li><li><a href="#network">Network</a></li><li><a href="#incentive">Incentive</a></li><li><a href="#reclaiming-disk-space">Reclaiming Disk Space</a></li><li><a href="#simplified-payment-verification">Simplified Payment Verification</a></li><li><a href="#combining-and-splitting-value">Combining and Splitting Value</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#calculations">Calculations</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#references">References</a></li></ol>
     <p><em>Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part.</em> <a href="https://bitcoin.org/en/" target="_blank"> - bitcoin.org</a></p><p><b>Background</b>: the Bitcoin white paper was released under the pseudo-name Satoshi Nakamoto on 2008-10-31, poignantly this was a time when the traditional banking system was in turmoil at the onset of a global financial crisis. The identity of Author Satoshi Nakamoto is not known, with some speculating that Satoshi is actually a group rather than an individual. Satoshi circulated the Bitcoin paper on an internet mailing list for Cypherpunks, a group of activists that advocate the use of cryptography and privacy enhancing technologies as a route to social and political change. Creating a digital money independent of the traditional banking system for use on the internet had been a long term aspiration of the libertarian minded Cypherpunks. Ironically, much of the cryptography underpinning the sometimes lofty idealism of the Cypherpunk movement was developed in the 1970s within government intelligence agencies the NSA (USA) and GCHQ (UK).</p><p><b>Motivation</b>: in this post I will give additional commentary on the Bitcoin white paper, as well as definitions, and links to resources. I will quote the paper verbatim in the grey boxes, and highlight text to be defined or further explained. The paper mainly describes the technical mechanisms underpinning the Bitcoin blockchain, but also touches on issues in banking, monetary policy, and incentive structures. The brilliance of the Bitcoin protocol is in the design of a system combining cryptographic techniques in a peer-to-peer network that has a concept of memory, with a self-regulating system of incentives. On first reading the paper can seem sparse and obtuse, but with sufficient context and understanding I hope to demonstrate to you its elegance, and momentous implications.</p><h4 id="links">Links:</h4><ul><li><a href="https://bitcoin.org/bitcoin.pdf" target="_blank">Bitcoin white paper</a></li><li><a href="https://www.activism.net/cypherpunk/manifesto.html" target="_blank">Cypherpunk Manifesto</a></li></ul><h2 id="abstract">Abstract</h2><hr /><blockquote style="background:#f5f5f5;">
 A purely <a href="#fn1"><mark>peer-to-peer</mark></a> version of electronic cash would allow online
 payments to be sent directly from one party to another without going through a
@@ -310,7 +314,7 @@ It is interesting to note the pioneering Nick Szabo's work on systems such as bi
 </div>
 
 <hr/>
-<div id="footercont" class="clearfix">Copyright &copy; 2021 William Grimes
+<div id="footercont" class="clearfix">Copyright &copy; 2022 William Grimes
     <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
 
 </div>

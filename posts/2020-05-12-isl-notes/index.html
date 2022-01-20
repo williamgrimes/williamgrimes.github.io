@@ -7,7 +7,7 @@
     <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
     <!-- Modified to fit Cryogen.-->
     <meta charset="UTF-8">
-    <title>William Grimes: Introduction to Statistical Learning</title>
+    <title>williamgrimes.xyz: Introduction to Statistical Learning</title>
     
 <meta name="keywords" content="bash,illegal fishing,whitepaper,text mining,project,statistics,NLP,bitcoin,notes,python,machine learning,kaggle,unix,computer vision,segmentation">
 
@@ -43,34 +43,19 @@
 <div id="left">
 
     <p id="logo">
-        <a title="William Grimes" href="/">
+        <a title="williamgrimes.xyz" href="/">
             <!-- <span class="fa fa-rocket"></span> -->
-            <span class="text">William Grimes</span>
+            <br>
             <img class="icon" src="/img/headshot.png">
+            <br>
+            <span class="author">William Grimes</span>
+            <br>
+            <span class="title">(innovate iterate integrate)</span>
         </a>
     </p>
 
-    <div id="menucont" class="bodycontainer clearfix">
-        <div class="menutitle">
-            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
-        </div>
-        <ul class="menu">
-            <li ><a title="Home" href="/">Home</a></li>
-            <li ><a title="Archives" href="/archives/">Archives</a></li>
-            
-            <li ><a title="Tags" href="/tags/">Tags</a></li>
-            
-            
-            <li >
-                <a href="/pages/cv/">Curriculum Vitae</a>
-            </li>
-            
-            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
-        </ul>
-    </div>
-
     <div id="socialmedia" class="clearfix">
-        <ul style="font-variant-caps:">
+        <ul>
             <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
             <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
             <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
@@ -80,6 +65,24 @@
         </ul>
     </div>
 
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/"> &#187; Home</a></li>
+            <li ><a title="Archives" href="/archives/"> &#187; Archives</a></li>
+            
+            <li ><a title="Tags" href="/tags/"> &#187; Tags</a></li>
+            
+            
+            <li >
+                <a href="/pages/cv/">&#187; Curriculum Vitae</a>
+            </li>
+            
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
 </div>
 
 <div id="right" class="clearfix">
@@ -88,13 +91,14 @@
     <div class="post-header">
     <div id="post-meta">
         <h1>Introduction to Statistical Learning</h1>
+        <br>
         <span class="date" style="font-variant-caps: small-caps;">12 May 2020</span>
         
     </div>
 </div>
 <div>
     <br/>
-    <ol class="toc"><li><a href="#statistical-learning">Statistical Learning:</a></li><li><a href="#linear-regression">Linear Regression:</a></li><li><a href="#classification">Classification:</a></li><li><a href="#resampling-methods">Resampling methods:</a></li><li><a href="#linear-model-selection-and-regularization">Linear Model Selection and Regularization:</a></li><li><a href="#moving-beyond-linearity">Moving Beyond Linearity:</a></li><li><a href="#tree-based-methods">Tree-Based Methods:</a></li><li><a href="#support-vector-machines">Support Vector Machines:</a></li><li><a href="#unsupervised-learning">Unsupervised Learning:</a></li></ol>
+    <h3>Contents</h3><ol class="toc"><li><a href="#statistical-learning">Statistical Learning:</a></li><li><a href="#linear-regression">Linear Regression:</a></li><li><a href="#classification">Classification:</a></li><li><a href="#resampling-methods">Resampling methods:</a></li><li><a href="#linear-model-selection-and-regularization">Linear Model Selection and Regularization:</a></li><li><a href="#moving-beyond-linearity">Moving Beyond Linearity:</a></li><li><a href="#tree-based-methods">Tree-Based Methods:</a></li><li><a href="#support-vector-machines">Support Vector Machines:</a></li><li><a href="#unsupervised-learning">Unsupervised Learning:</a></li></ol>
     <p><em>An Introduction to Statistical Learning, notes... </em></p><p><b>Motivation</b>: some notes on reviewing an Introduction to Statistical Learning (ISL) by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. The book is freely available <a href="http://faculty.marshall.usc.edu/gareth-james/ISL/" target="_blank">here</a>. `</p><h2 id="statistical-learning">Statistical Learning:</h2><p>Statistical learning refers to a set of tools for understanding data and recognising patterns. In the case of <em>supervised</em> learning the goal is to predict an output or make a decision without exlicit rule based programming but to use labeled input data to learn patterns. In contrast, <em>unsupervised</em> learning attempts to find patterns in data without pre-existing labels.</p><p align="center"><img src="https://render.githubusercontent.com/render/math?math=Y = f(X) %2B \epsilon" /></p><p>There is a relationship between a response <img src="https://render.githubusercontent.com/render/math?math=Y" /> and a set of <img src="https://render.githubusercontent.com/render/math?math=X" /> predictors <img src="https://render.githubusercontent.com/render/math?math=(x_1, x_2, x_3, ..., x_p)" />, with <img src="https://render.githubusercontent.com/render/math?math=\epsilon" /> being a random error term with a mean of zero. Statistical learning can be used to estimate the mapping between the response (dependent variable) and the predictors.</p><p>Statistical learning aims to best approximate the mapping function <img src="https://render.githubusercontent.com/render/math?math=f" /> between the response (dependent variable) and the predictors. In general, an estimation of <img src="https://render.githubusercontent.com/render/math?math=f" />, denoted by <img src="https://render.githubusercontent.com/render/math?math=\hat{f}" />, will not be perfect and will introduce error. The error between <img src="https://render.githubusercontent.com/render/math?math=f" /> and <img src="https://render.githubusercontent.com/render/math?math=\hat{f}" /> has a <em>reducible error</em> component that is reduced by better approximating the mapping function <img src="https://render.githubusercontent.com/render/math?math=\hat{f}" />, and an irreducible component due to the error term <img src="https://render.githubusercontent.com/render/math?math=\epsilon" />.</p><p>The two main motivations for learning this mapping are <em>prediction</em> and <em>inference</em>, where:</p><ul><li><p><strong>Prediction</strong>, in the case where the inputs <img src="https://render.githubusercontent.com/render/math?math=X" /> are available, and since the error term averages to zero we predict as <img src="https://render.githubusercontent.com/render/math?math=\hat{Y} = \hat{f}(X)" />, in many cases the exact form of <img src="https://render.githubusercontent.com/render/math?math=\hat{f}" /> is not of conern.</p></li><li><p><strong>Inference</strong>, is used to understand the way in which <img src="https://render.githubusercontent.com/render/math?math=Y" /> is affected as <img src="https://render.githubusercontent.com/render/math?math=X_1, X_2, ... X_p" /> change. To answer questions such as: which predictors are associated with the response, or what is th relationship between the response and each predictor?</p></li></ul><p>Approaches to estimate <img src="https://render.githubusercontent.com/render/math?math=f" /> share certain characteristics and can broadly be deemed <em>parametric</em> or <em>non-parametric</em>:</p><ul><li><p><strong>parametric</strong> - make an assumption about the functional nature, or shape, of <img src="https://render.githubusercontent.com/render/math?math=f" />. For example, assume that <img src="https://render.githubusercontent.com/render/math?math=f" /> is linear, yielding a linear model. Then estimate the set of parameters. In general, it is much simpler to estimate a set of parameters than it is to estimate an entirely arbitrary function <img src="https://render.githubusercontent.com/render/math?math=f" />. A disadvantage of this approach is that the specified model won’t usually match the true form of <img src="https://render.githubusercontent.com/render/math?math=f" />.</p></li><li><p><strong>non-parametric</strong> methods do not make explicit assumptions about the functional form of <img src="https://render.githubusercontent.com/render/math?math=f" />. They are more flexible and can fit to a wider range of forms of <img src="https://render.githubusercontent.com/render/math?math=f" />. The downside of this is that they often require many parameters to fit to <img src="https://render.githubusercontent.com/render/math?math=f" />.</p></li></ul><p><em>supervised</em> or <em>unsupervised</em>, where:</p><ul><li><p><strong>supervised learning</strong> refers to those scenarios in which for each observation of the predictor measurements there is an associated response measurement. The model generated relates the predictors to the response with the goal of accurately predicting future observations or of better inferring the relationship between the predictors and the response.</p></li><li><p><strong>unsupervised learning</strong> refers to those scenarios in which for each observation of the predictor measurements, there is no associated response. There is no response variable that can supervise the analysis that goes into generating a model. Often unsupervised learning involves <em>cluster analysis</em>, a process by which observations are arranged into relatively distinct groups.</p></li></ul><p><em>regression</em> or <em>classification</em>, where:</p><ul><li><p><strong>regression</strong> problems have output variables that take on quantitative continuous values.</p></li><li><p><strong>classification</strong> problems have outputs that whose values are distinct classes or categories. Problems with a qualitative response are often referred to as classification problems.</p></li></ul><p><strong>Quality of fit</strong> is a way to asses the performance of a model used to solve a regression problem determining how well predictions match the observed data. A typical metric for this is the mean squared error (MSE), given as,</p><p align="center"><img src="https://render.githubusercontent.com/render/math?math=MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{f}(x_i))^2" /></p><p>where <img src="https://render.githubusercontent.com/render/math?math=\hat{f}(x_i)" /> is the prediction given on the <img src="https://render.githubusercontent.com/render/math?math=i" />th observation.  We would like to choose a model that has as low a mean-squared error on the test group as possible.</p><p>The <strong>flexibility</strong> or number of <strong>degrees of freedom</strong> of a model quantifies the number of parameters in the model that are free to vary. The degrees offreedom is a quality that summarizes the flexibility of a curve. As the number of degrees of freedom of a model increases the training MSE will usually decrease, whilst the test MSE may not. When the training MSE is small but the test MSE is large, the model is described as overfitting the data. Almost always the training MSE will be less than the test MSE because most methods aim to minimize the training MSE.</p><p>The expected test MSE for a given value <img src="https://render.githubusercontent.com/render/math?math=x_0" /> can be decomposed into the sum of three quantities. The variance of <img src="https://render.githubusercontent.com/render/math?math=\hat{f}(x_0)" />, the squared bias of <img src="https://render.githubusercontent.com/render/math?math=\hat{f}(x_0)" />, and the variance of the error term, <img src="https://render.githubusercontent.com/render/math?math=\epsilon" />. Formally, the balance of these opposing forces known as the <strong>bias-variance tradeoff</strong> can be written as follows:</p><p align="center"><img src="https://render.githubusercontent.com/render/math?math=E (y_0 - \hat{f}(x_0))^2 = Var(\hat{f}(x_0)) %2B [Bias(\hat{f}(x_0))]^2  %2B  Var(\epsilon)" /></p><p>to minimise the expected test error, a method should minimise both the variance and the bias. It can be seen that the expected test mean squared error can never be less than <img src="https://render.githubusercontent.com/render/math?math=Var(\epsilon)" /> the irreducible error. Variance refers to the amount by which <img src="https://render.githubusercontent.com/render/math?math=\hat{f}" /> would change if it were estimated using a different training data set. In general, more flexible methods have higher variance, bias refers to the error that is introduced by approximating a potentially complex function using a simple model. More flexible models tend to have less bias. In general, the more flexible the statistical learning method, the more variance will increase and bias decrease.</p><p>In the classification setting the quality of fit can be assessed looking at the training error. The training error rate is the proportion of errors that are made when applying <img src="https://render.githubusercontent.com/render/math?math=\hat{f}" /> to the training observations. Formally stated as,</p><p align="center"><img src="https://render.githubusercontent.com/render/math?math=\frac{1}{n}\sum_{i=1}^{n}I(y_i \neq \hat{y}_i)" /></p><p>where <img src="https://render.githubusercontent.com/render/math?math=I" /> is an indicator variable that equals 0 when <img src="https://render.githubusercontent.com/render/math?math=y = \hat{y}" /> and equals 1 when <img src="https://render.githubusercontent.com/render/math?math=y \neq \hat{y}" />. In simple terms, the error rate is the ratio of incorrect classifications to the observation count. As in the regression scenario, a good classifier is one for which the test error rate is smallest.</p><p>The <strong>Bayes classifier</strong> is a simple classifier that assigns each observation the most likely class, which on average minimises the test error rate given its predictor variables. In Bayesian terms, a test observation should be classified for the predictor vector <img src="https://render.githubusercontent.com/render/math?math=x_0" /> to the class <img src="https://render.githubusercontent.com/render/math?math=j" /> for which,</p><p align="center"><img src="https://render.githubusercontent.com/render/math?math=Pr(Y=j|X=x_0)" /></p><p>is largest. That is, the class for which the conditional probability that <img src="https://render.githubusercontent.com/render/math?math=Y=j" />
 , given the observed predictor vector <img src="https://render.githubusercontent.com/render/math?math=x_0" />, is largest. This classifier is called the Bayes classifier.</p><p>In a two-class scenario, this can be stated as  <img src="https://render.githubusercontent.com/render/math?math=Pr(Y=1|X=x_0) &gt; 0.5" /> matching class A when true and class B when false. The threshold where the classification probability is exactly 50% is known as the Bayes decision boundary.</p><p>The Bayes classifier yields the lowest possible test error rate since it will always choose the class with the highest probability. The Bayes error rate can be stated formally as <img src="https://render.githubusercontent.com/render/math?math=1 - E(maxPr_j(Y=j|X)" />. The Bayes error rate can also be described as the ratio of observations that lie on the "wrong" side of the decision boundary. Unfortunately, the conditional distribution of Y given X is often unknown, so the Bayes classifier is most often unattainable.</p><p>Many modelling techniques try to compute the conditional distribution of <img src="https://render.githubusercontent.com/render/math?math=Y" /> given
 <img src="https://render.githubusercontent.com/render/math?math=X" /> and then provide estimated classifications based on the highest estimated probability. The <strong>k-nearest neighbors classifier</strong> is one such method.</p><p>The K-nearest neighbors classifier takes a positive integer K and first identifies the K points that are nearest to <img src="https://render.githubusercontent.com/render/math?math=x_0" />, represented by <img src="https://render.githubusercontent.com/render/math?math=N_0" />. It next estimates the conditional probability for class <img src="https://render.githubusercontent.com/render/math?math=j" /> based on the fraction of points in <img src="https://render.githubusercontent.com/render/math?math=N_0" /> who have a response equal to <img src="https://render.githubusercontent.com/render/math?math=j" />. Formally, the estimated conditional probability can be stated as</p><p align="center"><img src="https://render.githubusercontent.com/render/math?math=Pr(Y=j|X=x_0)= \frac{1}{K}\sum_{i{\epsilon}N_0}I(y_i=j)" /></p><p>The K-Nearest Neighbor classifier then applies Bayes theorem and yields the classification with the highest probability. Despite its simplicity, the K-Nearest Neighbor classifier often yields results that are surprisingly close to the optimal Bayes classifier. The choice of K can have a drastic effect on the yielded classifier. Too low a K yields a classifier that is too flexible, has too high a variance, and low bias.</p><p>Conversely, as K increases, the yielded classifier becomes less flexible, with a low variance, but high bias. In both regression and classification scenarios, choosing the correct level of flexibility is critical to the success of the model.</p><p><b>Further reading:</b></p><ul><li><a href="https://youtu.be/C3nIFH649wY" target="_blank"> Bias-Variance decomposition.</a></li></ul><h2 id="linear-regression">Linear Regression:</h2><p><em>Simple linear regression</em> predicts a quantitative response  <img src="https://render.githubusercontent.com/render/math?math=Y" /> from a single predictor variable <img src="https://render.githubusercontent.com/render/math?math=X" />, assuming they are linearly related, formally:</p><p align="center"><img src="https://render.githubusercontent.com/render/math?math=Y= \beta_0  %2B \beta_1X" /></p><p>where
@@ -207,7 +211,7 @@ distinct <em>i</em> and <em>i prime</em>. In some cases, an enlarged feature spa
 </div>
 
 <hr/>
-<div id="footercont" class="clearfix">Copyright &copy; 2021 William Grimes
+<div id="footercont" class="clearfix">Copyright &copy; 2022 William Grimes
     <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
 
 </div>
