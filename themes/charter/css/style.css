@@ -152,16 +152,16 @@ img.imgfull {
 }
 
 #left p#logo {
-    margin: 0 0 20px 0;
+    margin: 0 0 0px 0;
 }
 
 #left p#logo a {
     float: left;
     display: block;
-    padding: 30px 20px;
+    padding: 0px 0px;
     width: 100%;
     color: #ECEFF4;
-    margin: 0 0 20px auto;
+    margin: 0 0 0px auto;
 }
 
 #left p#logo a .icon {
@@ -169,7 +169,7 @@ img.imgfull {
     display: block;
     width: 200px;
     height: 200px;
-    margin: 20px auto -10px auto;
+    margin: 0px auto 0px auto;
 }
 
 #left p#logo a span.author {
@@ -185,39 +185,40 @@ img.imgfull {
 #left p#logo a span.title {
     display: flex;
     justify-content: center;
-    font-size: 15px;
-    line-height: 45px;
+    font-size: 16px;
+    line-height: 22px;
     font-weight: 200;
     font-family: "Charter";
     letter-spacing: 1.4px;
 }
 
-// #left #socialmedia {
-//     //position: absolute;
-//     //bottom: 0px;
-//     width: 100%;
-//     height: 30px;
-//     display: flex;
-//     justify-content: left;
-// }
-//
-// #left #socialmedia ul li {
-//     float: left;
-//     display: inline-block;
-//     padding: 20px;
-//     //width: 100%;
-//     list-style-type: none;
-//     //margin: 20px auto -10px auto;
-// }
-//
-// #left #socialmedia ul li a {
-//     color: #ECEFF4;
-//     opacity: 0.6;
-// }
-//
-// #left #socialmedia ul li a:hover {
-//     opacity: 1;
-// }
+#left #socialmedia.clearfix {
+    display: flex;
+    justify-content: span;
+    width: 100%;
+    letter-spacing: 3px;
+}
+
+#left #socialmedia.clearfix ul li{
+    //float: left;
+    display: inline-block;
+    padding: 7px;
+    font-size: 25pt;
+    list-style-type: none;
+    //margin: 0px 0px 0px 0px;
+}
+
+#left #socialmedia ul li a {
+    list-style-type: none;
+    display: inline-block;
+    list-style-type: none;
+    color: #ECEFF4;
+    opacity: 0.6;
+}
+
+#left #socialmedia ul li a:hover {
+    opacity: 1;
+}
 
 #right p {
     margin: 0 0 20px 0;
@@ -278,27 +279,10 @@ img.imgfull {
   }
 
 /* ==================================================
-   Responsive Media Queries - Tablets
-================================================== */
-
-@media screen and (max-width: 768px) {
-
-    #left {
-        max-width: 200px;
-        height: 700px;
-    }
-
-    #right {
-        padding: 20px 20px 20px 230px;
-    }
-
-}
-
-/* ==================================================
    Responsive Media Queries - Mobiles
 ================================================== */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
 
     #left {
         position: relative;
@@ -312,6 +296,10 @@ img.imgfull {
 
     #left p#logo a {
         padding: 0;
+    }
+
+    #left #socialmedia a {
+        padding: 15px;
     }
 
     #right {
