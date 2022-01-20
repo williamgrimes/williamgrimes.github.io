@@ -12,9 +12,31 @@
 @import url("http://fonts.googleapis.com/css?family=Charter:400,700");
 @import url("{{blog-prefix}}/fonts/sample.css");
 
+#right {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 50px 40px 320px;
+    line-height: 1.3;
+}
+
 #post {
     max-width: 800px;
     margin: 0 auto;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.5;
+}
+
+#tags-page {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+#posts { // archives
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 2;
 }
 
 hr {
@@ -208,18 +230,6 @@ img.imgfull {
     opacity: 1;
 }
 
-#right {
-    //position: relative;
-    //top: 0;
-    //left: 0;
-    //width: 100%;
-    //max-width: 1240px;
-    //z-index: 2;
-    padding: 40px 50px 40px 320px;
-    line-height: 1.25;
-    //margin: 0 auto;
-}
-
 #right p {
     margin: 0 0 20px 0;
 }
@@ -245,8 +255,9 @@ img.imgfull {
    CV
 ================================================== */
 #two-column {
-  padding-left: 0px;
   max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
 .column {
@@ -260,6 +271,8 @@ img.imgfull {
 
 .right {
   width: 75%;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Clear floats after the columns */
