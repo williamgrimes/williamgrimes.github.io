@@ -9,7 +9,7 @@
 <div id="two-column">
   <br>
   <div class="column left">
-    <b>Interests</b>
+    <b>INTERESTS</b>
   </div>
   <div class="column right">
     <p>
@@ -27,7 +27,7 @@
 -------------------------- -->
 <div id="two-column" style="line-height: 1.7em">
   <div class="column left">
-    <b>Skills</b>
+    <b>SKILLS</b>
   </div>
   <div class="column right">
     <p>
@@ -77,7 +77,7 @@
 -------------------------- -->
 <div id="two-column">
   <div class="column left">
-    <b>Work</b>
+    <b>WORK</b>
   </div>
   <div class="column right">
     <p>
@@ -175,16 +175,16 @@
 -------------------------- -->
 <div id="two-column">
   <div class="column left">
-    <b>Education</b>
+    <b>EDUCATION</b>
   </div>
   <div class="column right">
     <p>
       <b>University College London</b> <b><span style="float:right;">2013 - 2016</span></b>
       <br> &nbsp;&nbsp; <em>PhD, Bioinformatics and Computational Biology</em>
     </p>
-    <ul> 
-        <li>Thesis: <em>Image processing and analysis methods in quantitative endothelial cell biology</em></li> 
-    </ul> 
+    <ul>
+        <li>Thesis: <em>Image processing and analysis methods in quantitative endothelial cell biology</em></li>
+    </ul>
     <!--
     ----
     -->
@@ -216,7 +216,7 @@ AWARDS
 -------------------------- -->
 <div id="two-column">
   <div class="column left">
-    <b>Awards</b>
+    <b>AWARDS</b>
   </div>
   <div class="column right">
     <p>
@@ -232,7 +232,7 @@ AWARDS
 -------------------------- -->
 <div id="two-column">
   <div class="column left">
-    <b>Publications</b>
+    <b>PUBLICATIONS</b>
   </div>
   <div class="column right">
     <p>
@@ -267,36 +267,35 @@ AWARDS
 -------------------------- -->
 <div id="two-column">
   <div class="column left">
-    <b>Charity</b>
+    <b>CHARITY</b>
   </div>
   <div class="column right">
     <p>
       <b>Mobile Education Partnerships</b>, Myanmar <b><span style="float:right;">2011 - 2012</span></b>
       <br> &nbsp;&nbsp; <em>Communications and Development Team</em>
-      <br> &nbsp;&nbsp; <a href="http://www.mobileeducationpartnerships.org/" target="_blank">mobileeducationpartnerships.org/</a> 
+      <br> &nbsp;&nbsp; <a href="http://www.mobileeducationpartnerships.org/" target="_blank">mobileeducationpartnerships.org/</a>
     </p>
-    <ul> 
-      <li>Created a promotional video for the charity to use at conferences and linked to TEFL.com.</li> 
-      <li>Produced monthly news e-bulletins.</li> 
-      <li>Developed a membership base and established links with other educational organisations.</li> 
-      <li>Assisted in the layout, function and design of the website and integrated it with social networks.</li> 
-    </ul> 
+    <ul>
+      <li>Created a promotional video for the charity to use at conferences and linked to TEFL.com.</li>
+      <li>Produced monthly news e-bulletins.</li>
+      <li>Developed a membership base and established links with other educational organisations.</li>
+      <li>Assisted in the layout, function and design of the website and integrated it with social networks.</li>
+    </ul>
     <!--
     ----
     -->
     <p>
       <b>Sarvodaya Charity</b>, Sri Lanka <b><span style="float:right;">2009 - 2010</span></b>
       <br> &nbsp;&nbsp; <em>Teaching Assistant</em>
-      <br> &nbsp;&nbsp; <a href="http://www.sarvodaya.org/" target="_blank">sarvodaya.org/</a> 
+      <br> &nbsp;&nbsp; <a href="http://www.sarvodaya.org/" target="_blank">sarvodaya.org/</a>
     </p>
-    <ul> 
-      <li>Taught English in a pre-school, secondary school, and at Colombo University</li> 
-      <li>Fundraised £2,150 to construct a school from a sponsored marathon and by acquiring sponsorship</li> 
-      <li>Sector leader for Music and Sport in Project Sri Lanka 2010</li> 
-    </ul> 
+    <ul>
+      <li>Taught English in a pre-school, secondary school, and at Colombo University</li>
+      <li>Fundraised £2,150 to construct a school from a sponsored marathon and by acquiring sponsorship</li>
+      <li>Sector leader for Music and Sport in Project Sri Lanka 2010</li>
+    </ul>
     <!--
     ----
     -->
   </div>
 </div>
-
