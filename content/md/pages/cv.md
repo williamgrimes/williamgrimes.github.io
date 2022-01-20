@@ -7,6 +7,7 @@
 ---- INTERESTS
 -------------------------- -->
 <div id="two-column">
+  <br>
   <div class="column left">
     <b>Interests</b>
   </div>

@@ -1,6 +1,7 @@
 <div class="post-header">
     <div id="post-meta">
         <h1>{{post.title}}</h1>
+        <br>
         <span class="date" style="font-variant-caps: small-caps;">{{post.date|date:longDate}}</span>
         {% if post.author %}
         <span class="author">By: {{post.author}}</span>
@@ -9,7 +10,7 @@
 </div>
 <div>
     <br/>
-    {% if post.toc %}{{post.toc|safe}}{% endif %}
+    {% if post.toc %}<h3>Contents</h3>{{post.toc|safe}}{% endif %}
     {{post.content|safe}}
 </div>
 {% if post.tags|not-empty %}
