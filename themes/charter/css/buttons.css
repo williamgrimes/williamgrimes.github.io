@@ -48,7 +48,7 @@
 */
 
 .button {
-    background: none;
+    background: #3B4252;
     border: 2px solid #3B4252;
     position: relative;
     display: inline-block;
@@ -63,8 +63,8 @@
     letter-spacing: 2px; }
 
 .button:hover {
-    background: #3B4252;
-    color: #ECEFF4; }
+    background: #2E3440;
+    color: #88C0D0; }
 
 .button:active {
     top: 1px; }

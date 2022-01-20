@@ -66,12 +66,11 @@ body {
     text-justify: inter-word;
     font-family: "Charter";
     font-size: 16px;
-    color: #2E3440;
+    color: #000000;
     font-weight: 400;
     line-height: 1.25;
     font-size-adjust: 0.5;
-    background: #ECEFF4;
-
+    background: #FFFFFF;
     text-rendering: optimizeLegibility;
     vertical-align: baseline;
 }
@@ -87,12 +86,12 @@ body {
 }
 
 a {
-    color: #5E81AC;
+    color: #88C0D0;
     text-decoration: none;
 }
 
 a:hover {
-    color: #D08770;
+    color: #BF616A;
 }
 
 
@@ -144,8 +143,8 @@ img.imgfull {
     bottom: 0;
     width: 100%;
     max-width: 280px;
-    background: #3B4252;
-    color: #ECEFF4;
+    background: #2E3440;
+    color: #FFFFFF;
     z-index: 3;
     overflow-y: auto;
 
