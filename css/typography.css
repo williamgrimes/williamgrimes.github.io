@@ -60,7 +60,7 @@ h2 {
   font-weight: 700;
   font-family: charter;
   letter-spacing: -0.01em;
-  font-size: 2.25em;
+  font-size: 2em;
   line-height: 1.25; }
   @media (max-width: 900px) {
     h2 {
@@ -89,7 +89,7 @@ h3 {
   /* (22px / 24px) * .5 */
   font-weight: 700;
   font-family: charter;
-  font-size: 1.75em;
+  font-size: 1.5em;
   line-height: 1.25; }
   @media (max-width: 900px) {
     h3 {
@@ -189,7 +189,7 @@ code {
     padding: 1px 3px; }
 
 code, kbd, samp {
-    background-color: #FFFFFF;
+    background-color: #E5E9F0;
     font-family: Inconsolata, Consolas, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", "Droid Sans Mono", "Andale Mono", Anonymous, "Monaco", monospaced; }
 
 
