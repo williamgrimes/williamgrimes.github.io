@@ -1,4 +1,4 @@
-{:title "Python: Language Features"
+{:title "Python Tricks"
  :layout :post
  :toc true
  :tags  ["python" "notes"]}
@@ -8,6 +8,7 @@
 <b>Motivation</b>: here I provide some notes made whilst reviewing the book "Python tricks" by Dan Bader, which is a very useful highly recommended book available <a href="https://dbader.org/products/python-tricks-book/" target="_blank">here</a>. Python has become the third most popular programming language behind Java and C, and it continues to become more popular. It is an easy to learn high-level language, that is fun to use and learn. Some of the more advanced and interesting language features are discussed here.
 
 <b>The Zen of Python</b><br>
+<blockquote style="background:#f5f5f5;">
 <em>
 Beautiful is better than ugly.<br>
 Explicit is better than implicit.<br>
@@ -29,8 +30,11 @@ If the implementation is hard to explain, it's a bad idea.<br>
 If the implementation is easy to explain, it may be a good idea.<br>
 Namespaces are one honking great idea -- let's do more of those!<br>
 </em>
+</blockquote>
+
 ## Miscellaneous:
- 
+---
+
 ### Variable naming, underscores and dunders
 <table>
 <thead>
@@ -72,13 +76,13 @@ Namespaces are one honking great idea -- let's do more of those!<br>
 - Do **not** use parenthesis to call `assert` like a function. It is a statement. If you do `assert(condition, message)` you'll be running the `assert` with a `(condition, message)` tuple as first parameter which always evaluates to True.
 
 ### Context Managers and the with statement
-- The most common use of context managers is to manage resources, and this is why we use them when reading from a file. Opening a file consumes a resource (called a file descriptor), and this resource is limited by the OS. 
+- The most common use of context managers is to manage resources, and this is why we use them when reading from a file. Opening a file consumes a resource (called a file descriptor), and this resource is limited by the OS.
 - To check on unix the number of files that can be opened see:
 ```
-$ cat /proc/sys/fs/file-max 
+$ cat /proc/sys/fs/file-max
 1188554
 ```
-- A file descriptor is an integer handle assigned to an open file by the OS rather than accessing the file itself. This is useful to pass references to  files between processes and to maintain kernel security. 
+- A file descriptor is an integer handle assigned to an open file by the OS rather than accessing the file itself. This is useful to pass references to  files between processes and to maintain kernel security.
 - A file descriptor is leaked by not closing opened files, in python this is done by calling `open()` without a `close()` statement.
 - For example, using this statement the `hello.txt` will always be closed:
 ```python
@@ -117,6 +121,7 @@ with
 - In _Python 3.5+_ dictionaries can be merged as `zs = {**xs, **ys}` where duplicate entries are overwritten by the rightmost object in this case `ys`.
 
 ## Functions:
+---
 ### Lexical closures
 - Functions that access variables in a parent function are called 'lexical closures'
 - A closure remembers the values from its enclosing lexical scope even when the program flow is no longer in that scope.
@@ -146,9 +151,10 @@ or called on one line
 8
 ```
  - This is conceptually the same as using `def` but written inline.
- 
+
 ## Decorators functions:
-- Extend, and modify the behaviour of callable functions, without modifying 
+---
+- Extend, and modify the behaviour of callable functions, without modifying
 the callable itself, useful for:
     - logging
     - enforcing access control and authentication
@@ -174,16 +180,17 @@ def trace(func):
     return wrapper
 ```
 - Applying the `functools.wraps` to the wrapper closure returned by the decorator carries over the docstring and other metadata of the input function.
-    
-### *args and **kwargs 
+
+### *args and **kwargs
 - `*args` and `**kwargs` let you write functions with a variable number of arguments in Python.
 - `*args` collects extra positional arguments as a tuple. `**kwargs` collects the extra keyword arguments as a dictionary.
 - The actual syntax is `*` and `**` . Calling them args and kwargs is just a convention (and one you should stick to).
 
-### The point of no return 
+### The point of no return
  - Python adds an implicit `None` if a return statement is not written
 
 ## Classes, Objects, and OOP
+---
 ### String conversions with `__str__` and `__repr__`
 - To string conversions can be set with `__str__` and `__repr__` dunder class methods
 - The results of `__str__` should be readable, and `__repr__` unambiguous.
@@ -218,11 +225,11 @@ class NameToolongError(BaseValidationError):
 ```
 
 ### Cloning Objects
-- A _shallow copy_ constructs a new collection object and then populates it with 
+- A _shallow copy_ constructs a new collection object and then populates it with
 references to the child objects found in the original, it is only one level
 deep `copy.copy()`
-- A _deep copy_ makes the copying process recursive, constructing a new 
-collection then populating it with copes of the child objects found in the 
+- A _deep copy_ makes the copying process recursive, constructing a new
+collection then populating it with copes of the child objects found in the
 original `copy.deepcopy()`.
 ```python
 import copy
@@ -231,31 +238,31 @@ zs = copy.deepcopy(xs)
 ```
 
 ### Abstract Base Classes (ABCs)
-- ABCs ensure that derived classes implement particular methods from the base 
+- ABCs ensure that derived classes implement particular methods from the base
 class at instantiation time.
 - Using ABCs can help avoid bugs and makes class hierarchies easier to maintain
 
 ```python
-from abc import ABC, abstractmethod 
-class Animal(ABC): 
-    def move(self): 
+from abc import ABC, abstractmethod
+class Animal(ABC):
+    def move(self):
         pass
-  
-class Human(Animal): 
-    def move(self): 
-        print("I can walk and run") 
-  
-class Snake(Animal): 
-    def move(self): 
-        print("I can crawl") 
-  
-class Dog(Animal): 
-    def move(self): 
-        print("I can bark") 
-  
-class Lion(Animal): 
-    def move(self): 
-        print("I can roar") 
+
+class Human(Animal):
+    def move(self):
+        print("I can walk and run")
+
+class Snake(Animal):
+    def move(self):
+        print("I can crawl")
+
+class Dog(Animal):
+    def move(self):
+        print("I can bark")
+
+class Lion(Animal):
+    def move(self):
+        print("I can roar")
 ```
 
 ### Namedtuples
@@ -272,15 +279,15 @@ class Lion(Animal):
 - **Class variables** are declared inside the class deﬁnition (but outside of any instance methods). They’re not tied to any particular instance of a class. Instead, class variables store their contents on the class itself, and all objects created from a particular class share access to the same set of class variables. This means, for example, that modifying a class variable aﬀects all object instances at the same time.
 - **Instance variables** are always tied to a particular object instance. Their contents are not stored on the class, but on each individual object created from the class. Therefore, the contents of an instance variable are completely independent from one object instance to the next. And so, modifying an instance variable only aﬀects one object instance at a time.
 ```python
-class Dog: 
-    num_legs = 4 # <- Class variable 
-    
-    def __init__(self, name): 
+class Dog:
+    num_legs = 4 # <- Class variable
+
+    def __init__(self, name):
         self.name = name # <- Instance variable
 ```
 
 ### Class vs Instance vs Static Methods
-- **Instance methods**: the method named `MyClass.method`, is a regular instance method. It takes one parameter, `self`, which points to an instance of `MyClass` when the method is called. Through the self parameter, instance methods can freely access attributes and other methods on the same object. This gives them a lot of power when it comes to modifying an object’s state. Not only can they modify object state, instance methods can also access the class itself through the `self.__class__` attribute. 
+- **Instance methods**: the method named `MyClass.method`, is a regular instance method. It takes one parameter, `self`, which points to an instance of `MyClass` when the method is called. Through the self parameter, instance methods can freely access attributes and other methods on the same object. This gives them a lot of power when it comes to modifying an object’s state. Not only can they modify object state, instance methods can also access the class itself through the `self.__class__` attribute.
 - **Class methods**: the `MyClass.classmethod`, marked with a `@classmethod` decorator takes a `cls` parameter that points to the class and not the object instance when the method is called. Since the class method only has access to this cls argument, it can’t modify object instance state. That would require access to self . However, class methods can still modify class state that applies across all instances of the class.
 - **Static methods**: the third method, `MyClass.staticmethod` is marked with a `@staticmethod` decorator to flag it as a static method. This type of method doesn’t take a self or a `cls` parameter, although, of course, it can be made to accept an arbitrary number of other parameters. As a result, a static method cannot modify object state or class state. Static methods are restricted in what data they can access they are primarily a way to namespace your methods.
 ```python
@@ -295,10 +302,11 @@ class MyClass:
     @staticmethod
     def staticmethod():
         return 'static method called'
-```        
+```
 
 ## Data Types
-### Dictionaries 
+---
+### Dictionaries
 - maps, hasmaps, lookup tables, associative arrays
 - OrderedDict maintains order of insertion, this is standard as of Python 3.7
 - DefaultDict defines a default value for dictionary keys and creates if not available for missing keys
@@ -309,7 +317,7 @@ class MyClass:
 - `tuple` - immutable containers
 - `array.array('f, [1.0, 8.0]')` space-efficient storage of basic C-style data types, constrained
 to a single data type, so are more space efficient than lists or tuples.
-- `str` is an immutable store of textual data as unicode characters 
+- `str` is an immutable store of textual data as unicode characters
 - `bytes` objects are immutable sequences of single bytes, conceptually similar to string objects.
 - `bytesarray` - mutable array of single bytes
 - `set` an unordered collection of objects that does not allow duplicates
