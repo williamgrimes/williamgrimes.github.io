@@ -48,23 +48,23 @@
 */
 
 .button {
-    background: #3B4252;
-    border: 2px solid #3B4252;
+    background: #FFFFFF;
+    border: 1px solid #3B4252;
     position: relative;
     display: inline-block;
-    padding: 7px 12px;
+    padding: 7px 7px;
     margin: 0;
     width: auto;
     font-family: charter;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     letter-spacing: 2px; }
 
 .button:hover {
     background: #2E3440;
-    color: #88C0D0; }
+    color: #16537E; }
 
 .button:active {
     top: 1px; }

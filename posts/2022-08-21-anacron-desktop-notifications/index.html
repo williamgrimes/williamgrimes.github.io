@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+    <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
+    <!-- Modified to fit Cryogen.-->
+    <meta charset="UTF-8">
+    <title>williamgrimes.xyz: Anacron Desktop Notifications</title>
+    
+<meta name="keywords" content="filesystem,bash,illegal fishing,whitepaper,text mining,project,linux,NLP,bitcoin,notes,notification,python,anacron,machine learning,kaggle,unix,computer vision,segmentation">
+
+<meta name="description" content="This is a short guide on creating custom scheduled Linux desktop notifications with anacron and notify-send. This system could be used to set reminders for tasks you intend to complete @daily, @weekly, @monthly, or @yearly, and can also display metrics you are interested to follow.">
+
+<meta property="og:description" content="This is a short guide on creating custom scheduled Linux desktop notifications with anacron and notify-send. This system could be used to set reminders for tasks you intend to complete @daily, @weekly, @monthly, or @yearly, and can also display metrics you are interested to follow.">
+
+<meta property="og:url" content="http://williamgrimes.xyz/posts/2022-08-21-anacron-desktop-notifications/" />
+<meta property="og:title" content="Anacron Desktop Notifications" />
+<meta property="og:type" content="article" />
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+    <link rel="shortcut icon" href="images/ico/favicon.png">
+    <link rel="icon" href="/img/headshot.png">
+    <link href="/fonts/sample.css" rel="stylesheet" type="text/css" >
+    <!--[if IE]><![endif]-->
+    <link href="/css/buttons.css" rel="stylesheet" type="text/css" />
+    <link href="/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/typography.css" rel="stylesheet" type="text/css" />
+    <link href="/css/highlightjs.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night-eighties.min.css"> -->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+
+<div id="left">
+
+    <p id="logo">
+        <a title="williamgrimes.xyz" href="/">
+            <!-- <span class="fa fa-rocket"></span> -->
+            <br>
+            <img class="icon" src="/img/headshot.png">
+            <br>
+            <span class="author">William Grimes</span>
+            <br>
+            <span class="title">(innovate iterate integrate)</span>
+        </a>
+    </p>
+
+    <div id="socialmedia" class="clearfix">
+        <ul>
+            <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
+            <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+            <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
+            <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+            <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+            <li><a title="RSS" href="/feed.xml" rel="external"><span class="fa fa-rss"></span></a></li>
+        </ul>
+    </div>
+
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/"> &#187; Home</a></li>
+            <li ><a title="Archives" href="/archives/"> &#187; Archives</a></li>
+            
+            <li ><a title="Tags" href="/tags/"> &#187; Tags</a></li>
+            
+            
+            <li >
+                <a href="/pages/cv/">&#187; Curriculum Vitae</a>
+            </li>
+            
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
+</div>
+
+<div id="right" class="clearfix">
+    
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Anacron Desktop Notifications</h1>
+        <br>
+        <span class="date" style="font-variant-caps: small-caps;">21 August 2022</span>
+        
+    </div>
+</div>
+<div>
+    <br/>
+    
+    <p>This is a short guide on creating custom scheduled Linux desktop notifications with <code>anacron</code> and <code>notify-send</code>. This system could be used to set reminders for tasks you intend to complete <code>@daily</code>, <code>@weekly</code>, <code>@monthly</code>, or <code>@yearly</code>, and can also display metrics you are interested to follow.</p><div align="center"><img src="/img/notifications.png" alt="Notifications" style="width:60%" /></div><center><b>Caption: </b> linux desktop notifications scheduled daily.</center><p></p><p>You could use this approach to send notifications for example:</p><ul><li>to schedule a monthly reminder to pay a bill,</li><li>get a daily update on a stock price,</li><li>get daily statistics of covid cases in your area,</li><li>track the phase of the moon through a daily notification,</li><li>display a weekly metric of disk usage,</li><li>send a daily weather report notification.</li></ul><h1 id="schedulers">Schedulers</h1><hr /><h2 id="cron">Cron</h2><p>On unix systems <code>cron</code> (from Chronos) is a valuable command-line utility for scheduling jobs and automating system maintenance. The <code>cron</code> utility is run as a daemon meaning it is a background process, not under the direct control of an interactive user.</p><pre><code class="shell">$ sudo service cron status
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/lib/systemd/system/cron.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2022-08-21 13:29:50 CEST; 1h 53min ago
+       Docs: man:cron(8)
+   Main PID: 965 (cron)
+      Tasks: 1 (limit: 8991)
+     Memory: 472.0K
+        CPU: 152ms
+     CGroup: /system.slice/cron.service
+             └─965 /usr/sbin/cron -f -P
+</code></pre><p>A crontab (cron table) file, defines the configuration specifying the schedule on which shell commands should run. A crontab file is a list of jobs to be run by the cron daemon, there is a system-wide crontab file at <code>/etc/crontab</code> and users may have their own crontab files in addition. A job may be specified for example running a backup script at 10:30 every Saturday morning:</p><pre><code class="shell">30 10 * * 5 /home/username/backup.sh
+</code></pre><p>The downside of cron is that it assumes the system has constant up-time, in situations with intermittent up-time step in asynchronous cron also known as anacron.</p><h2 id="anacron">Anacron</h2><p>For a personal machine that is not running continuously anacron  can be used, to control daily, weekly, and monthly jobs that could otherwise be controlled by cron. Anacron is a perfect tool for sending a daily linux notification, when the machine is running. The advantage being that jobs that are scheduled when the machine is not running will be run at the next available opportunity.</p><p>Anacron operates by checking whether a scheduled job has been executed in the last days specified in the period parameter. If the job has not been executed, anacron waits for the number of minutes specified in the delay field to elapse after which it runs the specified shell command or script. Each job that being executed is locked so that if there are any other copies of Anacron in the system, such tasks cannot be executed at the same time. Once the execution of the specified task or job completes, Anacron timestamps this and exits when there is no more scheduled jobs to be executed [<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>]. For more information read the anacron manual page (<code>man anacron</code>) [<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup>].</p><p>The functionality to run anacron as non-root user is not as straightforward as with <code>cron</code> but can be configured as follows [<sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup>].</p><h3 id="1-create-a-folder-structure">1. Create a folder structure</h3><p>A folder is created in your home directory called <code>.anacron</code>, with folders <code>cron.daily</code>, <code>cron.weekly</code>, <code>cron.monthly</code>, <code>spool</code>, and <code>etc</code>.</p><pre><code class="shell">mkdir -p ~/.anacron/{cron.daily cron.weekly cron.monthly spool etc}
+</code></pre><h3 id="2-create-an-anacrontab-file-at-etcanacrontab">2. Create an anacrontab file at <code>etc/anacrontab</code></h3><pre><code class="shell">vim ~/.anacron/etc/anacrontab
+</code></pre><h3 id="3-configure-anacrontab-file">3. Configure anacrontab file</h3><pre><code class="shell"># /etc/anacrontab: configuration file for anacron
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/username
+
+#period in days  delay in minutes job-identifier  command
+1                2                daily-cron      nice run-parts --report --verbose $HOME/.anacron/cron.daily
+7                10               weekly-cron     nice run-parts --report --verbose $HOME/.anacron/cron.weekly
+@monthly         15               monthly-cron    nice run-parts --report --verbose $HOME/.anacron/cron.monthly
+</code></pre><p>**<strong>remember to replace <code>username</code> with your username</strong>**</p><p>Jobs in anacron are specified with the following fields:</p><ul><li><strong>period</strong> specifies how frequently, in days the job should be executed. For a example, a value of 1 means the job should be run every day.</li><li><strong>delay</strong> specifies a time in minutes between the when the anacron starts and when the job is executed, for example 2 minutes.</li><li><strong>job identifier</strong> specifies a unique job ID. This is used in log messages to identify the jobs.</li><li><strong>command</strong> specifies the command or the name of the script to be executed. If executing all scripts in a directory the <code>run-parts</code> command can be used.</li></ul><h3 id="4-add-this-to-your-profile">4. Add this to your <code>~/.profile</code></h3><p>So that Anacron is instantiated for your user each time you login.</p><pre><code class="shell">/usr/sbin/anacron -t $HOME/.anacron/etc/anacrontab -S $HOME/.anacron/spool &amp;&gt; $HOME/.anacron/anacron.log
+</code></pre><h3 id="5-add-scripts-to-anacroncrondaily">5. Add scripts to <code>~/anacron/cron.daily</code></h3><p>In the <code>cron.daily</code> (or weekly, ...) folder you can add shell scripts that you want to be run each day (or week). A couple of notes:</p><ul><li>the scripts should start with a shebang <code>#!/bin/sh</code>, not <code>/bin/bash</code>, and</li><li>scripts should be named without any extension e.g. <code>~/.anacron/cron.daily/moon-phase</code>.</li></ul><h2 id="desktop-notifications">Desktop Notifications</h2><hr /><p>To send linux  notifications of some metrics I'm interested to follow I use the <code>notify-send</code> command. This sends desktop notifications to the user via a notification daemon to inform the user about an event or display some form of information without getting in the user's way [<sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup>, <sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup>]. These notifications are configured to be run as daily or weekly via anacron scripts in <code>~/.anacron/cron.daily/</code> or <code>~/.anacron/cron.weekly/</code>.</p><h3 id="daily-notification-of-moon-phase-in-london">Daily notification of Moon Phase in London</h3><p>To get daily information about the phase of the moon I use the very nice console-oriented weather forecast service from <a href="https://twitter.com/igor_chubin">@igor_chubin</a>, available via curl [<sup id="fnref-6"><a class="footnote-ref" href="#fn-6">6</a></sup>]. In the script I specify variables for the moon phase, day of the moon cycle, location and an update time and create a notification of this using <code>notify-send</code>.</p><pre><code class="shell">vim ~/.anacron/cron.daily/moon-phase
+</code></pre><p>Containing the following:</p><pre><code class="shell">#!/bin/sh
+
+UPDATED=$(date '+%y/%m/%d %H:%M:%S')
+LOCATION="London"
+
+MOON_PHASE=$(curl --silent "wttr.in/${LOCATION}?format=%m")
+MOON_DAY=$(curl --silent "wttr.in/${LOCATION}?format=%M")
+
+/usr/bin/notify-send "Moon in ${LOCATION}    ---   [updated at ${UPDATED}]" "Moon phase: ${MOON_PHASE} \nMoon Day: ${MOON_DAY}" --app-name=""
+</code></pre><h3 id="daily-notification-of-covid-cases-in-japan">Daily notification of Covid Cases in Japan</h3><p>To get daily information about covid cases in Japan I have used the corona stats online service <sup id="fnref-7"><a class="footnote-ref" href="#fn-7">7</a></sup>.</p><pre><code class="shell">vim ~/.anacron/cron.daily/covid
+</code></pre><p>Containing the following:</p><pre><code class="shell">#!/bin/sh
+
+COUNTRY="Japan"
+
+TODAY_CASES=$(curl --silent  "https://corona-stats.online/$COUNTRY?format=json" | jq '.data[].todayCases')
+ACTIVE_PER_MILLION=$(curl --silent  "https://corona-stats.online/${COUNTRY}?format=json" | jq '.data[].activePerOneMillion')
+UPDATED=$(curl --silent  "https://corona-stats.online/${COUNTRY}?format=json" | jq '.data[].updated' | date '+%y/%m/%d %H:%M:%S')
+
+/usr/bin/notify-send "Covid Cases ${COUNTRY}    ---   [updated at ${UPDATED}]" "New Cases: ${TODAY_CASES} \nActive per million ${ACTIVE_PER_MILLION} " --app-name=""
+</code></pre><h3 id="weekly-notification-of-disk-usage">Weekly notification of Disk Usage</h3><p>Finally, to get a weekly update on disk usage, I have used the <code>df</code> command with <code>awk</code> to extract the appropriate fields.</p><pre><code class="shell">$ vim ~/.anacron/cron.weekly/disk-usage
+</code></pre><p>Containing the following:</p><pre><code class="shell">#!/bin/sh
+
+UPDATED=$(date '+%y/%m/%d %H:%M:%S')
+
+DISK_FILESYSTEM=$(df -h . | grep -v Filesystem | awk '{print $1}')
+DISK_SIZE=$(df -h . | grep -v Size | awk '{print $2}' | sed 's|[^0-9]||g')
+DISK_USED=$(df -h . | grep -v Used | awk '{print $3}' | sed 's|[^0-9]||g')
+DISK_AVAILABLE=$(df -h . | grep -v Avail | awk '{print $4}' | sed 's|[^0-9]||g')
+
+/usr/bin/notify-send "Disk Usage ${DISK_FILESYSTEM}    ---   [updated at ${UPDATED}]" "${DISK_USED} / ${DISK_SIZE} G disk used, available ${DISK_AVAILABLE} G" --app-name=""
+</code></pre><h1 id="conclusion">Conclusion</h1><hr /><p>This guide describes how to setup daily and weekly linux notifications for information that you may find relevant. It is easy to continue to add more scripts and extend this further by adding to the <code>cron.daily</code> directory.</p><p>In future I would also like to add some conditional notifications, depending on how reliable and useful this system turns out to be. For example you could have a script that sends a notification when it is the day of the full moon only, or when a stock drops below a certain price, or when covid cases fall below a certain level, or when disk usage is more than 80 %. It would also be useful to combine these conditional notifications with the option to send an email [<sup id="fnref-8"><a class="footnote-ref" href="#fn-8">8</a></sup>].</p><h1 id="references">References</h1><div class="footnotes"><hr /><ol><li id="fn-1"><p><a href="https://kifarunix.com/scheduling-tasks-using-anacron-in-linux-unix/">kifarunix: scheduling tasks using anacron in linux</a></p><a href="#fnref-1" class="footnote-backref">↩</a></li><li id="fn-2"><p><a href="https://linux.die.net/man/8/anacron">linux-die: anacron manual page</a></p><a href="#fnref-2" class="footnote-backref">↩</a></li><li id="fn-3"><p><a href="https://grinux.wordpress.com/2012/04/18/run-anacron-as-user/">grinux: run anacron as user</a></p><a href="#fnref-3" class="footnote-backref">↩</a></li><li id="fn-4"><p><a href="https://www.thegeekstuff.com/2010/12/ubuntu-notify-send/">thegeekstuff: Ubuntu notify send</a></p><a href="#fnref-4" class="footnote-backref">↩</a></li><li id="fn-5"><p><a href="https://manpages.ubuntu.com/manpages/xenial/man1/notify-send.1.html">manpage: notify send</a></p><a href="#fnref-5" class="footnote-backref">↩</a></li><li id="fn-6"><p><a href="https://github.com/chubin/wttr.in">github: wttr</a></p><a href="#fnref-6" class="footnote-backref">↩</a></li><li id="fn-7"><p><a href="https://corona-stats.online">corona stats online</a></p><a href="#fnref-7" class="footnote-backref">↩</a></li><li id="fn-8"><p><a href="https://fedingo.com/shell-script-to-check-disk-space-and-send-email-alerts/">fedingo: - shell script to check disk space and send email alerts</a></p><a href="#fnref-8" class="footnote-backref">↩</a></li></ol></div>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/linux/">linux</a>
+    
+    <a href="/tags-output/notification/">notification</a>
+    
+    <a href="/tags-output/anacron/">anacron</a>
+    
+</div>
+
+<br/>
+
+    <div id="prev-next">
+        
+        
+        <a class="right button" href="/posts/2019-09-21-unix-file-system/">The Unix Filesystem &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://williamgrimes.xyz/posts/2022-08-21-anacron-desktop-notifications/";
+            this.page.identifier = "Anacron Desktop Notifications";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//williamgrimes.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+<hr/>
+<div id="footercont" class="clearfix">Copyright &copy; 2022 William Grimes
+    <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+
+</div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/js/highlight.pack.js" type="application/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/scripts.js" type="application/javascript"></script>
+
+
+</body>
+</html>
