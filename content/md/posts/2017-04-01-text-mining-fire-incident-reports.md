@@ -1,7 +1,7 @@
 {:title "London Fire Brigade - Topic Modelling of Incident Reports"
  :layout :post
  :toc false
- :tags  ["NLP" "text mining" "project"]}
+ :tags  ["NLP" "text-mining" "project"]}
 
 This project used natural language processing (NLP) to analyse the London Fire Brigades corpus of free text reports. These reports are written for the most serious fire types and have been archived since the 1980s. The London Fire Brigade Business Intelligence Unit wanted to explore how to better understand and analyse these 37,000 text reports. This project shows how topic modelling can be used to understand more complex fire incidents, and explore their spatial and temporal patterns to help the London Fire Brigade in prevention of these fires. A Latent Dirichlet Allocation (LDA) was applied using term frequency–inverse document frequency (TFIDF).
 

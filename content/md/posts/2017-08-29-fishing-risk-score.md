@@ -1,7 +1,7 @@
 {:title "A Fishing Risk Framework from Satellites and Ocean Data"
  :layout :post
  :toc false
- :tags  ["illegal fishing" "machine learning"]}
+ :tags  ["illegal-fishing" "machine-learning"]}
 
 This proof-of-concept system assess vessels in a risk framework considering multiple factors to suggest the likelihood that a vessel has been engaging in illegal, unregulated, or unreported (IUU) fishing. The framework combines automatic identification system (AIS) tracking data with satellite imagery in construction of a risk framework. The framework combines several indicators including: the likelihood that a vessel has previously fished in a marine protected area (MPA) or exclusive economic zone (EEZ), and the intermittency of the vessel's AIS signal.
 

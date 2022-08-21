@@ -1,7 +1,7 @@
 {:title "Advancing Medical Discovery through Nuclei Segmentation"
  :layout :post
  :toc false
- :tags  ["segmentation" "computer vision" "kaggle"]}
+ :tags  ["segmentation" "computer-vision" "kaggle"]}
 
 Described here is an approach to the 2018 Data Science Bowl competition, this soluction  scored within the top 20% of submissions, out of over 3000 teams. The objective of the competition was to segment nuclei in cell microscopy images.
 
