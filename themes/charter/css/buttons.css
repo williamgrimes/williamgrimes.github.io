@@ -48,17 +48,17 @@
 */
 
 .button {
-    border: 2px solid #3B4252;
     background: #FFFFFF;
+    border: 1px solid #3B4252;
     position: relative;
     display: inline-block;
-    padding: 7px 12px;
+    padding: 7px 7px;
     margin: 0;
     width: auto;
     font-family: charter;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     letter-spacing: 2px; }
 
