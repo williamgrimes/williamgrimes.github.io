@@ -43,13 +43,13 @@ This approach also allows us to explore more subtle fire types that may not be w
 
 ## Presentation
 <div align="center">
-<iframe title="YouTube video player" class="youtube-player" type="text/html" 
+<iframe title="YouTube video player" class="youtube-player" type="text/html"
 width="560" height="315" src="http://www.youtube.com/embed/iW6XWcGhKUc"
 frameborder="0" allowFullScreen></iframe>
 </div>
 
 ## Authors
-This project was conducted as part of ASI Data Science fellowship 7, further details of 
+This project was conducted as part of ASI Data Science fellowship 7, further details of
 the eight week fellowship can be found [here](https://www.asidatascience.com/fellowship).
 
 **Data science fellows:** William Grimes

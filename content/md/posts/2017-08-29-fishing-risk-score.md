@@ -26,19 +26,19 @@ Our goal is to create an Open-Source Risk Tool by combining multiple satellite d
 
 ## Presentation
 <div align="center">
-<iframe title="YouTube video player" class="youtube-player" type="text/html" 
+<iframe title="YouTube video player" class="youtube-player" type="text/html"
 width="560" height="315" src="http://www.youtube.com/embed/f4Q858hmZP0"
 frameborder="0" allowFullScreen></iframe>
 </div>
 
 ## People
-**Fellows:** William Grimes, Iván Higuera-Mendieta, Shubham Tomar   
+**Fellows:** William Grimes, Iván Higuera-Mendieta, Shubham Tomar
 
-**Mentor:** Jane Zanzig 
+**Mentor:** Jane Zanzig
 
-**Project Manager:** Paul van der Boor 
+**Project Manager:** Paul van der Boor
 
-**Project Partner:** World Economic Forum’s New Vision for Oceans Initiative (Nishan Degnarain), Spire (Theresa Condor, Kyle Brazil), Digital Globe (Rhiannan Price, Har-Noy, Shay), Planet Labs (Will Marshall, Joseph Mascaro)    
+**Project Partner:** World Economic Forum’s New Vision for Oceans Initiative (Nishan Degnarain), Spire (Theresa Condor, Kyle Brazil), Digital Globe (Rhiannan Price, Har-Noy, Shay), Planet Labs (Will Marshall, Joseph Mascaro)
 
 **Project Chair:** Euro Beinat
 
