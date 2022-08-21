@@ -34,15 +34,7 @@ http://williamgrimes.xyz/pages/cv/index.html
 </url>
 <url>
 <loc>
-http://williamgrimes.xyz/tags-output/text mining/index.html
-</loc>
-<lastmod>
-2022-08-21
-</lastmod>
-</url>
-<url>
-<loc>
-http://williamgrimes.xyz/tags-output/machine learning/index.html
+http://williamgrimes.xyz/tags-output/illegal-fishing/index.html
 </loc>
 <lastmod>
 2022-08-21
@@ -66,6 +58,14 @@ http://williamgrimes.xyz/tags-output/linux/index.html
 </url>
 <url>
 <loc>
+http://williamgrimes.xyz/tags-output/machine-learning/index.html
+</loc>
+<lastmod>
+2022-08-21
+</lastmod>
+</url>
+<url>
+<loc>
 http://williamgrimes.xyz/tags-output/anacron/index.html
 </loc>
 <lastmod>
@@ -74,7 +74,7 @@ http://williamgrimes.xyz/tags-output/anacron/index.html
 </url>
 <url>
 <loc>
-http://williamgrimes.xyz/tags-output/computer vision/index.html
+http://williamgrimes.xyz/tags-output/text-mining/index.html
 </loc>
 <lastmod>
 2022-08-21
@@ -122,6 +122,14 @@ http://williamgrimes.xyz/tags-output/kaggle/index.html
 </url>
 <url>
 <loc>
+http://williamgrimes.xyz/tags-output/computer-vision/index.html
+</loc>
+<lastmod>
+2022-08-21
+</lastmod>
+</url>
+<url>
+<loc>
 http://williamgrimes.xyz/tags-output/notes/index.html
 </loc>
 <lastmod>
@@ -139,14 +147,6 @@ http://williamgrimes.xyz/tags-output/whitepaper/index.html
 <url>
 <loc>
 http://williamgrimes.xyz/tags-output/unix/index.html
-</loc>
-<lastmod>
-2022-08-21
-</lastmod>
-</url>
-<url>
-<loc>
-http://williamgrimes.xyz/tags-output/illegal fishing/index.html
 </loc>
 <lastmod>
 2022-08-21
