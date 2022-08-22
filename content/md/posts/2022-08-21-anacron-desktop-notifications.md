@@ -53,40 +53,39 @@ For a personal machine that is not running continuously anacron  can be used, to
 
 Anacron operates by checking whether a scheduled job has been executed in the last days specified in the period parameter. If the job has not been executed, anacron waits for the number of minutes specified in the delay field to elapse after which it runs the specified shell command or script. Each job that being executed is locked so that if there are any other copies of Anacron in the system, such tasks cannot be executed at the same time. Once the execution of the specified task or job completes, Anacron timestamps this and exits when there is no more scheduled jobs to be executed [[^1]]. For more information read the anacron manual page (`man anacron`) [[^2]].
 
-The functionality to run anacron as non-root user is not as straightforward as with `cron` but can be configured as follows [[^3]].
+The functionality to run anacron as non-root user is not as straightforward as with `cron`, and can be configured to run from the home directory [[^3]]. To send notifications as a non-root user to a users workspace I decided to use the default anacrontab  at `/etc/anacrontab`:
 
-### 1. Create a folder structure
-A folder is created in your home directory called `.anacron`, with folders `cron.daily`, `cron.weekly`, `cron.monthly`, `spool`, and `etc`.
-
-``` shell
-mkdir -p ~/.anacron/{cron.daily cron.weekly cron.monthly spool etc}
-```
-
-### 2. Create an anacrontab file at `etc/anacrontab`
+### 1. Edit the `/etc/anacrontab`
 
 ``` shell
-vim ~/.anacron/etc/anacrontab
+vim /etc/anacrontab
 ```
 
-### 3. Configure anacrontab file
+The contents of `/etc/anacrontab` are as follows
 
 ```shell
 # /etc/anacrontab: configuration file for anacron
 
 # See anacron(8) and anacrontab(5) for details.
 
-SHELL=/bin/bash
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-HOME=/home/username
+SHELL=/bin/sh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+# MAILTO=root
+# RANDOM_DELAY=30
+# Anacron jobs will start between 6am and 8am.
+# START_HOURS_RANGE=6-8
 
-#period in days  delay in minutes job-identifier  command
-1                2                daily-cron      nice run-parts --report --verbose $HOME/.anacron/cron.daily
-7                10               weekly-cron     nice run-parts --report --verbose $HOME/.anacron/cron.weekly
-@monthly         15               monthly-cron    nice run-parts --report --verbose $HOME/.anacron/cron.monthly
+# delay will be 1 minutes + RANDOM_DELAY for cron.daily
+1         1    cron.daily          nice run-parts /etc/cron.daily
+7         5    cron.weekly         nice run-parts /etc/cron.weekly
+@monthly  15   cron.monthly        nice run-parts /etc/cron.monthly
 ```
-\*\***remember to replace `username` with your username**\*\*
 
+Here you can specify new jobs by adding a new line, for example to run a backup script every two days with a delay of 35 minutes after anacron is initialised.
 
+``` shell
+2         35    backup         /home/user/backup
+```
 Jobs in anacron are specified with the following fields:
 
  + **period** specifies how frequently, in days the job should be executed. For a example, a value of 1 means the job should be run every day.
@@ -94,80 +93,99 @@ Jobs in anacron are specified with the following fields:
  + **job identifier** specifies a unique job ID. This is used in log messages to identify the jobs.
  + **command** specifies the command or the name of the script to be executed. If executing all scripts in a directory the `run-parts` command can be used.
 
-### 4. Add this to your `~/.profile`
-So that Anacron is instantiated for your user each time you login.
 
-``` shell
-/usr/sbin/anacron -t $HOME/.anacron/etc/anacrontab -S $HOME/.anacron/spool &> $HOME/.anacron/anacron.log
-```
-
-### 5. Add scripts to `~/anacron/cron.daily`
+### 2. Add scripts to `/etc/cron.daily`, `/etc/cron.weekly`
 In the `cron.daily` (or weekly, ...) folder you can add shell scripts that you want to be run each day (or week). A couple of notes:
  + the scripts should start with a shebang `#!/bin/sh`, not `/bin/bash`, and
- + scripts should be named without any extension e.g. `~/.anacron/cron.daily/moon-phase`.
+ + scripts should be named without any extension e.g. `/etc/cron.daily/moon-phase`.
+
+Rather than add scripts here I created a folder in my home directory `~/Notifications` and created symbolic links to `/etc/cron.daily` and `/etc/cron.weekly`.
 
 ## Desktop Notifications
 ---
-To send linux  notifications of some metrics I'm interested to follow I use the `notify-send` command. This sends desktop notifications to the user via a notification daemon to inform the user about an event or display some form of information without getting in the user's way [[^4], [^5]]. These notifications are configured to be run as daily or weekly via anacron scripts in `~/.anacron/cron.daily/` or `~/.anacron/cron.weekly/`.
+To send linux  notifications of some metrics I'm interested to follow I use the `notify-send` command. This sends desktop notifications to the user via a notification daemon to inform the user about an event or display some form of information without getting in the user's way [[^4], [^5]].
+
+Since it is not possible to execute anacron as a non-root user I configured my scripts to run as `su $USER -c <command>`, and specify the `DBUS_SESSION_BUS_ADDRESS`, an environment variable used by the dbus utility, required to start a message bus from a shell script.
 
 ### Daily notification of Moon Phase in London
 To get daily information about the phase of the moon I use the very nice console-oriented weather forecast service from [@igor_chubin](https://twitter.com/igor_chubin), available via curl [[^6]]. In the script I specify variables for the moon phase, day of the moon cycle, location and an update time and create a notification of this using `notify-send`.
 
 ``` shell
-vim ~/.anacron/cron.daily/moon-phase
+vim /etc/cron.daily/moon-phase
 ```
 Containing the following:
 
 ``` shell
 #!/bin/sh
 
-UPDATED=$(date '+%y/%m/%d %H:%M:%S')
+USER=<username>
+
+su $USER -c '
+UPDATED=$(date "+%y/%m/%d %H:%M:%S")
 LOCATION="London"
 
 MOON_PHASE=$(curl --silent "wttr.in/${LOCATION}?format=%m")
 MOON_DAY=$(curl --silent "wttr.in/${LOCATION}?format=%M")
 
-/usr/bin/notify-send "Moon in ${LOCATION}    ---   [updated at ${UPDATED}]" "Moon phase: ${MOON_PHASE} \nMoon Day: ${MOON_DAY}" --app-name=""
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+/usr/bin/notify-send "Moon in ${LOCATION}    ---   [updated at ${UPDATED}]" \
+"Moon phase: ${MOON_PHASE} \nMoon Day: ${MOON_DAY}" \
+--app-name=""
+'
 ```
 
 ### Daily notification of Covid Cases in Japan
 To get daily information about covid cases in Japan I have used the corona stats online service [^7].
 
 ``` shell
-vim ~/.anacron/cron.daily/covid
+vim /etc/cron.daily/covid
 ```
 Containing the following:
 ``` shell
 #!/bin/sh
 
+USER=<username>
+
+su $USER -c '
 COUNTRY="Japan"
 
-TODAY_CASES=$(curl --silent  "https://corona-stats.online/$COUNTRY?format=json" | jq '.data[].todayCases')
-ACTIVE_PER_MILLION=$(curl --silent  "https://corona-stats.online/${COUNTRY}?format=json" | jq '.data[].activePerOneMillion')
-UPDATED=$(curl --silent  "https://corona-stats.online/${COUNTRY}?format=json" | jq '.data[].updated' | date '+%y/%m/%d %H:%M:%S')
+TODAY_CASES=$(curl --silent  "https://corona-stats.online/$COUNTRY?format=json" | jq ".data[].todayCases")
+ACTIVE_PER_MILLION=$(curl --silent  "https://corona-stats.online/${COUNTRY}?format=json" | jq ".data[].activePerOneMillion")
+UPDATED=$(curl --silent  "https://corona-stats.online/${COUNTRY}?format=json" | jq ".data[].updated" | date "+%y/%m/%d %H:%M:%S")
 
-/usr/bin/notify-send "Covid Cases ${COUNTRY}    ---   [updated at ${UPDATED}]" "New Cases: ${TODAY_CASES} \nActive per million ${ACTIVE_PER_MILLION} " --app-name=""
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+/usr/bin/notify-send "Covid Cases ${COUNTRY}    ---   [updated at ${UPDATED}]" \
+"New Cases: ${TODAY_CASES} \nActive per million ${ACTIVE_PER_MILLION} " \
+--app-name=""
+'
 ```
 
 ### Weekly notification of Disk Usage
-Finally, to get a weekly update on disk usage, I have used the `df` command with `awk` to extract the appropriate fields.
+Finally, to get a weekly update on disk usage, I parsed the `df -h .` command to get information on the disk usage.
 
 ``` shell
-$ vim ~/.anacron/cron.weekly/disk-usage
+$ vim /etc/cron.weekly/disk-usage
 ```
 Containing the following:
 
 ``` shell
 #!/bin/sh
 
-UPDATED=$(date '+%y/%m/%d %H:%M:%S')
+USER=<username>
 
-DISK_FILESYSTEM=$(df -h . | grep -v Filesystem | awk '{print $1}')
-DISK_SIZE=$(df -h . | grep -v Size | awk '{print $2}' | sed 's|[^0-9]||g')
-DISK_USED=$(df -h . | grep -v Used | awk '{print $3}' | sed 's|[^0-9]||g')
-DISK_AVAILABLE=$(df -h . | grep -v Avail | awk '{print $4}' | sed 's|[^0-9]||g')
+su $USER -c '
+UPDATED=$(date "+%y/%m/%d %H:%M:%S")
 
-/usr/bin/notify-send "Disk Usage ${DISK_FILESYSTEM}    ---   [updated at ${UPDATED}]" "${DISK_USED} / ${DISK_SIZE} G disk used, available ${DISK_AVAILABLE} G" --app-name=""
+DISK_FILESYSTEM=$(df -h . --output=source | tail -1)
+DISK_SIZE=$(df -h . --output=size | tail -1 | sed "s|[^0-9]||g")
+DISK_USED=$(df -h . --output=used | tail -1 | sed "s|[^0-9]||g")
+DISK_AVAILABLE=$(df -h . --output=avail | tail -1 | sed "s|[^0-9]||g")
+
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+/usr/bin/notify-send "${DISK_FILESYSTEM}    ---   [updated at ${UPDATED}]" \
+"${DISK_USED} / ${DISK_SIZE} G disk used, available ${DISK_AVAILABLE} G" \
+--app-name=""
+'
 ```
 
 # Conclusion
