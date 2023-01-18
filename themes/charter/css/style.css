@@ -43,6 +43,23 @@ hr {
 }
 
 /* ==================================================
+   Footnotes
+================================================== */
+.footnotes ol{
+    display: block;
+    line-height: 1.0;
+}
+
+.footnotes ol li p {
+    display: inline-flex;
+}
+
+.footnote-backref {
+    margin-left: 10px;
+}
+
+
+/* ==================================================
    Global Styles
 ================================================== */
 
@@ -238,6 +255,7 @@ img.imgfull {
     margin: 0;
     text-align: left;
     letter-spacing: 1.4px;
+    line-height: 10px;
 }
 
 
