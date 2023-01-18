@@ -56,6 +56,7 @@ git push -u origin cryogen
 cd public
 git branch # verify it is gh-pages
 git add *
+git commit -m "<commit message>"
 git push -u origin gh-pages
 ```
 
