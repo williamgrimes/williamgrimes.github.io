@@ -52,7 +52,7 @@
     border: 1.5px solid #252A33;
     position: relative;
     display: inline-block;
-    padding: 5px 5px;
+    padding: 0px 5px;
     margin: 0;
     width: auto;
     font-family: charter;
@@ -60,7 +60,7 @@
     text-align: center;
     text-decoration: none;
     letter-spacing: 2px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     font-weight: 800;
     border-radius: 5px;
 }
