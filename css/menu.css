@@ -1,8 +1,12 @@
 /** Menu Styles **/
 
+#menucont {
+    margin-top: auto; /* Push menu to bottom of container / page */ 
+    flex-direction: column;
+    padding-bottom: 22px;
+}
+
 #menucont ul.menu {
-    position: absolute;
-    bottom: 24px;
     width: 100%;
     margin: 0;
 }
