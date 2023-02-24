@@ -1,7 +1,25 @@
 {:title "Curriculum Vitae"
  :layout :page
- :page-index 0
+ :page-index 1
  :navbar? true}
+
+<div>
+<br>
+</div>
+
+<!-- -------------------------
+---- ABOUT
+-------------------------- -->
+<div id="cv">
+  <div class="cv-column cv-column-title">
+    <b>SUMMARY</b>
+  </div>
+  <div class="cv-column cv-column-content">
+    <p>
+      As a full stack data professional, my expertise lies in applying machine learning to <b>geospatial</b> and <b>image data</b>. I'm deeply committed to software development and prioritize creating maintainable, scalable systems through test-driven development. My ultimate goal is to leverage technology to drive positive social outcomes, and I relish the opportunity to collaborate with cross-functional teams to achieve this shared mission.
+    </p>
+  </div>
+</div>
 
 <!-- -------------------------
 ---- INTERESTS
@@ -11,77 +29,105 @@
     <b>INTERESTS</b>
   </div>
   <div class="cv-column cv-column-content">
-    <p>
-      machine learning, <br>
-      data science,<br>
-      computer vision,<br>
-      geographic information systems,<br>
-      bitcoin,<br>
-      vipassana meditation<br>
-    </p>
+    <ul>
+      <li>Machine Learning</li>
+      <li>Geographic Information Systems (GIS)</li>
+      <li>Computer Vision</li>
+      <li>Software Engineering.</li>
+    </ul>
   </div>
 </div>
 
+
 <!-- -------------------------
----- SKILLS
+---- TECH
 -------------------------- -->
 <div id="cv">
   <div class="cv-column cv-column-title">
-    <b>SKILLS</b>
+    <b>TECH</b>
   </div>
   <div class="cv-column cv-column-content">
     <p>
-      <b>Programming: </b>
-      Python, R, Java, Matlab, SQL, Clojure
-      <br>
+      <b>Machine Learning: </b>
+      <ul>
+        <li>regression, decision trees, ensembles, SVM, neural networks, deep learning</li>
+      </ul>
       <!--
       ----
       -->
-      <b>Machine Learning: </b>
-      regression, decision trees, ensembles, SVM, neural networks, deep learning
-      <br>
+      <b>Programming: </b>
+      Python, R, Java, Matlab, SQL, Clojure
+      <ul>
+        <li>Python, R, Java, Matlab, SQL, Clojure</li>
+      </ul>
       <!--
       ----
       -->
       <b>Libraries: </b>
-      NumPy, pandas, SciPy, scikit-learn, scikit-image, OpenCV, Geopandas, GDAL, PyTorch, theano
-      <br>
+      <ul>
+        <li>NumPy, pandas, SciPy, scikit-learn, scikit-image, OpenCV, Geopandas, GDAL, PyTorch, theano</li>
+      </ul>
       <!--
       ----
       -->
       <b>Visualisation: </b>
-      matplotlib, bokeh, plotly, ggplot, Tableau
-      <br>
+      <ul>
+        <li>matplotlib, bokeh, plotly, ggplot, Tableau</li>
+      </ul>
       <!--
       ----
       -->
       <b>Scripting: </b>
-      Bash, sed, awk, grep, Python, Ruby
-      <br>
+      <ul>
+        <li>Bash, sed, awk, grep, Python, Ruby</li>
+      </ul>
       <!--
       ----
       -->
       <b>Databases: </b>
-      MySQL, PostgreSQL, MS SQL Server
-      <br>
+      <ul>
+        <li>MySQL, PostgreSQL, MS SQL Server</li>
+      </ul>
+      <!--
+      ----
+      -->
       <b>Front-end: </b>
-      Javascript, HTML, CSS, HTML,  Semantic UI, Jekyll
-      <br>
-      <b>Misc: </b> Azure, Docker, Git, Kafka, Jenkins, Jupyter Notebooks, Latex, Redis, UNIX
+      <ul>
+        <li>Javascript, HTML, CSS, HTML,  Semantic UI, Jekyll</li>
+      </ul>
+      <!--
+      ----
+      -->
+      <b>Misc: </b>
+      <ul>
+        <li>Azure, Docker, Git, Kafka, Jenkins, Jupyter Notebooks, Latex, Redis, UNIX</li>
+      </ul>
     </p>
   </div>
 </div>
 
 <!-- -------------------------
----- WORK
+---- EXPERIENCE
 -------------------------- -->
 <div id="cv">
   <div class="cv-column cv-column-title">
-    <b>WORK</b>
+    <b>EXPERIENCE</b>
   </div>
   <div class="cv-column cv-column-content">
     <p>
-      <b>Numerico Technologies</b>, Amsterdam / Remote <b><span style="float:right;">2018 - Present</span></b>
+      <b>DareData Engineering</b>, Remote <b><span style="float:right;">2021 - 2023</span></b>
+      <br> &nbsp;&nbsp; <em>Machine Learning Engineer</em>
+      <br> &nbsp;&nbsp; <a href="https://www.daredata.engineering/" target="_blank">daredata.engineering/</a>
+    </p>
+    <ul>
+      <li>Led a team as the machine learning engineer on a project that improved call center operations by developing and implementing a client-operator matching system. This system increased profitability, customer satisfaction, and reduced customer churn.</li>
+      <li>Used PySpark MLlib to successfully train a Gradient Boosted Tree (GBT) regressor that ranked clients with the best operator from approximately 500 million operator-customer pairs. Delivered daily leads that were operationalized in the call center, leading to improved efficiency and productivity.</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <p>
+      <b>Numerico Technologies</b>, Remote <b><span style="float:right;">2018 - Present</span></b>
       <br> &nbsp;&nbsp; <em>Data Scientist and Software Engineer</em>
       <br> &nbsp;&nbsp; <a href="https://numerico.tech/" target="_blank">numerico.tech/</a>
     </p>
