@@ -311,6 +311,28 @@ img.imgfull {
 }
 
 /* ==================================================
+   ABOUT
+================================================== */
+
+#about {
+  max-width: 900px;
+  margin: 10 auto;
+  line-height: 1.5;
+  font-size: 1.2em;
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: auto 1fr;
+  padding: 15px;
+  text-align: justify;
+  text-justify: inter-word;
+  border-radius: 10px;
+  border-top: 2px solid #BF616A;
+  border-left: 6px solid #BF616A;
+  border-bottom: 2px solid #BF616A;
+  border-right: 2px solid #BF616A;
+}
+
+/* ==================================================
    Responsive Media Queries - Mobiles
 ================================================== */
 
