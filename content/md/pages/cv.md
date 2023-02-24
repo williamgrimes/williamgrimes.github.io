@@ -6,19 +6,18 @@
 <!-- -------------------------
 ---- INTERESTS
 -------------------------- -->
-<div id="two-column">
-  <br>
-  <div class="column left">
+<div id="cv">
+  <div class="cv-column cv-column-title">
     <b>INTERESTS</b>
   </div>
-  <div class="column right">
+  <div class="cv-column cv-column-content">
     <p>
-      machine learning,
-      data science,
-      computer vision,
-      geographic information systems,
-      bitcoin,
-      vipassana meditation
+      machine learning, <br>
+      data science,<br>
+      computer vision,<br>
+      geographic information systems,<br>
+      bitcoin,<br>
+      vipassana meditation<br>
     </p>
   </div>
 </div>
@@ -26,11 +25,11 @@
 <!-- -------------------------
 ---- SKILLS
 -------------------------- -->
-<div id="two-column" style="line-height: 1.7em">
-  <div class="column left">
+<div id="cv">
+  <div class="cv-column cv-column-title">
     <b>SKILLS</b>
   </div>
-  <div class="column right">
+  <div class="cv-column cv-column-content">
     <p>
       <b>Programming: </b>
       Python, R, Java, Matlab, SQL, Clojure
@@ -76,11 +75,11 @@
 <!-- -------------------------
 ---- WORK
 -------------------------- -->
-<div id="two-column">
-  <div class="column left">
+<div id="cv">
+  <div class="cv-column cv-column-title">
     <b>WORK</b>
   </div>
-  <div class="column right">
+  <div class="cv-column cv-column-content">
     <p>
       <b>Numerico Technologies</b>, Amsterdam / Remote <b><span style="float:right;">2018 - Present</span></b>
       <br> &nbsp;&nbsp; <em>Data Scientist and Software Engineer</em>
@@ -178,11 +177,11 @@
 <!-- -------------------------
 ---- EDUCATION
 -------------------------- -->
-<div id="two-column">
-  <div class="column left">
+<div id="cv">
+  <div class="cv-column cv-column-title">
     <b>EDUCATION</b>
   </div>
-  <div class="column right">
+  <div class="cv-column cv-column-content">
     <p>
       <b>University College London</b> <b><span style="float:right;">2013 - 2016</span></b>
       <br> &nbsp;&nbsp; <em>PhD, Bioinformatics and Computational Biology</em>
@@ -219,11 +218,11 @@
 <!-- -------------------------
 AWARDS
 -------------------------- -->
-<div id="two-column">
-  <div class="column left">
+<div id="cv">
+  <div class="cv-column cv-column-title">
     <b>AWARDS</b>
   </div>
-  <div class="column right">
+  <div class="cv-column cv-column-content">
     <p>
       <b>Aardvark Scholarship</b>, Joe Nicholson <b><span style="float:right;">2012 - 2013</span></b>
       <br><em>A scholarship awarded once a year to an exceptional UCL Computer Science student.</em>
@@ -235,11 +234,11 @@ AWARDS
 <!-- -------------------------
 ---- PUBLICATIONS
 -------------------------- -->
-<div id="two-column">
-  <div class="column left">
+<div id="cv">
+  <div class="cv-column cv-column-title">
     <b>PUBLICATIONS</b>
   </div>
-  <div class="column right">
+  <div class="cv-column cv-column-content">
     <p>
     <em><b>Tuning the endothelial response: differential release of exocytic cargos from Weibel-Palade Bodies.</em></b>
     <br>T.D. Nightingale, J. McCormack, W. Grimes, C. Robinson, M. Lopes da Silva, I.J. White, A. Vaughan, L.P. Cramer, D.F. Cutler., <em>Journal of Thrombosis and Haemostasis</em>, June, 2018
@@ -270,11 +269,11 @@ AWARDS
 <!-- -------------------------
 ---- CHARITY
 -------------------------- -->
-<div id="two-column">
-  <div class="column left">
+<div id="cv">
+  <div class="cv-column cv-column-title">
     <b>CHARITY</b>
   </div>
-  <div class="column right">
+  <div class="cv-column cv-column-content">
     <p>
       <b>Effective Altruism,</b> Giving What We Can Pledge<b><span style="float:right;">2021 - Present</span></b>
       <br> &nbsp;&nbsp; <a href="https://www.givingwhatwecan.org/" target="_blank">givingwhatwecan.org/</a>
