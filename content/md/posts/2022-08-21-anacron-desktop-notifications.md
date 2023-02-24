@@ -20,9 +20,8 @@ You could use this approach to send notifications for example:
  + send a daily weather report notification.
 
 
-# Schedulers
----
-## Cron
+## Schedulers
+### Cron
 On unix systems `cron` (from Chronos) is a valuable command-line utility for scheduling jobs and automating system maintenance. The `cron` utility is run as a daemon meaning it is a background process, not under the direct control of an interactive user.
 
 
@@ -48,14 +47,14 @@ A crontab (cron table) file, defines the configuration specifying the schedule o
 
 The downside of cron is that it assumes the system has constant up-time, in situations with intermittent up-time step in asynchronous cron also known as anacron.
 
-## Anacron
+### Anacron
 For a personal machine that is not running continuously anacron  can be used, to control daily, weekly, and monthly jobs that could otherwise be controlled by cron. Anacron is a perfect tool for sending a daily linux notification, when the machine is running. The advantage being that jobs that are scheduled when the machine is not running will be run at the next available opportunity.
 
 Anacron operates by checking whether a scheduled job has been executed in the last days specified in the period parameter. If the job has not been executed, anacron waits for the number of minutes specified in the delay field to elapse after which it runs the specified shell command or script. Each job that being executed is locked so that if there are any other copies of Anacron in the system, such tasks cannot be executed at the same time. Once the execution of the specified task or job completes, Anacron timestamps this and exits when there is no more scheduled jobs to be executed [[^1]]. For more information read the anacron manual page (`man anacron`) [[^2]].
 
 The functionality to run anacron as non-root user is not as straightforward as with `cron`, and can be configured to run from the home directory [[^3]]. To send notifications as a non-root user to a users workspace I decided to use the default anacrontab  at `/etc/anacrontab`:
 
-### 1. Edit the `/etc/anacrontab`
+#### 1. Edit the `/etc/anacrontab`
 
 ``` shell
 vim /etc/anacrontab
@@ -94,20 +93,20 @@ Jobs in anacron are specified with the following fields:
  + **command** specifies the command or the name of the script to be executed. If executing all scripts in a directory the `run-parts` command can be used.
 
 
-### 2. Add scripts to `/etc/cron.daily`, `/etc/cron.weekly`
+#### 2. Add scripts to `/etc/cron.daily`, `/etc/cron.weekly`
 In the `cron.daily` (or weekly, ...) folder you can add shell scripts that you want to be run each day (or week). A couple of notes:
  + the scripts should start with a shebang `#!/bin/sh`, not `/bin/bash`, and
  + scripts should be named without any extension e.g. `/etc/cron.daily/moon-phase`.
 
 Rather than add scripts here I created a folder in my home directory `~/Notifications` and created symbolic links to `/etc/cron.daily` and `/etc/cron.weekly`.
 
-## Desktop Notifications
+### Desktop Notifications
 ---
 To send linux  notifications of some metrics I'm interested to follow I use the `notify-send` command. This sends desktop notifications to the user via a notification daemon to inform the user about an event or display some form of information without getting in the user's way [[^4], [^5]].
 
 Since it is not possible to execute anacron as a non-root user I configured my scripts to run as `su $USER -c <command>`, and specify the `DBUS_SESSION_BUS_ADDRESS`, an environment variable used by the dbus utility, required to start a message bus from a shell script.
 
-### Daily notification of Moon Phase in London
+#### Daily notification of Moon Phase in London
 To get daily information about the phase of the moon I use the very nice console-oriented weather forecast service from [@igor_chubin](https://twitter.com/igor_chubin), available via curl [[^6]]. In the script I specify variables for the moon phase, day of the moon cycle, location and an update time and create a notification of this using `notify-send`.
 
 ``` shell
@@ -134,7 +133,7 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
 '
 ```
 
-### Daily notification of Covid Cases in Japan
+#### Daily notification of Covid Cases in Japan
 To get daily information about covid cases in Japan I have used the corona stats online service [^7].
 
 ``` shell
@@ -160,7 +159,7 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
 '
 ```
 
-### Weekly notification of Disk Usage
+#### Weekly notification of Disk Usage
 Finally, to get a weekly update on disk usage, I parsed the `df -h .` command to get information on the disk usage.
 
 ``` shell
@@ -188,13 +187,12 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
 '
 ```
 
-# Conclusion
----
+## Conclusion
 This guide describes how to setup daily and weekly linux notifications for information that you may find relevant. It is easy to continue to add more scripts and extend this further by adding to the `cron.daily` directory.
 
 In future I would also like to add some conditional notifications, depending on how reliable and useful this system turns out to be. For example you could have a script that sends a notification when it is the day of the full moon only, or when a stock drops below a certain price, or when covid cases fall below a certain level, or when disk usage is more than 80 %. It would also be useful to combine these conditional notifications with the option to send an email [[^8]].
 
-# References
+## References
 [^1]: [kifarunix: scheduling tasks using anacron in linux](https://kifarunix.com/scheduling-tasks-using-anacron-in-linux-unix/)
 [^2]: [linux-die: anacron manual page](https://linux.die.net/man/8/anacron)
 [^3]: [grinux: run anacron as user](https://grinux.wordpress.com/2012/04/18/run-anacron-as-user/)

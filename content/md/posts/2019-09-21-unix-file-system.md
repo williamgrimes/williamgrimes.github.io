@@ -13,8 +13,7 @@ The expression "everything is a file" describes the philosophy within Unix syste
 
 On disk an inode is the physical manifestation of the file-system. This is an index onto a table by which the data can be accessed and contains metadata information for example about the file's permission bits, the creation/modification/access timestamps, the actual file type, and size of the file [[^3]].
 
-# File Systems
----
+## File Systems
 There is an important distinction between the _filesystem_ and the layer of abstraction in Unix called the _Virtual File System (VFS)_. A VFS is part of the linux kernel that provides a unified abstraction layer used by file systems and user applications. The VFS presents multiple local or network file systems in a common accessible format. Whilst the underlying filesystem describes how the data are arranged on the media, some common filesystems are [[^4]]:
 
  - **File Allocation Table (FAT)**: is a Windows file system originally developed for floppy disk drives in 1977. Before Windows 2000 FAT filesystems were the default on Windows operating systems. It has some limitations for example: FAT partitions cannot extend beyond 2TB, and FAT partitions need to be defragmented often to maintain reasonable performance.
@@ -25,8 +24,7 @@ There is an important distinction between the _filesystem_ and the layer of abst
 
 On top of these file systems that determine how data is accessed on disk the Unix Filesystem Hierarchy Standard (FHS) is a reference describing the conventions used for the layout of a UNIX system. This was first released in 1994 and is now on version is 3.0 released on 3 June 2015.
 
-# Unix File Types
----
+## Unix File Types
 The Portable Operating System Interface (POSIX) is a family of standards specified by the Institute of Electrical and Electronics Engineers (IEEE) Computer Society. The objective of these POSIX standards is to increase compatibility between operating systems. This is done through a common standardised application programming interface (API), standard command line shells and utility interfaces.
 
 The `ls` command is an example of a command specified by POSIX that lists files in the current working directory and can specify more information about files with `-l` the long format argument. For example:
@@ -98,7 +96,7 @@ crw------- ... /dev/null
 brw-rw---- ... /dev/sda
 ```
 
-# Unix Virtual File System Hierarchy
+## Unix Virtual File System Hierarchy
 ---
 In Unix files are arranged within a hierarchical tree with the highest level directory the root (`/`) of the filesystem as the location from which all other files descend.  so that it can more easily be retrieved.
 
@@ -197,7 +195,7 @@ Conventions exist for grouping certain files together, such as programs, system 
     └── tmp
 </pre>
 
-# Unix Important Directories
+## Unix Important Directories
 ---
 Directories have specific purposes and generally hold the same types of files, the following are directories that exist on most major versions of Unix:
 
@@ -279,11 +277,11 @@ Directories have specific purposes and generally hold the same types of files, t
   - contains server specific services related data
   - for example, `/srv/cvs` contains cvs related data
 
-# Unix Important Files
+## Unix Important Files
 ---
 Given below are some of the most useful and often used linux files that it is worth being aware of [[^7]].
 
-## Dotfiles
+### Dotfiles
 These are hidden files typically in a users home directory, often they are used for personal configuration settings. These files will not ordinarily be shown by the `ls` command unless given the `-a` flag as in `ls -a` to specify _all_ files.
 
 These are some useful dotfiles which are available with a bash shell, other dotfiles may exist depending on the installed programs. Often these files end with `rc` like `~/.bashrc` and `~/.vimrc` where the `rc` stands for run commands, to be executed on program launch.
@@ -329,7 +327,7 @@ These are some useful dotfiles which are available with a bash shell, other dotf
 - `/var/log/messages` - contains messages produced by the syslog daemon during the boot process.
 - `/var/log/wtmp` - a binary data file holding login time and duration for each user currently on the system.
 
-# Conclusion
+## Conclusion
 ---
 The Unix philosophy is documented by Doug McIlroy in the Bell System Technical Journal from 1978:
 
@@ -340,7 +338,7 @@ The Unix philosophy is documented by Doug McIlroy in the Bell System Technical J
 
 This philosophy and early design decisions in Unix have created some of the most successful operating systems still used today. Understanding the basic concepts and ideas of Unix is very useful, and the filesystem is integral to this. Learning your way around Unix systems and understanding the basic hierarchy, file permissions, and locations of important directories and files is an investment well worth making.
 
-# References
+## References
 [^1]: [Wikipedia: Bell Labs](https://en.wikipedia.org/wiki/Bell_Labs)
 [^2]: [StackExchange: Unix - Everything is a file?](https://unix.stackexchange.com/a/225542)
 [^3]: [StackOverflow: What is the difference between inode number and file descriptor?](https://stackoverflow.com/a/45633752)

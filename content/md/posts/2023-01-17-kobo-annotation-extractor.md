@@ -24,8 +24,7 @@ E-ink displays were developed by a company called the *E Ink Corporation*, found
 
 Having recently switched from reading paper books to reading on an e-reader, it occurred to me that an additional advantage of reading on an electronic device is the data that is captured whilst reading. This project aims to make use of some of that data generated.
 
-# Manjushri Kobo
----
+## Manjushri Kobo
 This project is named after Manjushri a bodhisattva in Mahayana Buddhism associated with wisdom and learning. He is often depicted holding a sword and a book, symbolising the cutting of ignorance and the attainment of knowledge. Manjushri is considered to be the embodiment of the wisdom of all buddhas, and is often invoked in tantric practices for the attainment of higher wisdom and understanding. He is also one of the most revered and important figures in Tibetan Buddhism [[^3]].
 
 <div align="center">
@@ -37,8 +36,7 @@ This project is named after Manjushri a bodhisattva in Mahayana Buddhism associa
 Manjushri is an appropriate name for this project that aims to make better use of annotations made on a Kobo, to aid learning. The objective is to extract multi-word annotations created on the Kobo Clara HD outputting a file of quotations, and for single words a vocabulary list with definitions that can be learned through Anki [[^4]].
 
 
-# Overview
----
+## Overview
 The Github repository for the project is located here: [manjushri_kobo](https://github.com/williamgrimes/manjushri_kobo). At a high level the project is structured as follows, where main is the entry point for the project.
 
 <pre style="line-height:120%">
@@ -173,13 +171,12 @@ After importing the csv to an existing or newly created deck the words can be st
 <center><b>Caption: </b> Viewing an Anki card.</center>
 <p></p>
 
-# Summary
----
+## Summary
 This short project I hope will be useful to get more value from reading on the Kobo, assisting in learning new vocabulary, and providing a reference library of quotes from books read. As e-ink displays slowly eat up the market I imagine more tools will become available for this, but I think using free and open source projects like Anki, and Org mode makes the outputs more generally useful.
 
 In the future I might extend this project to include some reading statistics in the output logs. For example it would be interesting to log the books read, time spent reading broken down by month, fastest books read, words read per day, etcetera. The project could also be set to run directly when connected by setting a udev rule to launch the `run_manjushri_kobo.sh` bash script.
 
-# References
+## References
 [^1]: [Wikimedia: Electronic paper - Side view of Electrophoretic display](https://upload.wikimedia.org/wikipedia/commons/3/3a/Electronic_paper_%28Side_view_of_Electrophoretic_display%29_in_svg.svg)
 [^2]: [Wikipedia: E Ink](https://en.wikipedia.org/wiki/E_Ink)
 [^3]: [Wikipedia: Manjushri](https://en.wikipedia.org/wiki/Manjushri)
