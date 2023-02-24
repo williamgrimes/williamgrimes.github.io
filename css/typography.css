@@ -23,6 +23,7 @@ em, i {
 }
 
 h1 {
+    text-align: center;
     margin-top: 0.6875em;
     /* (22px / 48px) * 1.5 */
     margin-bottom: 0.22916667em;
