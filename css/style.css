@@ -268,7 +268,7 @@ img.imgfull {
    CV
 ================================================== */
 #cv {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   line-height: 1.5;
   display: grid;
@@ -308,6 +308,28 @@ img.imgfull {
   content: "";
   display: table;
   clear: both;
+}
+
+/* ==================================================
+   ABOUT
+================================================== */
+
+#about {
+  max-width: 900px;
+  margin: 10 auto;
+  line-height: 1.5;
+  font-size: 1.2em;
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: auto 1fr;
+  padding: 15px;
+  text-align: justify;
+  text-justify: inter-word;
+  border-radius: 10px;
+  border-top: 2px solid #BF616A;
+  border-left: 6px solid #BF616A;
+  border-bottom: 2px solid #BF616A;
+  border-right: 2px solid #BF616A;
 }
 
 /* ==================================================
