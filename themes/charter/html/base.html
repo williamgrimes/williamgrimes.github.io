@@ -36,16 +36,40 @@
 <div id="left">
 
     <p id="logo">
-        <a title="{{title}}" href="{{index-uri}}">
+        <br>
+        <img class="icon" src="{{blog-prefix}}/img/headshot.png">
+        <br>
+        <a title="{{title}}" href="{{blog-prefix}}/pages/about">
             <!-- <span class="fa fa-rocket"></span> -->
-            <br>
-            <img class="icon" src="{{blog-prefix}}/img/headshot.png">
-            <br>
             <span class="author">{{author}}</span>
             <br>
-            <span class="title">(innovate iterate integrate)</span>
         </a>
     </p>
+
+    <span class="title">(innovate iterate integrate)</span>
+
+
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li {% if home %} class="active" {% endif %}><a title="Home" href="{{index-uri}}"> &#187; Home</a></li>
+            <li {% if archives %} class="active" {% endif %}><a title="Archives" href="{{archives-uri}}"> &#187; Archives</a></li>
+
+            {% if tags|not-empty %}
+            <li {%ifequal uri tags-uri %} class="active" {% endifequal %}><a title="Tags" href="{{tags-uri}}"> &#187; Tags</a></li>
+            {% endif %}
+
+            {% for nav-page in navbar-pages %}
+            <li {%ifequal page.uri nav-page.uri %} class="active" {% endifequal %}>
+                <a href="{{nav-page.uri}}">&#187; {{nav-page.title}}</a>
+            </li>
+            {% endfor %}
+
+            <!-- <li><a title="RSS" href="{{rss-uri}}">RSS</a></li> -->
+        </ul>
+    </div>
 
     <div id="socialmedia" class="clearfix">
         <ul>
@@ -58,24 +82,6 @@
         </ul>
     </div>
 
-    <div id="menucont" class="bodycontainer clearfix">
-        <div class="menutitle">
-            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
-        </div>
-        <ul class="menu">
-            <li {% if home %} class="active" {% endif %}><a title="Home" href="{{index-uri}}"> &#187; Home</a></li>
-            <li {% if archives %} class="active" {% endif %}><a title="Archives" href="{{archives-uri}}"> &#187; Archives</a></li>
-            {% if tags|not-empty %}
-            <li {%ifequal uri tags-uri %} class="active" {% endifequal %}><a title="Tags" href="{{tags-uri}}"> &#187; Tags</a></li>
-            {% endif %}
-            {% for nav-page in navbar-pages %}
-            <li {%ifequal page.uri nav-page.uri %} class="active" {% endifequal %}>
-                <a href="{{nav-page.uri}}">&#187; {{nav-page.title}}</a>
-            </li>
-            {% endfor %}
-            <!-- <li><a title="RSS" href="{{rss-uri}}">RSS</a></li> -->
-        </ul>
-    </div>
 </div>
 
 <div id="right" class="clearfix">
