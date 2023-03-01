@@ -33,7 +33,8 @@
       <li>Machine Learning</li>
       <li>Geographic Information Systems (GIS)</li>
       <li>Computer Vision</li>
-      <li>Software Engineering.</li>
+      <li>Earth Observation</li>
+      <li>Software Engineering</li>
     </ul>
   </div>
 </div>
@@ -47,62 +48,62 @@
     <b>TECH</b>
   </div>
   <div class="cv-column cv-column-content">
-    <p>
-      <b>Machine Learning: </b>
-      <ul>
-        <li>regression, decision trees, ensembles, SVM, neural networks, deep learning</li>
-      </ul>
-      <!--
-      ----
-      -->
-      <b>Programming: </b>
-      Python, R, Java, Matlab, SQL, Clojure
-      <ul>
-        <li>Python, R, Java, Matlab, SQL, Clojure</li>
-      </ul>
-      <!--
-      ----
-      -->
-      <b>Libraries: </b>
-      <ul>
-        <li>NumPy, pandas, SciPy, scikit-learn, scikit-image, OpenCV, Geopandas, GDAL, PyTorch, theano</li>
-      </ul>
-      <!--
-      ----
-      -->
-      <b>Visualisation: </b>
-      <ul>
-        <li>matplotlib, bokeh, plotly, ggplot, Tableau</li>
-      </ul>
-      <!--
-      ----
-      -->
-      <b>Scripting: </b>
-      <ul>
-        <li>Bash, sed, awk, grep, Python, Ruby</li>
-      </ul>
-      <!--
-      ----
-      -->
-      <b>Databases: </b>
-      <ul>
-        <li>MySQL, PostgreSQL, MS SQL Server</li>
-      </ul>
-      <!--
-      ----
-      -->
-      <b>Front-end: </b>
-      <ul>
-        <li>Javascript, HTML, CSS, HTML,  Semantic UI, Jekyll</li>
-      </ul>
-      <!--
-      ----
-      -->
-      <b>Misc: </b>
-      <ul>
-        <li>Azure, Docker, Git, Kafka, Jenkins, Jupyter Notebooks, Latex, Redis, UNIX</li>
-      </ul>
-    </p>
+    <!--
+    ----
+    -->
+    <b>Machine Learning: </b>
+    <ul>
+      <li>regression, decision trees, ensembles, SVM, neural networks, deep learning</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <b>Programming: </b>
+    <ul>
+      <li>Python, R, Java, Matlab, SQL, Clojure</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <b>Libraries: </b>
+    <ul>
+      <li>NumPy, pandas, SciPy, scikit-learn, scikit-image, OpenCV, Geopandas, GDAL, PyTorch, theano</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <b>Visualisation: </b>
+    <ul>
+      <li>matplotlib, bokeh, plotly, ggplot, Tableau</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <b>Scripting: </b>
+    <ul>
+      <li>Bash, sed, awk, grep, Python, Ruby</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <b>Databases: </b>
+    <ul>
+      <li>MySQL, PostgreSQL, MS SQL Server</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <b>Front-end: </b>
+    <ul>
+      <li>Javascript, HTML, CSS, HTML,  Semantic UI, Jekyll</li>
+    </ul>
+    <!--
+    ----
+    -->
+    <b>Misc: </b>
+    <ul>
+      <li>Azure, Docker, Git, Kafka, Jenkins, Jupyter Notebooks, Latex, Redis, UNIX</li>
+    </ul>
   </div>
 </div>
 
