@@ -55,13 +55,6 @@
     <!--
     ----
     -->
-    <b>Machine Learning: </b>
-    <ul>
-      <li>regression, decision trees, ensembles, SVM, neural networks, deep learning</li>
-    </ul>
-    <!--
-    ----
-    -->
     <b>Programming: </b>
     <ul>
       <li>Python, R, Java, Matlab, SQL, Clojure</li>
@@ -108,6 +101,16 @@
     <ul>
       <li>Azure, Docker, Git, Apache Kafka, Apache Spark, Jenkins, Jupyter Notebooks, Latex, Redis, UNIX</li>
     </ul>
+    <!--
+    ----
+    -->
+    <b>Machine Learning: </b>
+    <ul>
+      <li>Regression, Decision Trees, Ensembles, SVM, Neural Networks, Deep Learning</li>
+    </ul>
+    <!--
+    ----
+    -->
   </div>
 </div>
 
