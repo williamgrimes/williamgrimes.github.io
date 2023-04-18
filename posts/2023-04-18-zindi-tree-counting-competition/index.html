@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+    <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
+    <!-- Modified to fit Cryogen.-->
+    <meta charset="UTF-8">
+    <title>williamgrimes.xyz: Zindi: Palm Tree Counting</title>
+    
+<meta name="keywords" content="filesystem,competition,bash,machine-learning,whitepaper,project,linux,text-mining,computer-vision,NLP,zindi,Pytorch,bitcoin,illegal-fishing,kobo,nltk,notes,notification,python,Deep Learning,anacron,kaggle,unix,segmentation">
+
+<meta name="description" content="This article is a technical analysis of a project code submitted as part of an entry in the Zindi &quot;Digital Africa Plantation Counting Challenge&quot; [1]. The challenge aimed to develop a machine learning algorithm capable of accurately detecting and counting the number of palm oil trees in aerial images captured from drones. The code for the approach described here is available on Github [2].">
+
+<meta property="og:description" content="This article is a technical analysis of a project code submitted as part of an entry in the Zindi &quot;Digital Africa Plantation Counting Challenge&quot; [1]. The challenge aimed to develop a machine learning algorithm capable of accurately detecting and counting the number of palm oil trees in aerial images captured from drones. The code for the approach described here is available on Github [2].">
+
+<meta property="og:url" content="http://williamgrimes.xyz/posts/2023-04-18-zindi-tree-counting-competition/" />
+<meta property="og:title" content="Zindi: Palm Tree Counting" />
+<meta property="og:type" content="article" />
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+    <link rel="shortcut icon" href="images/ico/favicon.png">
+    <link rel="icon" href="/img/headshot.png">
+    <link href="/fonts/sample.css" rel="stylesheet" type="text/css" >
+    <!--[if IE]><![endif]-->
+    <link href="/css/buttons.css" rel="stylesheet" type="text/css" />
+    <link href="/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/typography.css" rel="stylesheet" type="text/css" />
+    <link href="/css/highlightjs.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night-eighties.min.css"> -->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+
+<div id="left">
+
+    <p id="logo">
+        <br>
+        <img class="icon" src="/img/headshot.png">
+        <br>
+        <a title="williamgrimes.xyz" href="/pages/about">
+            <!-- <span class="fa fa-rocket"></span> -->
+            <span class="author">William Grimes</span>
+            <br>
+        </a>
+    </p>
+
+    <span class="title">(innovate iterate integrate)</span>
+
+
+    <div id="menucont" class="bodycontainer clearfix">
+        <div class="menutitle">
+            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+        </div>
+        <ul class="menu">
+            <li ><a title="Home" href="/"> &#187; Home</a></li>
+            <li ><a title="Archives" href="/archives/"> &#187; Archives</a></li>
+
+            
+            <li ><a title="Tags" href="/tags/"> &#187; Tags</a></li>
+            
+
+            
+            <li >
+                <a href="/pages/about/">&#187; About Me</a>
+            </li>
+            
+            <li >
+                <a href="/pages/cv/">&#187; Curriculum Vitae</a>
+            </li>
+            
+
+            <!-- <li><a title="RSS" href="/feed.xml">RSS</a></li> -->
+        </ul>
+    </div>
+
+    <div id="socialmedia" class="clearfix">
+        <ul>
+            <li><a title="GitHub" href="https://github.com/williamgrimes/" rel="external"><span class="fa fa-github"></span></a></li>
+            <li><a title="Stack Overflow" href="https://stackoverflow.com/users/2545164/william-grimes/" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+            <!-- <li><a title="Google+" href="./" rel="external"><span class="fa fa-google-plus"></span></a></li> -->
+            <li><a title="LinkedIn" href="https://www.linkedin.com/in/william-grimes/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+            <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+            <li><a title="RSS" href="/feed.xml" rel="external"><span class="fa fa-rss"></span></a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="right" class="clearfix">
+    
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Zindi: Palm Tree Counting</h1>
+        <br>
+        <span class="date" style="font-variant-caps: small-caps;">18 April 2023</span>
+        
+    </div>
+</div>
+<div>
+    <br/>
+    
+    <p>This article is a technical analysis of a project code submitted as part of an entry in the Zindi "Digital Africa Plantation Counting Challenge" [<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>]. The challenge aimed to develop a machine learning algorithm capable of accurately detecting and counting the number of palm oil trees in aerial images captured from drones. The code for the approach described here is available on Github [<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup>].</p><div align="center"><img src="/img/Id_0ypefmx02b.png" alt="Palm Trees Example Image" style="width:60%" /></div><center><b>Caption: </b> Example aerial image demonstrating the variation of content within the data set, including: palm trees, shacks, and other vegetation. All images were of a standard size 1024 x 1024 in png format containing 3 channels.</center><p></p><p>The algorithm was trained on data consisting of a set of images, with labels corresponding to the number of palm trees in each image. The approach was applied to an unseen test set and those counts compared to ground truths on the Zindi platform.</p><h2 id="research">Research</h2><p>At first, I was uncertain about how to tackle this task since it required counting and the training data lacked bounding boxes or segmentations, which are the types of data I've worked with in the past. As a result, I started researching density estimation and crowd counting techniques.</p><h3 id="density-estimation-and-crowd-counting">Density Estimation and Crowd Counting</h3><p>Density estimation is a computer vision technique used to estimate the distribution or density of objects in an image. In density estimation, the goal is to predict the likelihood of an object being present at each point in the image, rather than identifying or localising specific objects. One common application of density estimation is crowd counting, where the goal is to estimate the number of people in a crowded scene. Density estimation can also be used to estimate the distribution of other objects in an image, such as cars on a road or trees in a forest.</p><p>To perform density estimation, a density map is typically generated from the input image. A density map is a continuous 2D function that assigns a value to each pixel in the image, representing the expected density or likelihood of an object being present at that location. The density map can be generated using techniques such as kernel density estimation, where a Gaussian kernel is convolved with the image to estimate the density at each pixel.</p><p>Once the density map has been generated, it can be used as input to a machine learning model to predict the count or distribution of objects in the image. The model can be trained using labelled data that includes both the input images and their corresponding density maps, allowing it to learn to predict the object count or distribution from the density map. Some state-of-the-art crowd counting models are:</p><h4 id="mcnn-multi-column-convolutional-neural-network-3">MCNN (Multi-column Convolutional Neural Network) [<sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup>]</h4><p>MCNN is one of the earliest CNN-based crowd counting models. It consists of multiple columns, each containing a different CNN, and a fusion layer that combines the outputs of these columns. MCNN is relatively simple and easy to implement, but it may not be as accurate as some of the newer models.</p><h4 id="csrnet-contextual-pyramid-cnn-4">CSRNet (Contextual Pyramid CNN) [<sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup>]</h4><p>CSRNet is a more recent crowd counting model that uses a contextual pyramid CNN architecture. It has a hierarchical structure that captures both global and local information. CSRNet can handle high-density crowds and is known for its accuracy, but it may require more computational resources than MCNN.</p><h4 id="sanet-scale-aggregation-network-5">SANet (Scale Aggregation Network) [<sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup>]</h4><p>SANet is another CNN-based crowd counting model that uses a scale aggregation network to estimate crowd density. It can capture multi-scale features and handle density variations in crowded scenes. SANet has shown promising results in challenging scenarios, such as scenes with occlusions and severe density variations.</p><h3 id="noaa-fisheries-steller-sea-lion-population-count">NOAA Fisheries Steller Sea Lion Population Count</h3><p>The NOAA Fisheries Steller Sea Lion Population Count Challenge [<sup id="fnref-6"><a class="footnote-ref" href="#fn-6">6</a></sup>] was a competition hosted on Kaggle with a similar aim to count sea lions in aerial imagery. The competition aimed to improve the accuracy and efficiency of population monitoring of Steller sea lions, an endangered species found in the western and northern coastal areas of North America.</p><div align="center"><img src="/img/kaggle-sea-lions.jpg" alt="Palm Trees Example Image" style="width:90%" /></div><center><b>Caption: </b> Drone imagery of Sea Lions from Steller Watch 2017 Sea Lion competition hosted on Kaggle.</center><p></p><p>The winning participant of this challenge used a Visual Geometry Group 16 (VGG16) [<sup id="fnref-7"><a class="footnote-ref" href="#fn-7">7</a></sup>] neural network architecture without the final layer, and added two fully connected (FC) layers with 1024 and 5 neurons respectively, with a linear output. They used stochastic gradient descent (SGD) as the optimisation algorithm and mean squared error (MSE) as the loss function.</p><h3 id="approach">Approach</h3><p>Following a literature review, particularly the paper "Comparison of Deep Learning Methods for Detecting and Counting Sorghum Heads in UAV Imagery" [<sup id="fnref-8"><a class="footnote-ref" href="#fn-8">8</a></sup>], I opted for a similar approach to the Sea Lion counting challenge, but with the latest EfficientNet and ResNet models.</p><ul><li><p><strong>EfficientNet</strong> [<sup id="fnref-9"><a class="footnote-ref" href="#fn-9">9</a></sup>]: EfficientNet is a family of deep neural network architectures that were introduced in 2019. They use a compound scaling method to balance the number of parameters, Floating Point Operations Per Second (FLOPS), and accuracy. The EfficientNet architecture achieved state-of-the-art performance on the ImageNet classification task with significantly fewer parameters and computational cost than previous architectures.</p></li><li><p><strong>ResNet</strong> [<sup id="fnref-10"><a class="footnote-ref" href="#fn-10">10</a></sup>]: ResNet is a deep residual neural network architecture that was introduced in 2015. It uses residual connections to enable the model to learn deeper representations of the input data. ResNet achieved state-of-the-art performance on the ImageNet classification task and has been widely used in various computer vision applications.</p></li></ul><p>Overall, ResNet and EfficientNet have achieved better performance than VGG on various computer vision tasks. This review of ML competitions [<sup id="fnref-11"><a class="footnote-ref" href="#fn-11">11</a></sup>] in computer vision states that in 2022 EfficientNet was the most popular pre-trained model amongst competition winners, due to it's efficiency and it being less resource intensive.</p><p>Initially, I conducted experiments on Google Colab Notebooks to access GPUs. Later, I shifted to Vast.ai [<sup id="fnref-12"><a class="footnote-ref" href="#fn-12">12</a></sup>], which is a cloud-based platform that offers access to a distributed network of computers for running machine learning and deep learning models. To simplify the process of working on a remote GPU docker, I developed several scripts to install the necessary libraries and synchronize between the local and remote environments using rsync.</p><h2 id="data">Data</h2><p>This data was collected using drones over 4 farms in Côte d'Ivoire in July and September 2022. There are 2002 images in train. There are 858 images in test.</p><p>A random sample of 50 images with their id, and target count from the training set can be seen below, representing the variation in the training set. Some images are blank and have a count of zero.</p><div align="center"><img src="/img/train-montage.png" alt="Train Data" style="width:100%" /></div><center><b>Caption: </b> Drone images of palm trees with count in training data, the data include blank images with 0 count.</center><p></p><p>An initial exploratory data analysis (EDA) revealed that within the set of 2860 images, 807 images were completely empty (all pixels value 0).</p><h3 id="normalisation">Normalisation</h3><p>Normalising data before using a CNN is an important step in preparing the data for training by scaling to standard range. Typically this range is between 0 and 1, or between -1 and 1, this re-scaling is achieved by subtracting the mean and dividing by the standard deviation of the input data.</p><p>To determine the range to normalise I looped through all the images in the training data, excluding the empty images and obtained for each channel the mean values for each of the red, green and blue channels, as well as the standard deviations. The normalised images looked like this:</p><div align="center"><img src="/img/palm-tree-normalisation.png" alt="Palm Trees after Normalisation" style="width:70%" /></div><center><b>Caption: </b> Palm tree images images normalised.</center><p></p><h3 id="augmentation-pipeline">Augmentation Pipeline</h3><p>The idea behind data augmentation is to create new training examples by applying different transformations to the existing images in the training set, such as rotation, translation, scaling, flipping, and cropping. It is a popular technique in computer vision tasks, where large amounts of labeled data are required to train deep learning models effectively. These transformations change the appearance of the image while keeping the class label the same, and they help to make the model more robust to variations in the input data.</p><p>For this task I used transformations that would not lose information in the image that might affect the count, for example cropping. The augmentation pipeline I used for training was as follows.e:</p><ul><li>Gaussian Blur</li><li>Random Horizontal Flip</li><li>Random Vertical Flip</li><li>Color Jitter</li></ul><p>The parameters used for example the blur kernel were customisable and stored in the <code>params.yaml</code> file.</p><h2 id="model-architectures">Model Architectures:</h2><p>In PyTorch the <code>nn.Module</code> is a base class that serves as the building block for creating neural networks. I used this to define and <code>EfficientNetCounter</code> and a <code>ResNetCounter</code> class. The <code>nn.Module</code> class provides methods for initialising the network parameters, defining the forward pass computation, and calculating gradients during back-propagation.</p><h3 id="efficientnetcounter">EfficientNetCounter:</h3><pre><code class="python">class EfficientNetCounter(nn.Module):
+    """
+    A PyTorch module for counting objects using EfficientNet.
+
+    Args:
+        params (dict): A dictionary containing the configuration parameters for the model.
+            - model_name (str): The name of the EfficientNet model to use.
+
+    Attributes:
+        model (EfficientNet): The pre-trained EfficientNet model.
+        fc (nn.Linear): The fully-connected layer for counting objects.
+        relu (nn.ReLU): The activation function for the fully-connected layer.
+
+    """
+    def __init__(self, params=None):
+        super(EfficientNetCounter, self).__init__()
+        self.model = EfficientNet.from_pretrained(params.get("model_name"))
+        self.fc = nn.Linear(1000, 1)
+        self.relu = nn.ReLU()
+
+    def forward(self, x):
+        x = self.model(x)
+        x = self.fc(x)
+        return self.relu(x)
+</code></pre><p>This code defines a PyTorch module called <code>EfficientNetCounter</code> that uses the pre-trained EfficientNet model to count objects in an image. The module takes a dictionary of configuration parameters params as input, which specifies the name of the EfficientNet model to use.</p><p>The <code>__init__</code> method of the EfficientNetCounter class initialises the pre-trained EfficientNet model with the specified <code>model_name</code> from the <code>params.yaml</code> and adds a fully-connected layer fc with input size of 1000 and output size of 1. The output of this fully-connected layer is passed through a Rectified Linear Unit (ReLU) activation function relu.</p><h3 id="resnetcounter">ResNetCounter:</h3><pre><code class="python">class ResNetCounter(nn.Module):
+    """
+    A PyTorch module for counting objects using ResNet.
+
+    Args:
+        params (dict): A dictionary containing the configuration parameters for the model.
+            - model_name (str): The name of the ResNet model to use.
+
+    Attributes:
+        model (nn.Sequential): The pre-trained ResNet model, with its final layers removed.
+        fc1 (nn.Linear): The first fully-connected layer for counting objects.
+        fc2 (nn.Linear): The second fully-connected layer for counting objects.
+
+    """
+    def __init__(self, params=None):
+        super(ResNetCounter, self).__init__()
+        self.model = getattr(models, params.get("model_name"))(pretrained=True)
+        self.model = nn.Sequential(*list(self.model.children())[:-2])
+
+        self.fc1 = nn.Linear(512*7*7, 256)
+        nn.init.xavier_uniform_(self.fc1.weight)
+        nn.init.zeros_(self.fc1.bias)
+        self.fc2 = nn.Linear(256, 1)
+        nn.init.xavier_uniform_(self.fc2.weight)
+        nn.init.zeros_(self.fc2.bias)
+
+    def forward(self, batch):
+        x = self.model(batch)
+        x = nn.Flatten()(x)
+        x = self.fc1(x)
+        x = self.fc2(x)
+        x = nn.functional.relu(x)
+        return x
+</code></pre><p>The second architecture I experimented with used a pre-trained ResNet model to count objects in an image. The module takes a dictionary of configuration parameters params as input, which specifies the name of the ResNet model to use.</p><p>The <code>__init__</code> method of the ResNetCounter class initializes the pre-trained ResNet model with the specified <code>model_name</code> and removes its final two layers. Then, two fully-connected layers <code>fc1</code> and <code>fc2</code> are added for counting objects. The first fully-connected layer has an input size of 51277 (output from the ResNet model) and output size of 256, while the second fully-connected layer has an input size of 256 and output size of 1. Xavier initialisation is used for the weights of both fully-connected layers, and their biases are initialized to zero.</p><p>The forward method defines the forward pass of the module. The input batch is passed through the pre-trained ResNet model, and the output is flattened using the <code>nn.Flatten()</code> function. The flattened output is then passed through the two fully-connected layers, and the resulting output is passed through a Rectified Linear Unit (ReLU) activation function before being returned.</p><h2 id="training-results">Training Results</h2><p>With these two model architectures and the infrastructure for training I could use the <code>params.yaml</code> file to and <code>scripts/run-remote.sh</code> to experiment with different hyper-parameters for example:</p><pre><code class="yaml">normalize:
+  rgb_means: [0.41210787, 0.50030631, 0.34875169]
+  rgb_stds: [0.15202952, 0.15280726, 0.1288698]
+transforms:
+  resize: 380  # heigt and width are the same
+  rescaler: false  # use the rescaler function to strech images
+  jitter_brightness: [0.5, 1.5]
+  jitter_contrast: 1
+  jitter_saturation: [0.5, 1.5]
+  jitter_hue: [-0.1, 0.1]
+  blur_kernel: [1, 7]
+  blur_sigma:  [0.1, 2]
+  h_flip_probability: 0.5  # horizontal flip
+  v_flip_probability: 0.5  # vertical flip
+net:
+  efficientnet:
+    model_name: "efficientnet-b3"
+    val_split: 0.15
+    learning_rate: 0.0005 # 1e-3 # 1e-4
+    batch_size: 67
+    max_epochs: 50
+    early_stopping_patience: 3
+  resnet:
+    model_name: "resnet34"
+    val_split: 0.15
+    learning_rate: 0.001 # 1e-3 # 1e-4
+    batch_size: 80
+    max_epochs: 40
+    early_stopping_patience: 5
+</code></pre><p>The output for each run was collected in a <code>runs.csv</code>. The best score was achieved using efficientnet-b3 and a batch size of 5.</p><table><thead><tr><th><strong>run</strong></th><th>20230331_140249</th><th>20230331_160035</th><th>20230403_154042</th><th>20230405_115823</th></tr></thead><tbody><tr><td><strong>loss</strong></td><td>2.51</td><td>2.64</td><td>3.46</td><td>9.41</td></tr><tr><td><strong>model_name</strong></td><td>efficientnet-b3</td><td>efficientnet-b7</td><td>resnet152</td><td>resnet18</td></tr><tr><td><strong>learning_rate</strong></td><td>0.001</td><td>0.001</td><td>0.001</td><td>0.001</td></tr><tr><td><strong>batch_size</strong></td><td>5</td><td>5</td><td>20</td><td>200</td></tr><tr><td><strong>image_size</strong></td><td>1024</td><td>600</td><td>448</td><td>224</td></tr><tr><td><strong>image_rescaler</strong></td><td>False</td><td>True</td><td>True</td><td>False</td></tr><tr><td><strong>blur_kernel</strong></td><td>[1, 9]</td><td>[1, 9]</td><td>[1, 5]</td><td>[1, 5]</td></tr><tr><td><strong>blur_sigma</strong></td><td>[0.1, 2]</td><td>[0.1, 2]</td><td>[0.1, 2]</td><td>[0.1, 2]</td></tr><tr><td><strong>mem_usage</strong></td><td>20939</td><td>22193</td><td>18095</td><td>9440</td></tr><tr><td><strong>elapsed_time</strong></td><td>6099</td><td>8312</td><td>5187</td><td>2276</td></tr></tbody></table><p>The columns are defined as follows:</p><ul><li><code>run</code> - Name of run constructed using run date, time, and model&gt;</li><li><code>loss</code> - The validation loss achieved on the run.</li><li><code>model_name</code> - The pretrained model used.</li><li><code>learning_rate</code> - The learning rate as a float.</li><li><code>batch_size</code> - The number of images in a batch.</li><li><code>image_size</code> - The size of image used in neural network.</li><li><code>image_rescaler</code> - Whether images were rescaled as a boolean.</li><li><code>blur_kernel</code> - The data augmentation blur kernel used.</li><li><code>blur_sigma</code> - The data augmentation blur sigma value.</li><li><code>mem_usage</code> - The maximum memory usage from training the network.</li><li><code>elapsed_time</code> - The total training time in seconds.</li></ul><p>For each experiment, the logs, trained model and a csv of predictions is also generated.</p><h2 id="summary">Summary</h2><p>Throughout this project, I gained valuable experience in running deep learning models with PyTorch on Vast.ai, and I believe this knowledge will serve as a useful template for tackling future computer vision challenges involving remote sensing data. Although I had hoped to implement various crowd estimation techniques, time constraints compelled me to prioritise writing reusable project infrastructure code that I can use again in future. Nonetheless, this project has been an enriching learning opportunity, and I look forward to applying this experience to future endeavours in the field of computer vision.</p><p>In addition to experimenting with more models I would like to improve the infrastructure using TensorBoard to better visualise model performance [<sup id="fnref-12-1"><a class="footnote-ref" href="#fn-12">12</a></sup>], and a library such as neptune for better keeping track of experiments [<sup id="fnref-13"><a class="footnote-ref" href="#fn-13">13</a></sup>]. It could also be helpful to use Grad-CAM (Gradient-weighted Class Activation Mapping) is a technique used in deep learning to visualise the regions of an input image that are important for a specific prediction made by a convolutional neural network (CNN). It computes a class activation map by using the gradients of the output of the CNN with respect to the feature maps of the final convolutional layer. This allows us to highlight the regions of the input image that are most relevant for the CNN's prediction, providing insight into how the network is making its decisions.</p><p>It has been a lot of fun to take part in this competition and thank you for Zindi and Digital Africa for hosting the competition and providing the data.</p><h2 id="references">References</h2><div class="footnotes"><hr /><ol><li id="fn-1"><p><a href="https://zindi.africa/competitions/digital-africa-plantation-counting-challenge/">Zindi: Digital Africa Plantation Counting Challenge</a></p><a href="#fnref-1" class="footnote-backref">↩</a></li><li id="fn-2"><p><a href="https://github.com/williamgrimes/zindi_tree_counting_competition">github.com/williamgrimes/zindi_tree_counting_competition</a></p><a href="#fnref-2" class="footnote-backref">↩</a></li><li id="fn-3"><p><a href="https://arxiv.org/abs/1805.11788">Multi-function Convolutional Neural Networks for Improving Image Classification Performance</a></p><a href="#fnref-3" class="footnote-backref">↩</a></li><li id="fn-4"><p><a href="https://www.nature.com/articles/s41598-022-09685-w">An effective modular approach for crowd counting in an image using convolutional neural networks</a></p><a href="#fnref-4" class="footnote-backref">↩</a></li><li id="fn-5"><p><a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Xinkun_Cao_Scale_Aggregation_Network_ECCV_2018_paper.pdf">Scale Aggregation Network for Accurate and Efficient Crowd Counting</a></p><a href="#fnref-5" class="footnote-backref">↩</a></li><li id="fn-6"><p><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/discussion/35408">NOAA Fisheries Steller Sea Lion Population Count: Winning Solution</a></p><a href="#fnref-6" class="footnote-backref">↩</a></li><li id="fn-7"><p><a href="https://arxiv.org/abs/1409.1556">Very Deep Convolutional Networks for Large-Scale Image Recognition</a></p><a href="#fnref-7" class="footnote-backref">↩</a></li><li id="fn-8"><p><a href="https://www.mdpi.com/2072-4292/14/13/3143">Comparison of Deep Learning Methods for Detecting and Counting Sorghum Heads in UAV Imagery</a></p><a href="#fnref-8" class="footnote-backref">↩</a></li><li id="fn-9"><p><a href="https://proceedings.mlr.press/v97/tan19a/tan19a.pdf">EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks. Proceedings of the 36th International Conference on Machine Learning</a></p><a href="#fnref-9" class="footnote-backref">↩</a></li><li id="fn-10"><p><a href="https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html">Deep Residual Learning for Image Recognition.</a></p><a href="#fnref-10" class="footnote-backref">↩</a></li><li id="fn-11"><p><a href="https://mlcontests.com/state-of-competitive-machine-learning-2022/?ref=mlc_home#winning-solutions">ML Contests: The State of Competitive Machine Learning</a></p><a href="#fnref-11" class="footnote-backref">↩</a></li><li id="fn-12"><p><a href="https://www.tensorflow.org/tensorboard/">TensorBoard</a></p><a href="#fnref-12" class="footnote-backref">↩</a><a href="#fnref-12-1" class="footnote-backref">↩</a></li><li id="fn-13"><p><a href="https://neptune.ai/blog/how-to-keep-track-of-experiments-in-pytorch-using-neptune">Neptune: How to Keep Track of Experiments in PyTorch</a></p><a href="#fnref-13" class="footnote-backref">↩</a></li></ol></div>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/competition/">competition</a>
+    
+    <a href="/tags-output/computer-vision/">computer-vision</a>
+    
+    <a href="/tags-output/zindi/">zindi</a>
+    
+    <a href="/tags-output/Pytorch/">Pytorch</a>
+    
+    <a href="/tags-output/Deep%20Learning/">Deep Learning</a>
+    
+</div>
+
+<br/>
+
+    <div id="prev-next">
+        
+        
+        <a class="right button" href="/posts/2023-01-17-kobo-annotation-extractor/">Kobo: Annotation Extractor &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://williamgrimes.xyz/posts/2023-04-18-zindi-tree-counting-competition/";
+            this.page.identifier = "Zindi: Palm Tree Counting";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//williamgrimes.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+<hr/>
+<div id="footercont" class="clearfix">Copyright &copy; 2023 William Grimes
+    <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+
+</div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/js/highlight.pack.js" type="application/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/scripts.js" type="application/javascript"></script>
+
+
+</body>
+</html>
