@@ -1,4 +1,4 @@
-{:title "London Fire Brigade - Topic Modelling of Incident Reports"
+{:title "London Fire Brigade: Topic Modelling of Incident Reports"
  :layout :post
  :toc false
  :tags  ["NLP" "text-mining" "project"]}

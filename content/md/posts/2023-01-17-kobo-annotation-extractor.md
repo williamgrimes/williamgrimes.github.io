@@ -1,4 +1,4 @@
-{:title "Kobo - Annotation Extractor"
+{:title "Kobo: Annotation Extractor"
  :layout :post
  :toc false
  :tags  ["python" "kobo" "nltk"]}
