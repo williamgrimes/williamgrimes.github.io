@@ -109,7 +109,8 @@ h3 {
       /* (20px / 22px) * .5 */ } }
 
 h4, h5, h6 {
-  font-size: 1.125em;
+  font-size: 1.25em;
+  font-weight: 700;
   line-height: 1.11111111;
   margin-top: 1.83333333em;
   /* (22px / 18px) * 1.5 */
